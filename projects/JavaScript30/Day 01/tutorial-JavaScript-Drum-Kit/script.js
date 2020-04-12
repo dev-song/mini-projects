@@ -16,4 +16,15 @@ function playAudio(e) {
     key.classList.add('playing');
 }
 
+/**
+ * Remove transition of '.playing' CSS styles
+ */
+function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;     // ignore all 'transitionend' events except the one with 'transform' propertyName
+    this.classList.remove('playing');
+}
+
 window.addEventListener('keydown', playAudio);
+
+const keys = document.querySelectorAll('div.key');
+keys.forEach(elm => elm.addEventListener('transitionend', removeTransition));
