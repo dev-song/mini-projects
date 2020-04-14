@@ -22,9 +22,23 @@
 
   <style>
 
-    /*
-      misc styles, nothing to do with CSS variables
-    */
+    /* Added */
+    :root {
+      --base: #ffc600;
+      --spacing: 10px;
+      --blur: 10px;
+    }
+
+    img {
+      padding: var(--spacing);
+      background-color: var(--base);
+      filter: blur(var(--blur));
+    }
+
+    .hl {
+      color: var(--base);
+    }
+    /* Added end */
 
     body {
       text-align: center;
@@ -45,6 +59,21 @@
   </style>
 
   <script>
+  // Added
+    const inputs = document.querySelectorAll('.controls input');
+
+    function handleUpdate() {
+      // console.log(this.dataset);
+      const suffix = this.dataset.sizing || "";
+
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+    }
+
+    inputs.forEach(elm => {
+      elm.addEventListener('change', handleUpdate);
+      elm.addEventListener('mousemove', handleUpdate);
+    })
+  // Added end
   </script>
 
 </body>
