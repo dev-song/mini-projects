@@ -8,3 +8,35 @@ fetch(endpoint)
         cities.push(...json);
     })
 
+function findMatches(wordToMatch, cities) {
+    return cities.filter(place => {
+        // figure out if the city or state matches what was searched
+        const regex = new RegExp(wordToMatch, 'gi');
+        return place.city.match(regex) || place.state.match(regex);
+    })
+}
+
+function displayMatches() {
+    const matchArray = findMatches(this.value, cities);
+    
+    const html = matchArray.map(place => {
+        // emphasize searched word
+        const regex = new RegExp(this.value, 'gi');
+        const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
+        const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
+
+        // return HTML string
+        return `
+            <li>
+                <span class="name">${cityName}, ${stateName}</span>
+                <span class="population">${numWithCommas(place.population)}</span>
+            </li>
+        `;
+    }).join('');
+    suggestions.innerHTML = html;
+}
+
+function numWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
