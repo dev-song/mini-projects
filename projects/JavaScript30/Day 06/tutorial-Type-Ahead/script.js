@@ -40,3 +40,9 @@ function numWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
+const searchInput = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
+
+// searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
+
