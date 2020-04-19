@@ -18,3 +18,28 @@ let isDrawing = false;
 let lastX = 0, lastY = 0;
 let hue = 0;
 let direction = true;
+
+function draw(e) {
+    if(!isDrawing) return;      // stop the function when isDrawing is false
+
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);   // starting point of the line
+    ctx.lineTo(e.offsetX, e.offsetY);   // end point of the line
+    ctx.stroke();
+
+    // update lastX, lastY
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+}
+
+// isDrawing depends on various mouse events
+    // draw function is activated only when mousemove with mousedown
+canvas.addEventListener('mousedown', e => {
+    isDrawing = true;
+
+    // make lines start at event's position
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+});
+canvas.addEventListener('mouseup', () => isDrawing = false);
+canvas.addEventListener('mouseout', () => isDrawing = false);
+
+canvas.addEventListener('mousemove', draw);
