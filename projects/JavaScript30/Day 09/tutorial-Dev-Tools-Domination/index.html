@@ -10,6 +10,7 @@
 
   <script>
     const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+    const pDOM = document.querySelector('p');
 
     function makeGreen() {
       const p = document.querySelector('p');
@@ -18,28 +19,63 @@
     }
 
     // Regular
+    console.log('Hello');
 
     // Interpolated
+    console.log('Hello, I\'m a %s string!', 'SAMPLE');
+
+    let str = "SAMPLE";
+    console.log(`Hello, I'm a ${str} string!`);
 
     // Styled
+    console.log('%cThis is a msg', 'color: dodgerblue; font-size: 20px;');
 
     // warning!
+    console.warn('Warning! You should not try this!');
 
     // Error :|
+    console.error('Oops :| Something\'s missing...');
 
     // Info
+    console.info('Average person walks at a spped of 4km/h.');
 
     // Testing
+      // Prints 2nd argument only when 1st argument is wrong
+    console.assert(1 === 2, 'It is wrong!');
 
     // clearing
+    // console.clear()
 
     // Viewing DOM Elements
+    console.dir(pDOM);
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.group(`${dog.name}`);
+        console.log(`${dog.name} is ${dog.age} years old.`);
+        console.log(`How cute he is!`);
+      console.groupEnd(`${dog.name}`);
+    });
 
     // counting
+    console.log('Test');
+    console.count('Test');
+    console.count('Test');
+    console.count('Sample');
+    console.count('Sample');
+    console.count('Test');
 
     // timing
+    console.time('Fetching data: ')
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('Fetching data: ');
+        console.log(data);
+      });
+    
+    // table
+    console.table(dogs);
 
   </script>
 </body>
