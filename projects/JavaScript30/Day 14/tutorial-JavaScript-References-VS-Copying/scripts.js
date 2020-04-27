@@ -62,7 +62,7 @@ const rad = {
 }
 const dev = Object.assign({}, rad);
 dev.social.twitter = "@rosch";
-console.log(rad.social.twitter);    // @rad - affected
+console.log(rad.social.twitter);    // @rosch - affected
 
 // ※ poor man's deepClone - simpler, but not recommended
 const dev2 = JSON.parse(JSON.stringify(rad));
