@@ -1,6 +1,8 @@
 const addItems = document.querySelector('.add-items');
 const itemsList = document.querySelector('.plates');
-const items = [];
+// check if data is in the localStorage on page load
+    // if data doesn't exist, assign an empty array to items
+const items = Json.parse(localStorage.getItem('items')) || [];
 
 function addItem(e) {
     // stop page from reloading
@@ -18,13 +20,19 @@ function addItem(e) {
 
     items.push(item);
     populateList(items, itemsList);
+
+    // save data to the local storage
+        // 1st parameter: key, 2nd parameter: data to be saved
+        // 2nd parameter string type, so object-type data should be stringified to be saved
+    localStorage.setItem('items', JSON.stringify(items));
+    
     // 'this' refers 'form' elm, and form elm has reset method
     this.reset();
 }
 
 // creates actual HTML
-    // it recreates entire list every time it's executed
-    // so if you can improve performance by updating the last one only
+    // additional performance improvement is possible,
+    // as it recreates entire list by every execution,
 function populateList(plates = [], platesList) {
     platesList.innerHTML = plates.map((plate, i) => {
         // label and input can be linked through id-for
@@ -39,3 +47,6 @@ function populateList(plates = [], platesList) {
 
 // 'submit' event listener not only mouse input, but also keyboard input
 addItems.addEventListener('submit', addItem);
+
+// load and show itemsList on page load
+populateList(items, itemsList);
