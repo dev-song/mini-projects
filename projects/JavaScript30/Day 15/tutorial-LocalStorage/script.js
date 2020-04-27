@@ -17,8 +17,24 @@ function addItem(e) {
     };
 
     items.push(item);
+    populateList(items, itemsList);
     // 'this' refers 'form' elm, and form elm has reset method
     this.reset();
+}
+
+// creates actual HTML
+    // it recreates entire list every time it's executed
+    // so if you can improve performance by updating the last one only
+function populateList(plates = [], platesList) {
+    platesList.innerHTML = plates.map((plate, i) => {
+        // label and input can be linked through id-for
+        return `
+            <li>
+                <input type="checkbox" data-index=${i} id="item${i}" ${plate.done ? 'checked' : ''} />
+                <label for="item${i}">${plate.text}</label>
+            </li>
+        `
+    }).join('');
 }
 
 // 'submit' event listener not only mouse input, but also keyboard input
