@@ -2,7 +2,7 @@ const addItems = document.querySelector('.add-items');
 const itemsList = document.querySelector('.plates');
 // check if data is in the localStorage on page load
     // if data doesn't exist, assign an empty array to items
-const items = Json.parse(localStorage.getItem('items')) || [];
+const items = JSON.parse(localStorage.getItem('items')) || [];
 
 function addItem(e) {
     // stop page from reloading
@@ -45,8 +45,22 @@ function populateList(plates = [], platesList) {
     }).join('');
 }
 
+// change 'done' and save it in the localStorage
+function toggleDone(e) {
+    if (!e.target.matches('input')) return;  // stop the function if target isn't input
+
+    const elm = e.target;
+    const index = elm.dataset.index;
+    
+    items[index].done = !items[index].done;
+    localStorage.setItem('items', JSON.stringify(items));
+    
+    populateList(items, itemsList);
+}
+
 // 'submit' event listener not only mouse input, but also keyboard input
 addItems.addEventListener('submit', addItem);
+itemsList.addEventListener('click', toggleDone);
 
 // load and show itemsList on page load
 populateList(items, itemsList);
