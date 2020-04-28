@@ -36,6 +36,34 @@
     </style>
 
     <script>
+      const hero = document.querySelector('.hero');
+      const text = hero.querySelector('h1');
+      const walk = 100;
+
+      function shadow(e) {
+        // set variables of whole screen's width & height, current cursor X & Y offset
+          // using object destructuring
+          // same as 'const width = hero.offsetWidth, height = hero.offsetHeight'
+        const {offsetWidth: width, offsetHeight: height} = hero;
+        let {offsetX: x, offsetY: y} = e;
+
+        // 'this' is what function is linked to
+          // so (this !== e.target) means when event target isn't 'hero', execute code inside it
+        if (this !== e.target) {
+          x = x + e.target.offsetLeft;
+          y = y + e.target.offsetTop;
+        }
+
+        // set shadow length using x, y, by modifying them to be between -50 ~ 50
+          // 0 <= x / width <= 1
+        const xWalk = Math.round((x / width * walk) - (walk / 2));
+        const yWalk = Math.round((y / height * walk) - (walk / 2));
+
+        // add shadow style to text
+        text.style.textShadow = `${xWalk}px ${yWalk}px 0 red`;
+      }
+
+      hero.addEventListener('mousemove', shadow);
     </script>
   </body>
 </html>
