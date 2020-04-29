@@ -48,6 +48,49 @@
 <script>
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 
+/* My solution */
+const nameParts = bands.map(band => {
+  const data = {
+    article: '',
+    name: ''
+  };
+  const words = band.split(' ');
+  const firstWord = words[0];
+  
+  if (['The', 'An', 'A'].includes(firstWord)) {
+    // assign firstWord to object's article
+    data['article'] = firstWord;
+    
+    // exclude firstWord and assign the other words to object's name
+    words.splice(0, 1);
+    data['name'] = words.join(' ');
+  } else {
+    data['name'] = band;
+  }
+
+  return data;
+})
+
+// sort by band object's name
+const nameSorted = nameParts.sort((bandA, bandB) => {
+  const nameA = bandA.name;
+  const nameB = bandB.name;
+
+  if (nameA > nameB) return 1;
+  else if (nameA < nameB) return -1;
+  else return 0;
+})
+
+// join every elements of the array
+const bandsSorted = [];
+nameSorted.forEach(band => {
+  const fullName = band.article != '' ? band.article.concat(' ', band.name) : band.name;
+  bandsSorted.push(fullName);
+})
+
+// add html list as children of '#bands' element
+const html = bandsSorted.map(band => `<li>${band}</li>`).join('');
+document.getElementById('bands').innerHTML = html;
 
 </script>
 
