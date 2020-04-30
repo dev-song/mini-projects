@@ -1,0 +1,110 @@
+/***************************************
+********** General
+***************************************/
+:root {
+    --test: lightsalmon;
+    --circleSizeBig: 5rem;
+    --circleSizeMedium: 4rem;
+    --circleRadiusBig: 2.5rem;
+    --circleRadiusMedium: 2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+/***************************************
+********** Header
+***************************************/
+#navBar {
+    background-color: var(--test);
+}
+
+#navBar ul {
+    width: 80%;
+    margin: auto;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.link {
+    margin: 2rem;
+
+    list-style: none;
+}
+
+
+/***************************************
+********** Main
+***************************************/
+main {
+    width: 80%;
+    margin: auto;
+}
+
+#pageInfo, .draw-result {
+    margin-top: 1rem;
+    padding: 1rem;
+
+    text-align: center;
+    background-color: var(--test);
+}
+
+#userData, #userSet, .draw-result, .result-set {
+    margin-top: 1rem;
+    
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+#userDraw, .draw-sequence {
+    margin: auto;
+
+    flex: 1;
+}
+
+#userSet, .result-set {
+    margin: 0;
+
+    flex: 3;
+}
+
+.user-number {
+    width: var(--circleSizeBig);
+    height: var(--circleSizeBig);
+    border-radius: var(--circleRadiusBig);
+
+    background-color: black;
+}
+
+.result-number{
+    width: var(--circleSizeMedium);
+    height: var(--circleSizeMedium);
+    border-radius: var(--circleRadiusMedium);
+    
+    background-color: black;
+}
+
+.plus {
+    font-size: 4rem;
+    font-weight: bold;
+
+    line-height: 3.25rem;
+
+    background-color: white;
+}
