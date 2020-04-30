@@ -181,7 +181,32 @@
       Video 58
     </li>
   </ul>
-<script>
-</script>
+  <script>
+    // querySelectorAll() returns NodeList
+    const timeNodes = document.querySelectorAll('[data-time]');
+
+    // NodeList has to be converted to array to use methods like .map(), .reduce()
+      // conversion can be done by Array.from(targetList) or [...targetList]
+    const timeArr = Array.from(timeNodes);
+
+    const seconds = timeArr
+      .map(timeElm => timeElm.dataset.time)
+      .map(timeCode => {
+        // const [a, b] = ["a", "b"] can be utilized with methods that return array
+        // map(a => func(a)) can be replaced by map(func)
+        const [mins, secs] = timeCode.split(':').map(parseFloat);
+        return (mins * 60) + secs;
+      })
+      .reduce((total, vidSeconds) => total + vidSeconds);
+
+    let secondsLeft = seconds;
+    const hours = Math.floor(secondsLeft / 3600);
+    secondsLeft = secondsLeft % 3600;
+
+    const mins = Math.floor(secondsLeft / 60);
+    secondsLeft = secondsLeft % 60;
+
+    console.log(hours, mins, secondsLeft);
+  </script>
 </body>
 </html>
