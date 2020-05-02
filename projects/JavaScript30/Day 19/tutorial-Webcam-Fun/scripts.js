@@ -20,8 +20,24 @@ function getVideo() {
             video.play();
         })
         .catch(err => {
-            console.error(`Oh no!`, err);
+            console.error(`OH NO!`, err);
         });
+}
+
+// make webcam image bigger and look like video
+function paintToCanvas() {
+    const width = video.videoWidth;
+    const height = video.videoHeight;
+
+    canvas.width = width;
+    canvas.height = height;
+
+    // take webcam images into canvas by every 16ms (about 60 fps)
+        // returning it makes it re-accessible when it has to be stopped
+    return setInterval(() => {
+        // draw image of 'video' from top-left corner of canvas
+        ctx.drawImage(video, 0, 0, width, height);
+    }, 16);
 }
 
 getVideo();
