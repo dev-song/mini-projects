@@ -37,6 +37,18 @@ function paintToCanvas() {
     return setInterval(() => {
         // draw image of 'video' from top-left corner of canvas
         ctx.drawImage(video, 0, 0, width, height);
+
+        // get pixel data from top-left corner of canvas
+            // returns array of rgba data
+        let pixels = ctx.getImageData(0, 0, width, height);
+
+        // modify pixels through filter functions
+        // pixels = redEffect(pixels);
+        // pixels = rgbSplit(pixels);
+        // pixels = greenScreen(pixels);
+
+        // put pixels back into canvas
+        ctx.putImageData(pixels, 0, 0)
     }, 16);
 }
 
@@ -63,6 +75,56 @@ function takePhoto() {
 
     // insert 'link' as a first child of 'strip'
     strip.insertBefore(link, strip.firstChild);
+}
+
+// filter functions
+    // get pixels out of canvas and modify them and put them back in
+function redEffect(pixels) {
+    for (let i = 0; i < pixels.data.length; i += 4;) {
+        pixels.data[i + 0] = pixels.data[i + 0] + 100; // R of RGB
+        pixels.data[i + 1] = pixels.data[i + 1] - 50; // G of RGB
+        pixels.data[i + 2] = pixels.data[i + 2] * 0.5; // B of RGB
+    }
+
+    return pixels;
+}
+
+// split red, green, blue to left or right, from the image
+function rgbSplit(pixels) {
+    for (let i = 0; i < pixels.data.length; i += 4;) {
+        pixels.data[i - 150] = pixels.data[i + 0]; // R of RGB
+        pixels.data[i + 100] = pixels.data[i + 1]; // G of RGB
+        pixels.data[i - 500] = pixels.data[i + 2]; // B of RGB
+    }
+
+    return pixels;
+}
+
+// make pixel transparent when rgb value is within certain range
+function greenScreen(pixels) {
+    const levels = {};
+
+    // get rgb min/max from range type inputs
+    document.querySelectorAll('.rgb input').forEach(input => {
+        levels[input.name] = input.value;
+    });
+
+    for (i = 0; i < pixels.data.length; i = i + 4) {
+        const red = pixels.data[i + 0];
+        const green = pixels.data[i + 1];
+        const blue = pixels.data[i + 2];
+
+        if (red >= levels.rmin
+            && green >= levels.gmin
+            && blue >= levels.bmin
+            && red <= levels.rmax
+            && green <= levels.gmax
+            && blue <= levels.bmax) {
+                pixels.data[i + 3] = 0;
+            }
+
+        return pixels;
+    }
 }
 
 getVideo();
