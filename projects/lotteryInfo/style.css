@@ -5,8 +5,10 @@
     --test: lightsalmon;
     --circleSizeBig: 5rem;
     --circleSizeMedium: 4rem;
+    --circleSizeSmall: 3rem;
     --circleRadiusBig: 2.5rem;
     --circleRadiusMedium: 2rem;
+    --circleRadiusSmall: 1.5rem;
 }
 
 * {
@@ -56,6 +58,8 @@ h3 {
 ********** Main
 ***************************************/
 main {
+    position: relative;
+
     width: 80%;
     margin: auto;
 }
@@ -117,3 +121,40 @@ main {
 
     background-color: white;
 }
+
+/***************************************
+********** Overlay
+***************************************/
+#overlay-number-selection {
+    position: absolute;
+    bottom: 5%;
+    left: -5%;
+
+    width: 110%;
+    margin: auto;
+    border-radius: 1rem;
+    
+    display: none;
+
+    background-color: lightgray;
+}
+
+.selection-set {
+    margin: 1rem 0;
+    padding: 1rem;
+    
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.selection-number {
+    width: var(--circleSizeSmall);
+    height: var(--circleSizeSmall);
+    border-radius: var(--circleRadiusSmall);
+    
+    line-height: var(--circleSizeSmall);
+
+    background-color: black;
+}
+
