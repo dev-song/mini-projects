@@ -47,6 +47,10 @@ h3 {
     list-style: none;
 }
 
+.link a {
+    text-decoration: none;
+    color: white;
+}
 
 /***************************************
 ********** Main
@@ -62,6 +66,7 @@ main {
 
     text-align: center;
     background-color: var(--test);
+    border-radius: 1rem;
 }
 
 #userData, #userSet, .draw-result, .result-set {
@@ -89,6 +94,8 @@ main {
     height: var(--circleSizeBig);
     border-radius: var(--circleRadiusBig);
 
+    line-height: var(--circleSizeBig);
+
     background-color: black;
 }
 
@@ -97,6 +104,8 @@ main {
     height: var(--circleSizeMedium);
     border-radius: var(--circleRadiusMedium);
     
+    line-height: var(--circleSizeMedium);
+
     background-color: black;
 }
 
