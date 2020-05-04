@@ -10,8 +10,49 @@
   </div>
 
 <script>
+  // Google Chrome and Microsoft Edge need vendor prefix 'webkit'
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
+  const recognition = new SpeechRecognition();
+
+  // make interim results be returned
+  recognition.interimResults = true;
+
+  // HTML element for recognition results
+  let p = document.createElement('p');
+  const words = document.querySelector('.words');
+  words.appendChild(p);
+
+  // it listens when the result comes back
+  recognition.addEventListener('result', e => {
+    // extract transcript from recognition
+    const transcript = Array.from(e.results)
+      .map(result => result[0])
+      .map(result => result.transcript)
+      .join('');
+
+    p.textContent = transcript;
+
+    // create new paragraph when speech breaks
+    if(e.results[0].isFinal) {
+      p = document.createElement('p');
+      words.appendChild(p);
+    }
+
+    // recognize certain speech
+      // can be used with external Weather API
+    if(transcript.includes('온도')) {
+      console.log(`오늘의 온도는 00도입니다.`);
+    }
+  })
+
+  // recognition unbinds itself when result comes back, making it unavailable
+  // restart is needed when recognition ends
+  recognition.addEventListener('end', () => {
+    recognition.start();
+  });
+
+  recognition.start();
 
 </script>
 
