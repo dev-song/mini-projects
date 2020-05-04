@@ -80,7 +80,7 @@ function takePhoto() {
 // filter functions
     // get pixels out of canvas and modify them and put them back in
 function redEffect(pixels) {
-    for (let i = 0; i < pixels.data.length; i += 4;) {
+    for (let i = 0; i < pixels.data.length; i += 4) {
         pixels.data[i + 0] = pixels.data[i + 0] + 100; // R of RGB
         pixels.data[i + 1] = pixels.data[i + 1] - 50; // G of RGB
         pixels.data[i + 2] = pixels.data[i + 2] * 0.5; // B of RGB
@@ -91,7 +91,7 @@ function redEffect(pixels) {
 
 // split red, green, blue to left or right, from the image
 function rgbSplit(pixels) {
-    for (let i = 0; i < pixels.data.length; i += 4;) {
+    for (let i = 0; i < pixels.data.length; i += 4) {
         pixels.data[i - 150] = pixels.data[i + 0]; // R of RGB
         pixels.data[i + 100] = pixels.data[i + 1]; // G of RGB
         pixels.data[i - 500] = pixels.data[i + 2]; // B of RGB
