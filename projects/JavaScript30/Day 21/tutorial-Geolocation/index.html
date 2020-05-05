@@ -59,6 +59,20 @@
     /*Compass: https://thenounproject.com/search/?q=compass&i=592352*/
   </style>
   <script>
+    const arrow = document.querySelector('.arrow');
+    const speed = document.querySelector('.speed-value');
+
+    // get current position data (accuracy, heading, latitude, longitude, speed)
+    navigator.geolocation.watchPosition(data => {
+      // display speed rounded to the tenths place
+      speed.textContent = Math.round(data.coords.speed * 10) / 10;
+      // arrow rotates by heading (heading itself is 360deg-base, so additional math is not required)
+      arrow.style.transform = `rotate(${data.coords.heading}deg)`;
+    }, err => {
+      // display error when user disabled geolocation feature
+      console.err(err);
+      alert('The app needs permission to geolocation!');
+    });
   </script>
 </body>
 </html>
