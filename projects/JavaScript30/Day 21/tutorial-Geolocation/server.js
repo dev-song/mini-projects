@@ -19,4 +19,15 @@ var app = http.createServer(function(request, response) {
     console.log('Server is running');
 });
 
+/**
+ * for localhost access
+ */
 app.listen(3000);
+
+/**
+ * for external access from the same network
+ */ 
+// var externalHost = '192.168.1.37';
+// var externalPort = 80;
+
+// app.listen(externalPort, externalHost, () => console.log(`Server is running at http://${externalHost}:${externalPort}`));
