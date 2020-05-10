@@ -221,6 +221,7 @@
 
 <script>
   const triggers = document.querySelectorAll('.cool > li');
+  const background = document.querySelector('.dropdownBackground');
 
   function handleMouseEnter() {
     this.classList.add('trigger-enter');
@@ -230,10 +231,14 @@
         this.classList.add('trigger-enter-active')
       }
     }, 150);
+
+    background.classList.add('open');
   }
 
   function handleMouseLeave() {
     this.classList.remove('trigger-enter', 'trigger-enter-active');
+
+    background.classList.remove('open');
   }
 
   triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleMouseEnter));
