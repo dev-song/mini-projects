@@ -233,6 +233,20 @@
     }, 150);
 
     background.classList.add('open');
+
+    const dropdown = this.querySelector('.dropdown');
+    const dropdownCoords = dropdown.getBoundingClientRect();
+    const coords = {
+      height: dropdownCoords.height,
+      width: dropdownCoords.width,
+      top: dropdownCoords.top,
+      left: dropdownCoords.left
+    };
+
+    background.style.setProperty('width', `${coords.width}px`);
+    background.style.setProperty('height', `${coords.height}px`);
+    background.style.setProperty('top', `${coords.top}px`);
+    background.style.setProperty('left', `${coords.left}px`);
   }
 
   function handleMouseLeave() {
