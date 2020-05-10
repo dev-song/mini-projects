@@ -220,6 +220,24 @@
 </style>
 
 <script>
+  const triggers = document.querySelectorAll('.cool > li');
+
+  function handleMouseEnter() {
+    this.classList.add('trigger-enter');
+
+    setTimeout(() => {
+      if (this.classList.contains('trigger-enter')) {
+        this.classList.add('trigger-enter-active')
+      }
+    }, 150);
+  }
+
+  function handleMouseLeave() {
+    this.classList.remove('trigger-enter', 'trigger-enter-active');
+  }
+
+  triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleMouseEnter));
+  triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleMouseLeave));
 </script>
 
 </body>
