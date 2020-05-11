@@ -35,6 +35,27 @@
   </div>
 
 <script>
+  const slider = document.querySelector('.items');
+  let isMouseDown = false;
+  let startX, scrollLeft;
+
+  slider.addEventListener('mousedown', () => {
+    isMouseDown = true;
+    slider.classList.add('active');
+  });
+  
+  slider.addEventListener('mouseleave', () => {
+    isMouseDown = false;
+    slider.classList.remove('active');
+  });
+  
+  slider.addEventListener('mouseup', () => {
+    isMouseDown = false;
+    slider.classList.remove('active');
+  });
+
+  slider.addEventListener('mousemove', () => {
+  });
 </script>
 
   </body>
