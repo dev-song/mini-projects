@@ -1,0 +1,115 @@
+/*********************
+********* General
+*********************/
+:root {
+
+}
+
+html {
+    background-color: #EEF0F4;
+}
+
+nav, section {
+    width: 90%;
+    margin: auto;
+}
+
+.button-blue {
+    background-color: navy;
+    border-radius: 0.5rem;
+
+    color: white;
+}
+
+
+/*********************
+********* Header
+*********************/
+header {
+    display: flex;
+
+}
+
+nav, nav ul {
+    display: flex;
+    padding: 0;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+
+/*********************
+********* Main
+*********************/
+#pageIntro, #coachStat, #coachBooking {
+    display: flex;
+}
+
+.coach-name-photo, .coach-intro, .stat-detail, .coaching-benefit, .coach-photo-box {
+    flex: 1;
+}
+
+.coaching-contents {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#coachingDetail, #inspiringMsg, #mealPlanNewsletter, #tipsAndTricks {
+    text-align: center;
+}
+
+.content-box {
+    width: 20rem;
+    height: 20rem;
+    margin: auto;
+
+    background-color: gray;
+    border-radius: 2rem;
+}
+
+.workout-programs, .tips-tricks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.program-wrapper, .tip-trick-wrapper {
+    width: 15rem;
+
+    text-align: left;
+}
+
+.coach-photo-box {    
+    background-color: navy;
+}
+
+.subscribe-wrapper {
+    width: 90%;
+    height: 80%;
+    margin: auto;
+
+    background-color: gray;
+}
+
+.social-media-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+/*********************
+********* Footer
+*********************/
+footer {
+    display: flex;
+
+    background-color: navy;
+    color: white;
+}
+
+.footer-logo-payments {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
