@@ -18,8 +18,22 @@
   const speed = document.querySelector('.speed');
   const bar = speed.querySelector('.speed-bar');
   const video = document.querySelector('.flex');
+  
+  let isMouseDown = false;
+  speed.addEventListener('mousedown', function() {
+    isMouseDown = true;
+  });
+  speed.addEventListener('mouseup', function() {
+    isMouseDown = false;
+  });
+  speed.addEventListener('mouseleave', function() {
+    isMouseDown = false;
+  });
 
   speed.addEventListener('mousemove', function(e) {
+    e.preventDefault();
+    if (!isMouseDown) return;
+
     const y = e.pageY - this.offsetTop;
     const percent = y / this.offsetHeight;
 
