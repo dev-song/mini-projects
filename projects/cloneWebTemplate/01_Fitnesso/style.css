@@ -2,11 +2,17 @@
 ********* General
 *********************/
 :root {
-
+    --background-color: #EEF0F4;
+    --foreground-color: #081158;
 }
 
-html {
-    background-color: #EEF0F4;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-color);
 }
 
 nav, section {
@@ -15,27 +21,42 @@ nav, section {
 }
 
 .button-blue {
-    background-color: navy;
-    border-radius: 0.5rem;
+    padding: 0.75rem;
 
-    color: white;
+    background-color: var(--foreground-color);
+    border-radius: 0.5rem;
+    color: var(--background-color);
+    font-size: 1.25rem;
 }
 
+h1 { font-size: 6rem; }
+h2 { font-size: 4rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.5rem; }
 
 /*********************
 ********* Header
 *********************/
-header {
+header, nav, nav ul {
     display: flex;
-
+    justify-content: space-between;
 }
 
-nav, nav ul {
-    display: flex;
-    padding: 0;
+#brandLogo {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+
+    background-color: var(--foreground-color);
+}
+
+nav {
+    width: auto;
+    margin: auto 0;
 }
 
 nav ul li {
+    margin: auto 2rem auto 0;
     list-style: none;
 }
 
@@ -43,6 +64,10 @@ nav ul li {
 /*********************
 ********* Main
 *********************/
+#pageIntro, #coachStat, #coachingDetail, #fitnessPlanFree, #fitnessPlanAdvanced, #coachBooking{
+    margin: 5rem auto;
+}
+
 #pageIntro, #coachStat, #coachBooking {
     display: flex;
 }
@@ -51,22 +76,38 @@ nav ul li {
     flex: 1;
 }
 
+#coachStat {
+    width: 80%;
+    padding: 5% 10%;
+    transform: skewY(-3deg);
+
+    background-color: var(--foreground-color);
+    color: var(--background-color);
+}
+
+.stat-detail, #coachingDetail, #inspiringMsg, #mealPlanNewsletter, #tipsAndTricks {
+    text-align: center;
+}
+
+#coachingDetail {
+    width: 90%;
+    margin-top: -10%;
+    padding: 10% 5%;
+    background-color: white;
+}
+
 .coaching-contents {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
-#coachingDetail, #inspiringMsg, #mealPlanNewsletter, #tipsAndTricks {
-    text-align: center;
-}
-
 .content-box {
     width: 20rem;
     height: 20rem;
-    margin: auto;
+    margin: 3rem auto 0 auto;
 
     background-color: gray;
-    border-radius: 2rem;
+    border-radius: 0.5rem;
 }
 
 .workout-programs, .tips-tricks {
@@ -77,11 +118,13 @@ nav ul li {
 .program-wrapper, .tip-trick-wrapper {
     width: 15rem;
 
+    background-color: gray;
+    border-radius: 0.5rem;
     text-align: left;
 }
 
 .coach-photo-box {    
-    background-color: navy;
+    background-color: var(--foreground-color);
 }
 
 .subscribe-wrapper {
