@@ -2,8 +2,10 @@
 ********* General
 *********************/
 :root {
-    --background-color: #EEF0F4;
-    --foreground-color: #081158;
+    --color-background: #EEF0F4;
+    --color-foreground: #081158;
+    --color-blue-light: #CFDDEE;
+    --color-blue-less-light: #BDCBE5;
 }
 
 * {
@@ -12,7 +14,7 @@
 }
 
 body {
-    background-color: var(--background-color);
+    background-color: var(--color-background);
 }
 
 nav, section {
@@ -23,16 +25,23 @@ nav, section {
 .button-blue {
     padding: 0.75rem;
 
-    background-color: var(--foreground-color);
+    background-color: var(--color-foreground);
     border-radius: 0.5rem;
-    color: var(--background-color);
+    color: var(--color-background);
     font-size: 1.25rem;
 }
 
-h1 { font-size: 6rem; }
+h1, h2, h3, button { font-family: 'Signika', sans-serif; }
+h4, p { font-family: 'Mallanna', sans-serif; }
+h3.font-emphasize { font-family: 'Ravi Prakash', cursive; }
+
+h1 { font-size: 5rem; }
 h2 { font-size: 4rem; }
-h3 { font-size: 2rem; }
+h3 { font-size: 3rem; }
 h4 { font-size: 1.5rem; }
+p { font-size: 1.25rem; }
+
+img { width: 100%; }
 
 /*********************
 ********* Header
@@ -47,7 +56,7 @@ header, nav, nav ul {
     width: 4rem;
     height: 4rem;
 
-    background-color: var(--foreground-color);
+    background-color: var(--color-foreground);
 }
 
 nav {
@@ -64,7 +73,7 @@ nav ul li {
 /*********************
 ********* Main
 *********************/
-#pageIntro, #coachStat, #coachingDetail, #fitnessPlanFree, #fitnessPlanAdvanced, #coachBooking{
+#pageIntro, #coachStat, #coachingDetail, #fitnessPlanFree, #fitnessPlanAdvanced, #coachBooking, #mealPlanNewsletter, #tipsAndTricks, #socialMedia{
     margin: 5rem auto;
 }
 
@@ -81,8 +90,8 @@ nav ul li {
     padding: 5% 10%;
     transform: skewY(-3deg);
 
-    background-color: var(--foreground-color);
-    color: var(--background-color);
+    background-color: var(--color-foreground);
+    color: var(--color-background);
 }
 
 .stat-detail, #coachingDetail, #inspiringMsg, #mealPlanNewsletter, #tipsAndTricks {
@@ -103,10 +112,12 @@ nav ul li {
 
 .content-box {
     width: 20rem;
-    height: 20rem;
     margin: 3rem auto 0 auto;
+}
 
-    background-color: gray;
+.content-photo {
+    width: 80%;
+    
     border-radius: 0.5rem;
 }
 
@@ -123,16 +134,61 @@ nav ul li {
     text-align: left;
 }
 
-.coach-photo-box {    
-    background-color: var(--foreground-color);
+#fitnessPlanAdvanced {
+    width: 90%;
+    padding: 10% 5%;
+    background-color: var(--color-foreground);
+    color: var(--color-background);
+}
+
+#inspiringMsg, #mealPlanNewsletter {
+    display: flex;
+    height: 50rem;
+}
+
+#inspiringMsg {
+    width: 100%;
+    margin-top: -10%;
+
+    background-image: url('resources/squat-meghan-holmes.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+#inspiringMsgText {
+    margin: auto;
+
+    color: var(--color-background);
+}
+
+.coach-photo-box {
+    display: flex;
+    padding: 3rem;
+
+    background-color: var(--color-foreground);
+}
+
+#coachPhoto2 {
+    width: 80%;
+    margin: 3rem auto 0 auto;
+}
+
+#mealPlanNewsletter {
+    width: 100%;
+
+    background-image: url('resources/running-andrew-tanglao.jpg');
+    background-position: center;
+    background-size: cover;
 }
 
 .subscribe-wrapper {
-    width: 90%;
-    height: 80%;
+    width: 80%;
     margin: auto;
+    padding: 3rem 3rem;
 
-    background-color: gray;
+    border-radius: 1rem;
+    background-color: var(--color-blue-light);
+    color: var(--color-foreground);
 }
 
 .social-media-wrapper {
@@ -145,9 +201,10 @@ nav ul li {
 *********************/
 footer {
     display: flex;
+    padding: 3rem 1rem;
 
-    background-color: navy;
-    color: white;
+    background-color: var(--color-foreground);
+    color: var(--color-background);
 }
 
 .footer-logo-payments {
