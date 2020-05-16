@@ -44,13 +44,23 @@
 
   function randHole(holes) {
     const randIndex = Math.floor(Math.random() * holes.length);
-    const randHole = holes[randIndex];
-    if (randHole === lastHole) {
+    const hole = holes[randIndex];
+    if (hole === lastHole) {
       return randHole(holes);
     }
 
-    lastHole = randHole;
-    return randHole;
+    lastHole = hole;
+    return hole;
+  }
+
+  function peep() {
+    const time = randTime(200, 1000);
+    const hole = randHole(holes);
+    hole.classList.add('up');
+
+    setTimeout(() => {
+      hole.classList.remove('up');
+    }, time);
   }
 
 </script>
