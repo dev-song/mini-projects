@@ -17,12 +17,14 @@ body {
     background-color: var(--color-background);
 }
 
-nav, section {
+section {
     width: 90%;
     margin: auto;
+    padding: 10% 5%;
 }
 
 .button-blue {
+    margin: 1rem 0;
     padding: 0.75rem;
 
     background-color: var(--color-foreground);
@@ -33,11 +35,11 @@ nav, section {
 
 h1, h2, h3, button { font-family: 'Signika', sans-serif; }
 h4, p { font-family: 'Mallanna', sans-serif; }
-h3.font-emphasize { font-family: 'Ravi Prakash', cursive; }
+h2#fontEmphasize { font-family: 'Ravi Prakash', cursive; }
 
 h1 { font-size: 5rem; }
 h2 { font-size: 4rem; }
-h3 { font-size: 3rem; }
+h3 { font-size: 2.5rem; }
 h4 { font-size: 1.5rem; }
 p { font-size: 1.25rem; }
 
@@ -55,13 +57,14 @@ header, nav, nav ul {
     display: inline-block;
     width: 4rem;
     height: 4rem;
+    margin: 1rem;
 
     background-color: var(--color-foreground);
 }
 
 nav {
     width: auto;
-    margin: auto 0;
+    margin: auto 1rem;
 }
 
 nav ul li {
@@ -73,16 +76,40 @@ nav ul li {
 /*********************
 ********* Main
 *********************/
-#pageIntro, #coachStat, #coachingDetail, #fitnessPlanFree, #fitnessPlanAdvanced, #coachBooking, #mealPlanNewsletter, #tipsAndTricks, #socialMedia{
-    margin: 5rem auto;
-}
-
 #pageIntro, #coachStat, #coachBooking {
     display: flex;
 }
 
 .coach-name-photo, .coach-intro, .stat-detail, .coaching-benefit, .coach-photo-box {
     flex: 1;
+}
+
+.coach-name-photo {
+    margin: 0 1rem;
+
+    background-image: url('resources/stairs-clique-images.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 1rem;
+}
+
+#fontEmphasize {
+    position: relative;
+    top: -3rem;
+
+    text-align: center;
+}
+
+#coachPhoto {
+    border-radius: 1rem;
+}
+
+.coach-intro {
+    margin-left: 2rem;
+}
+
+.coach-intro h2 {
+    margin: 1rem 0;
 }
 
 #coachStat {
@@ -101,18 +128,21 @@ nav ul li {
 #coachingDetail {
     width: 90%;
     margin-top: -10%;
-    padding: 10% 5%;
+    padding-top: 20%;
     background-color: white;
 }
 
 .coaching-contents {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    padding: 1rem;
 }
 
 .content-box {
-    width: 20rem;
-    margin: 3rem auto 0 auto;
+    width: auto;
+    margin-top: 3rem;
+    padding: 0 2rem;
 }
 
 .content-photo {
@@ -135,8 +165,6 @@ nav ul li {
 }
 
 #fitnessPlanAdvanced {
-    width: 90%;
-    padding: 10% 5%;
     background-color: var(--color-foreground);
     color: var(--color-background);
 }
@@ -147,9 +175,6 @@ nav ul li {
 }
 
 #inspiringMsg {
-    width: 100%;
-    margin-top: -10%;
-
     background-image: url('resources/squat-meghan-holmes.jpg');
     background-position: center;
     background-size: cover;
@@ -174,8 +199,6 @@ nav ul li {
 }
 
 #mealPlanNewsletter {
-    width: 100%;
-
     background-image: url('resources/running-andrew-tanglao.jpg');
     background-position: center;
     background-size: cover;
