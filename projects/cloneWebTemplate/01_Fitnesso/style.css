@@ -43,7 +43,12 @@ h3 { font-size: 2.5rem; }
 h4 { font-size: 1.5rem; }
 p { font-size: 1.25rem; }
 
-img { width: 100%; }
+img {
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
 
 /*********************
 ********* Header
@@ -126,7 +131,6 @@ nav ul li {
 }
 
 #coachingDetail {
-    width: 90%;
     margin-top: -10%;
     padding-top: 20%;
     background-color: white;
@@ -157,11 +161,21 @@ nav ul li {
 }
 
 .program-wrapper, .tip-trick-wrapper {
-    width: 15rem;
+    width: 16rem;
 
     background-color: gray;
     border-radius: 0.5rem;
     text-align: left;
+}
+
+.program-photo, .tip-photo {
+    height: 70%;
+
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.program-time, .program-price {
+    display: inline-block;
 }
 
 #fitnessPlanAdvanced {
@@ -184,6 +198,10 @@ nav ul li {
     margin: auto;
 
     color: var(--color-background);
+}
+
+#coachBooking {
+    background-color: white;
 }
 
 .coach-photo-box {
@@ -214,9 +232,40 @@ nav ul li {
     color: var(--color-foreground);
 }
 
+#tipsAndTricks {
+    background-color: white;
+}
+
+#socialMedia {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.image-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.workout-photo-sample {
+    width: 16rem;
+    height: 24rem;
+
+    background-size: cover;
+    background-position: center;
+}
+
 .social-media-wrapper {
     display: flex;
     justify-content: space-around;
+
+    width: 80%;
+    margin: -3% 0;
+    padding: 5% 10%;
+    transform: skewY(2deg);
+
+    background-color: var(--color-foreground);
+    color: var(--color-background);
 }
 
 /*********************
@@ -228,6 +277,11 @@ footer {
 
     background-color: var(--color-foreground);
     color: var(--color-background);
+}
+
+footer > section {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .footer-logo-payments {
