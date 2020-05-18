@@ -167,6 +167,18 @@ nav ul li {
     text-align: left;
 }
 
+.program-text-info {
+    position: relative;
+    height: 20%;
+    padding: 1rem;
+}
+
+.program-price.before-sale {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 .program-wrapper:nth-of-type(2), .tip-trick-wrapper:nth-of-type(2) {
     margin: 0 5%;
 }
