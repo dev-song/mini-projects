@@ -56,15 +56,13 @@ img {
 header, nav, nav ul {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 #brandLogo {
     display: inline-block;
-    width: 4rem;
-    height: 4rem;
-    margin: 1rem;
-
-    background-color: var(--color-foreground);
+    width: 10rem;
+    margin-left: 1rem;
 }
 
 nav {
@@ -161,14 +159,19 @@ nav ul li {
 }
 
 .program-wrapper, .tip-trick-wrapper {
-    width: 16rem;
+    flex: 1;
 
-    background-color: gray;
+    background-color: white;
     border-radius: 0.5rem;
+    color: var(--color-foreground);
     text-align: left;
 }
 
-.program-photo, .tip-photo {
+.program-wrapper:nth-of-type(2), .tip-trick-wrapper:nth-of-type(2) {
+    margin: 0 5%;
+}
+
+.program-photo {
     height: 70%;
 
     border-radius: 0.5rem 0.5rem 0 0;
@@ -234,6 +237,12 @@ nav ul li {
 
 #tipsAndTricks {
     background-color: white;
+}
+
+.tip-photo {
+    height: 100%;
+
+    border-radius: 0.5rem;
 }
 
 #socialMedia {
