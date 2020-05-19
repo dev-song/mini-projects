@@ -167,18 +167,6 @@ nav ul li {
     text-align: left;
 }
 
-.program-text-info {
-    position: relative;
-    height: 20%;
-    padding: 1rem;
-}
-
-.program-price.before-sale {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
 .program-wrapper:nth-of-type(2), .tip-trick-wrapper:nth-of-type(2) {
     margin: 0 5%;
 }
@@ -189,8 +177,34 @@ nav ul li {
     border-radius: 0.5rem 0.5rem 0 0;
 }
 
+.program-text-info {
+    position: relative;
+    height: 24%;
+    margin: 5%;
+}
+
 .program-time, .program-price {
     display: inline-block;
+}
+
+.program-price {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.program-price.before-sale {
+    position: absolute;
+    top: 1.5rem;
+    right: 0;
+
+    font-size: 1rem;
+}
+
+.program-title {
+    margin: 1rem 0 1.5rem;
+
+    line-height: 1.5rem;
 }
 
 #fitnessPlanAdvanced {
@@ -251,10 +265,71 @@ nav ul li {
     background-color: white;
 }
 
-.tip-photo {
-    height: 100%;
+.tip-trick-wrapper {
+    position: relative;
+    height: 40rem;
 
+    background-position: center;
+    background-size: cover;
+    border-radius: 1rem;
+}
+
+.tip-trick-wrapper:nth-of-type(1) {
+    background-image: url('resources/prep-scott-broome.jpg');
+}
+
+.tip-trick-wrapper:nth-of-type(2) {
+    background-image: url('resources/boxing-sarah-cervantes.jpg');
+}
+
+.tip-trick-wrapper:nth-of-type(3) {
+    background-image: url('resources/breath-angelos-michalopoulos.jpg');
+}
+
+.tip-info-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 90%;
+    margin: 0 5% 5%;
+}
+
+.tip-type {
+    display: inline-block;
+    margin-bottom: 5%;
+    padding: 0.3rem;
+
+    background-color: var(--color-blue-less-light);
     border-radius: 0.5rem;
+}
+
+.tip-info {
+    padding: 1.5rem 1rem;
+
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.tip-writer-photo {
+    width: 2rem;
+    height: 2rem;
+
+    margin-right: 0.5rem;
+}
+
+.tip-writer-name {
+    display: inline-block;
+    position: relative;
+    
+    transform: translateY(-30%);
+    font-size: 1rem;
+}
+
+.tip-title {
+    margin: 1rem 0;
+
+    line-height: 1.5rem;
 }
 
 #socialMedia {
