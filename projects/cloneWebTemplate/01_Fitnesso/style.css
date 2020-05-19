@@ -330,7 +330,6 @@ nav ion-icon {
 
 .tip-writer-name {
     display: inline-block;
-    position: relative;
     
     transform: translateY(-30%);
     font-size: 1rem;
