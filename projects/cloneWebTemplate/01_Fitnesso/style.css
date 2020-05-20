@@ -201,6 +201,9 @@ nav ion-icon {
     position: absolute;
     top: 0;
     right: 0;
+
+    color: var(--color-emphasize);
+    font-weight: bold;
 }
 
 .program-price.before-sale {
@@ -208,7 +211,9 @@ nav ion-icon {
     top: 1.5rem;
     right: 0;
 
+    color: var(--color-blue-less-light);
     font-size: 1rem;
+    text-decoration: line-through;
 }
 
 .program-title {
