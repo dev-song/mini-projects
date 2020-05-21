@@ -22,6 +22,8 @@ section {
     width: 90%;
     margin: auto;
     padding: 10% 5%;
+
+    border: none;
 }
 
 .button-blue {
@@ -49,6 +51,8 @@ img {
 
     object-fit: cover;
     object-position: center;
+
+    border: none;
 }
 
 /*********************
@@ -126,8 +130,8 @@ nav ion-icon {
 }
 
 #coachStat {
-    width: 80%;
-    padding: 5% 10%;
+    width: 90%;
+    padding: 5% 5%;
     transform: skewY(-3deg);
 
     background-color: var(--color-foreground);
@@ -229,7 +233,7 @@ nav ion-icon {
 
 #inspiringMsg, #mealPlanNewsletter {
     display: flex;
-    height: 50rem;
+    height: 30rem;
 }
 
 #inspiringMsg {
@@ -418,5 +422,29 @@ footer > section {
     display: flex;
     flex-direction: column;
 
+    margin: 0;
+    padding-left: 1rem;
+
     justify-content: space-between;
+}
+
+#brandLogo2 {
+    width: 12rem;
+
+    transform: translateY(-25%);
+}
+
+.payment-logo {
+    width: 3rem;
+
+    padding: 0.25rem;
+}
+
+/*********************
+********* Mobile
+*********************/
+@media (min-width: 1080px) {
+    section {
+        max-width: 1200px;
+    }
 }
