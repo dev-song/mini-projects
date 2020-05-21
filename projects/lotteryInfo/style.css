@@ -125,7 +125,7 @@ main {
 /***************************************
 ********** Overlay
 ***************************************/
-#overlay-number-selection {
+#overlayNumberSelection {
     position: absolute;
     bottom: 5%;
     left: -5%;
@@ -155,6 +155,7 @@ main {
     
     line-height: var(--circleSizeSmall);
 
-    background-color: black;
+    background-color: white;
+    text-align: center;
 }
 
