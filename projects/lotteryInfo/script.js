@@ -1,6 +1,10 @@
 const userNumbers = document.querySelectorAll('.user-number');
 const resultNumbers = document.querySelectorAll('.result-number');
 
+userNumbers.forEach(elm => elm.addEventListener('click', e => {
+    toggleElm(overlay);
+}));
+
 // changes elements' color by its number
 function setColorByNum(elm) {
     // color list and corresponding numbers
@@ -26,4 +30,10 @@ function setColorByNum(elm) {
     }
 
     elm.style.background = numColor;
+}
+
+// make certain DOM element visible or invisible
+function toggleElm(elm) {
+    const isVisible = elm.style.display === "block";
+    elm.style.display = isVisible ? "none" : "block";
 }
