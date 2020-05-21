@@ -1,8 +1,19 @@
 const userNumbers = document.querySelectorAll('.user-number');
 const resultNumbers = document.querySelectorAll('.result-number');
+const selectNumbers = document.querySelectorAll('.selection-number');
+const overlay = document.querySelector('#overlayNumberSelection');
+let userSelection = [];
 
 userNumbers.forEach(elm => elm.addEventListener('click', e => {
     toggleElm(overlay);
+}));
+
+selectNumbers.forEach(elm => elm.addEventListener('click', e => {
+    const isAddedWithoutErr = addUserSelection(e.target);
+    if (isAddedWithoutErr) {
+        toggleElm(overlay);
+        userSelection.sort((a, b) => a - b);
+    }
 }));
 
 // changes elements' color by its number
@@ -36,4 +47,18 @@ function setColorByNum(elm) {
 function toggleElm(elm) {
     const isVisible = elm.style.display === "block";
     elm.style.display = isVisible ? "none" : "block";
+}
+
+// add element's number to the selection
+function addUserSelection(elm) {
+    const num = parseInt(elm.textContent);
+    if (userSelection.length >= 6) {
+        return false;
+    }
+    if (userSelection.includes(num)) {
+        return false;
+    }
+    userSelection.push(num);
+
+    return true;
 }
