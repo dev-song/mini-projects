@@ -53,12 +53,23 @@ function toggleElm(elm) {
 function addUserSelection(elm) {
     const num = parseInt(elm.textContent);
     if (userSelection.length >= 6) {
+        excessAlert();
         return false;
     }
     if (userSelection.includes(num)) {
+        sameAlert();
         return false;
     }
     userSelection.push(num);
 
     return true;
+}
+
+// show alert when user selects more than 6 numbers
+function excessAlert() {
+    alert("You selected more than 6 numbers! Remove certain number by click it or reset the whole numbers.");
+}
+
+function sameAlert() {
+    alert("You selected the same number! Choose another number.");
 }
