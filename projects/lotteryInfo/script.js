@@ -13,6 +13,7 @@ selectNumbers.forEach(elm => elm.addEventListener('click', e => {
     if (isAddedWithoutErr) {
         toggleElm(overlay);
         userSelection.sort((a, b) => a - b);
+        displayUserSelection();
     }
 }));
 
@@ -63,6 +64,11 @@ function addUserSelection(elm) {
     userSelection.push(num);
 
     return true;
+}
+
+// display userSelection on .user-number
+function displayUserSelection() {
+    userNumbers.forEach((number, index) => number.textContent = userSelection[index]);
 }
 
 // show alert when user selects more than 6 numbers
