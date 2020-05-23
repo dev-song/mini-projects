@@ -4,8 +4,7 @@ const selectNumbers = document.querySelectorAll('.selection-number');
 const overlay = document.querySelector('#overlayNumberSelection');
 let userSelection = [];
 
-// JSON related variables (JSON storage, JSON source path)
-let drawData;
+// JSON related variables (JSON source path)
 const jsonPath = "./drawData.json";
 
 userNumbers.forEach(elm => elm.addEventListener('click', e => {
@@ -99,4 +98,22 @@ function getJSON(path, callback) {
 
     oReq.open('GET', path);
     oReq.send();
+}
+
+function displayJSON(json) {
+    const resultSet = document.querySelectorAll('.draw-result');
+
+    resultSet.forEach((set, setIndex) => {
+        const currentDrawData = json[setIndex];
+
+        const drawSequence = set.querySelector('.draw-sequence');
+        const sequenceText = drawSequence.textContent;
+        drawSequence.textContent = sequenceText.replace('000', currentDrawData.draw);
+
+        const resultNums = set.querySelectorAll('.result-number');
+        resultNums.forEach((num, numIndex) => num.textContent = currentDrawData.balls[numIndex]);
+
+        const bonusNum = set.querySelector('.bonus');
+        bonusNum.textContent = currentDrawData.bonus;
+    })
 }
