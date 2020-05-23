@@ -87,15 +87,14 @@ function sameAlert() {
 /**
  * GET JSON-type data from the path and store it into the global variable
  * @param {String} path Where the JSON data is gotten from.
- * @param {String} storage The variable the JSON data is stored.
  * @param {Function} callback Function that accepts loaded JSON data as an argument
  */
-function getJSON(path, storage, callback) {
+function getJSON(path, callback) {
     const oReq = new XMLHttpRequest();
 
     oReq.addEventListener('load', function() {
-        storage = JSON.parse(this.responseText);
-        callback(storage);
+        const json = JSON.parse(this.responseText);
+        callback(json);
     });
 
     oReq.open('GET', path);
