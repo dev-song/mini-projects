@@ -103,17 +103,17 @@ main {
     background-color: white;
 }
 
-.result-number{
+.result-number, .result-number-plus{
     width: var(--circleSizeMedium);
     height: var(--circleSizeMedium);
     border-radius: var(--circleRadiusMedium);
     
     line-height: var(--circleSizeMedium);
 
-    background-color: black;
+    background-color: white;
 }
 
-.plus {
+.result-number-plus {
     font-size: 4rem;
     font-weight: bold;
 
