@@ -4,6 +4,10 @@ const selectNumbers = document.querySelectorAll('.selection-number');
 const overlay = document.querySelector('#overlayNumberSelection');
 let userSelection = [];
 
+// JSON related variables (JSON storage, JSON source path)
+let drawData;
+const jsonPath = "./drawData.json";
+
 userNumbers.forEach(elm => elm.addEventListener('click', e => {
     toggleElm(overlay);
 }));
@@ -78,4 +82,22 @@ function excessAlert() {
 
 function sameAlert() {
     alert("You selected the same number! Choose another number.");
+}
+
+/**
+ * GET JSON-type data from the path and store it into the global variable
+ * @param {String} path Where the JSON data is gotten from.
+ * @param {String} storage The variable the JSON data is stored.
+ * @param {Function} callback Function that accepts loaded JSON data as an argument
+ */
+function getJSON(path, storage, callback) {
+    const oReq = new XMLHttpRequest();
+
+    oReq.addEventListener('load', function() {
+        storage = JSON.parse(this.responseText);
+        callback(storage);
+    });
+
+    oReq.open('GET', path);
+    oReq.send();
 }
