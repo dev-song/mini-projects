@@ -26,7 +26,7 @@ const getHtml = async (url) => {
 function getPrevData(n) {
     let delay = 3000;   // 매 회차별 데이터 조회 delay (단위: ms)
 
-    for (let i = n, seq = 0; i > 0; i--, seq++) {
+    for (let i = 1, seq = 0; i <= n; i++, seq++) {
         let adjustedURL = targetURL + '&drwNo=' + i;
         log('drawNo: ' + i + ', sequence: ' + seq);
         setTimeout(getData, delay + seq * delay, adjustedURL);
@@ -59,7 +59,6 @@ async function getData(url) {
     
         fs.exists(jsonFile, exist => {
             if (exist) {
-            //     log(jsonFile + " exists");
     
                 fs.readFile(jsonFile, (err, data) => {
                     if (err) {
@@ -69,7 +68,7 @@ async function getData(url) {
     
                         // 불러온 json 파일의 길이가 0이거나, 첫 번째 원소의 draw 값이 불러온 drawNo와 일치하지 않으면 jsonSrc배열에 데이터를 추가
                         if (jsonSrc.length === 0 || jsonSrc[0].draw != drawNo) {
-                            jsonSrc.push(drawDataEach);
+                            jsonSrc.unshift(drawDataEach);
                         }
     
                         // 새로 추가된 최근의 draw는 배열의 맨 뒤에 있으므로, sort()로 내림차순 정렬해줌
@@ -91,10 +90,10 @@ async function getData(url) {
     // .then(res => log(res));
 }
 
-////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 // 함수 실행 구역
 
-getData(targetURL); // 최신 결과를 JSON에 추가
-// getPrevData(906);   // param 회차까지의 이전 결과 내역을 받아서 JSON으로 저장
+// getData(targetURL); // 최신 결과를 JSON에 추가
+// getPrevData(912);   // param 회차까지의 이전 결과 내역을 받아서 JSON으로 저장
 
-////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
