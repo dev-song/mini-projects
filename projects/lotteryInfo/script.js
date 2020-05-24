@@ -117,3 +117,7 @@ function displayJSON(json) {
         bonusNum.textContent = currentDrawData.bonus;
     })
 }
+
+/////////////////////////////////////////////////////////////
+// 홈페이지 로드 이후 자동 실행
+getJSON(jsonPath, displayJSON);
