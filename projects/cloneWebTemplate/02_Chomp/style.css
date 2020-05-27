@@ -40,6 +40,8 @@
 
 .button.white {
     border: solid 1px var(--gray);
+    background-color: var(--white);
+    color: var(--aqua);
 }
 
 input {
@@ -239,6 +241,69 @@ header > section > .section-wrapper {
 
 .menu-info > .text-content.sub {
     margin: 1rem 0 0.7rem;
+}
+
+/* section.company-faq */
+.company-faq > .section-wrapper {
+    display: flex;
+}
+
+.faq-image-container {
+    width: 50%;
+
+    background-color: var(--aqua);
+}
+
+.faq-contents {
+    width: 50%;
+    padding-left: 5%;
+}
+
+/* section.company-contact */
+.company-contact > .section-wrapper {
+    display: flex;
+
+    padding-bottom: 5%;
+}
+
+.contact-contents {
+    width: 50%;
+    padding-right: 5%;
+}
+
+.contact-image-container {
+    width: 50%;
+
+    background-color: var(--aqua);
+}
+
+/* section.order-placement.visual */
+.order-placement.visual > .section-wrapper {
+    display: flex;
+
+    width: 95%;
+    padding: 2.5%;
+}
+
+.order-image-container.simple {
+    width: 50%;
+    margin-right: 0.5rem;
+
+    background-color: var(--white);
+    border: 1px solid var(--aqua);
+}
+
+.order-contents.simple {
+    box-sizing: border-box;
+    width: 50%;
+    margin-left: 0.5rem;
+    padding: 5rem 3rem;
+
+    background-color: var(--aqua);
+}
+
+.text-highlight-2 {
+    color: var(--deep-aqua);
 }
 
 /*******************************************
