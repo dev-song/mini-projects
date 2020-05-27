@@ -40,11 +40,72 @@
     border: solid 1px var(--gray);
 }
 
+.text-highlight {
+    color: var(--aqua);
+}
+
 /*******************************************
 ******** Header
 *******************************************/
+header {
+    text-align: center;
+}
 
+header > section > .section-wrapper {
+    padding: 0% 5%;
+}
 
+.header-upper {
+    padding: 1rem 0;
+
+    background-color: var(--aqua);
+    color: var(--white);
+}
+
+.banner-text > .text-highlight {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.header-lower {
+    padding: 1.5rem 0;
+}
+
+.header-lower > .section-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-wrapper {
+    display: inline-block;
+    width: 4rem;
+    height: 2rem;
+
+    background-color: var(--aqua);
+}
+
+.nav-wrapper, .nav-wrapper > ul {
+    display: flex;
+
+    align-items: center;
+}
+
+.nav-wrapper > ul > li {
+    margin : 0 1rem;
+
+    list-style: none;
+}
+
+.nav-wrapper > ul > li > a {
+    text-decoration: none;
+}
+
+.nav-wrapper .button {
+    margin: 0;
+}
 
 /*******************************************
 ******** Main
