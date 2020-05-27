@@ -1,0 +1,57 @@
+/*******************************************
+******** General
+*******************************************/
+:root {
+    --aqua: #35B8BE;
+    --light-aqua: #F5FBFC;
+    --deep-aqua: #1B9097;
+    --white: #FFFFFF;
+    --gray: #DFE3E6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.section-wrapper {
+    width: 90%;
+    max-width: 1280px;
+    margin: auto;
+    padding: 10% 5%;
+}
+
+.button {
+    display: inline-block;
+
+    margin: 2rem 0 1rem;
+    padding: 0.5rem 1rem;
+
+    border-radius: 0.4rem;
+    font-size: 1.25rem;
+}
+
+.button.blue {
+    background-color: var(--aqua);
+    color: var(--white);
+}
+
+.button.white {
+    border: solid 1px var(--gray);
+}
+
+/*******************************************
+******** Header
+*******************************************/
+
+
+
+/*******************************************
+******** Main
+*******************************************/
+
+
+
+/*******************************************
+******** Footer
+*******************************************/
