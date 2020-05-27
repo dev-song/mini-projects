@@ -4,9 +4,11 @@
 :root {
     --aqua: #35B8BE;
     --light-aqua: #F5FBFC;
+    --less-light-aqua: #9ADBDE;
     --deep-aqua: #1B9097;
     --white: #FFFFFF;
     --gray: #DFE3E6;
+    --light-gray: #FAFAFA;
 }
 
 * {
@@ -38,6 +40,24 @@
 
 .button.white {
     border: solid 1px var(--gray);
+}
+
+input {
+    display: inline-block;
+    width: 2rem;
+    padding: 0.75rem 1rem;
+
+    background-color: var(--light-gray);
+    border: 1px solid var(--gray);
+    border-radius: 0.4rem;
+}
+
+input[type="submit"] {
+    width: auto;
+
+    border-color: var(--aqua);
+    background-color: var(--aqua);
+    color: var(--white);
 }
 
 h1 { font-size: 4rem; }
@@ -169,6 +189,56 @@ header > section > .section-wrapper {
 .how-it-work .work-step {
     align-self: center;
     text-align: center;
+}
+
+/* section.browse-menu */
+.browse-menu > .section-wrapper {
+    text-align: center;
+}
+
+.menu-contents {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem 2rem;
+
+    text-align: left;
+}
+
+.menu-content-container {
+    display: flex;
+    padding: 2rem 1.5rem;
+
+    border: 1px solid var(--less-light-aqua);
+    border-radius: 0.4rem;
+}
+
+.menu-image-container {
+    width: 25%;
+    margin-right: 1.5rem;
+
+    background-color: var(--aqua);
+}
+
+.menu-info {
+    position: relative;
+    width: 75%;
+}
+
+.menu-name {
+    display: inline-block;
+}
+
+.menu-price {
+    position: absolute;
+    right: 0;
+    top: 0.125rem;
+
+    display: inline-block;
+}
+
+.menu-info > .text-content.sub {
+    margin: 1rem 0 0.7rem;
 }
 
 /*******************************************
