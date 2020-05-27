@@ -18,7 +18,7 @@
     width: 90%;
     max-width: 1280px;
     margin: auto;
-    padding: 10% 5%;
+    padding: 10% 5% 20%;
 }
 
 .button {
@@ -39,6 +39,10 @@
 .button.white {
     border: solid 1px var(--gray);
 }
+
+h1 { font-size: 4rem; }
+h4 { font-size: 1.5rem; }
+p { font-size: 1.25rem; }
 
 .text-highlight {
     color: var(--aqua);
@@ -103,6 +107,10 @@ header > section > .section-wrapper {
     text-decoration: none;
 }
 
+.nav-wrapper > ul > li:nth-child(1) > a {
+    color: var(--aqua);
+}
+
 .nav-wrapper .button {
     margin: 0;
 }
@@ -111,7 +119,57 @@ header > section > .section-wrapper {
 ******** Main
 *******************************************/
 
+/* section.order-placement */
+.order-placement > .section-wrapper {
+    display: flex;
+}
 
+.order-contents {
+    width: 50%;
+    padding-right: 5%;
+}
+
+.order-image-container {
+    width: 50%;
+
+    background-color: var(--aqua);
+}
+
+/* section.company-intro */
+.company-intro > .section-wrapper {
+    display: flex;
+}
+
+.intro-contents {
+    width: 50%;
+    padding-right: 5%;
+}
+
+.intro-image-container {
+    width: 50%;
+
+    background-color: var(--aqua);
+}
+
+/* section.how-it-work */
+.how-it-work > .section-wrapper {
+    display: grid;
+    gap: 15% 5%;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 4fr;
+}
+
+.how-it-work .text-content.main {
+    grid-column: 1 / span 3;
+
+    justify-self: center;
+}
+
+.how-it-work .work-step {
+    align-self: center;
+    text-align: center;
+}
 
 /*******************************************
 ******** Footer
