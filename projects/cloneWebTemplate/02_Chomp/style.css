@@ -309,3 +309,43 @@ header > section > .section-wrapper {
 /*******************************************
 ******** Footer
 *******************************************/
+footer {
+    background-color: var(--light-aqua)
+}
+
+.footer-top > .section-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    width: 95%;
+    padding: 7.5% 2.5%;
+}
+
+.company-info {
+    width: 16rem;
+}
+
+.section-link, .template, .contact {
+    justify-self: center;
+}
+
+.footer-top .text-content.sub {
+    padding-top: 1.5rem;
+}
+
+.footer-bottom > .section-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    width: 95%;
+    padding: 5% 2.5%;
+}
+
+.footer-bottom > .section-wrapper > .left-wrapper {
+    display: flex;
+}
+
+.footer-bottom > .section-wrapper > .right-wrapper {
+    display: flex;
+}
