@@ -349,3 +349,21 @@ footer {
 .footer-bottom > .section-wrapper > .right-wrapper {
     display: flex;
 }
+
+.icon-container {
+    margin-left: 2rem;
+    padding: 0.5rem;
+
+    border: 1px solid var(--gray);
+    border-radius: 1.25rem;
+}
+
+ion-icon {
+    display: flex;
+    align-items: center;
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    color: var(--gray);
+}
