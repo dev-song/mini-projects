@@ -106,11 +106,14 @@ main {
 .result-number, .result-number-plus{
     width: var(--circleSizeMedium);
     height: var(--circleSizeMedium);
-    border-radius: var(--circleRadiusMedium);
-    
-    line-height: var(--circleSizeMedium);
+    transition: all 1s ease-in-out;
 
-    background-color: white;
+    line-height: var(--circleSizeMedium);
+    background-color: gray;
+    border-radius: var(--circleRadiusMedium);
+    color: white;
+    font-size: 1.6rem;
+    text-shadow: 3px 3px 3px gray;
 }
 
 .result-number-plus {
@@ -119,7 +122,9 @@ main {
 
     line-height: 3.25rem;
 
-    background-color: white;
+    background-color: transparent;
+    color: black;
+    text-shadow: none;
 }
 
 /***************************************
