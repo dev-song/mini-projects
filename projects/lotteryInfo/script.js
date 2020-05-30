@@ -118,6 +118,11 @@ function displayJSON(json) {
     })
 }
 
+function init() {
+    getJSON(jsonPath, displayJSON);
+    setTimeout(() => resultNumbers.forEach(setColorByNum), 100);
+}
+
 /////////////////////////////////////////////////////////////
 // 홈페이지 로드 이후 자동 실행
-getJSON(jsonPath, displayJSON);
+window.addEventListener('DOMContentLoaded', init);
