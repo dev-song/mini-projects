@@ -22,11 +22,12 @@ const getHtml = async (url) => {
 };
 
 // n회차 만큼의 이전 결과 데이터를 불러오는 함수
+    // lastRecord가 있을 경우 lastRecord 이후부터 end까지 실행
     // async/await 문법을 활용한 것은 실패해서 setTimeout으로 지연시간 강제 부여
-function getPrevData(n) {
+function getPrevData(end, lastRecord = 0) {
     let delay = 3000;   // 매 회차별 데이터 조회 delay (단위: ms)
 
-    for (let i = 1, seq = 0; i <= n; i++, seq++) {
+    for (let i = lastRecord + 1, seq = 0; i <= end; i++, seq++) {
         let adjustedURL = targetURL + '&drwNo=' + i;
         log('drawNo: ' + i + ', sequence: ' + seq);
         setTimeout(getData, delay + seq * delay, adjustedURL);
@@ -53,6 +54,7 @@ function checkLastRecord(jsonFile) {
                 else {
                     let fileData = JSON.parse(data);
                     if (fileData.length != 0) {
+                        log(fileData[0].draw);
                         return fileData[0].draw;
                     }
                 }
@@ -121,9 +123,9 @@ async function getData(url) {
 /////////////////////////////////////////////////////////////////////////////////
 // 함수 실행 구역
 
-// checkLastDraw(targetURL);
 // getData(targetURL); // 최신 결과를 JSON에 추가
-// getPrevData(912);   // param 회차까지의 이전 결과 내역을 받아서 JSON으로 저장
-checkLastRecord(jsonFile);
+// checkLastDraw(targetURL);
+// checkLastRecord(jsonFile);
+// getPrevData(913, 910);   // param 회차까지의 이전 결과 내역을 받아서 JSON으로 저장
 
 /////////////////////////////////////////////////////////////////////////////////
