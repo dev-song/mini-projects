@@ -34,7 +34,7 @@ function getPrevData(n) {
 }
 
 // 결과 표시 홈페이지에 접속해, 가장 최근의 당첨회차가 몇인지 파악
-function checkDraw(url) {
+function checkLastDraw(url) {
     getHtml(url)
         .then(html => {
             const $ = cheerio.load(html.data);
@@ -42,6 +42,23 @@ function checkDraw(url) {
 
             console.log(currentDraw);
         })
+}
+
+// 현재 json 파일의 최신 회차가 몇 회차인지 파악
+function checkLastRecord(jsonFile) {
+    fs.exists(jsonFile, exist => {
+        if (exist) {
+            fs.readFile(jsonFile, (err, data) => {
+                if (err) log(err);
+                else {
+                    let fileData = JSON.parse(data);
+                    if (fileData.length != 0) {
+                        return fileData[0].draw;
+                    }
+                }
+            })
+        }
+    })
 }
 
 async function getData(url) {
@@ -104,8 +121,9 @@ async function getData(url) {
 /////////////////////////////////////////////////////////////////////////////////
 // 함수 실행 구역
 
-// checkDraw(targetURL);
+// checkLastDraw(targetURL);
 // getData(targetURL); // 최신 결과를 JSON에 추가
 // getPrevData(912);   // param 회차까지의 이전 결과 내역을 받아서 JSON으로 저장
+checkLastRecord(jsonFile);
 
 /////////////////////////////////////////////////////////////////////////////////
