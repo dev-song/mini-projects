@@ -147,6 +147,10 @@ header > section > .section-wrapper {
     margin: 0;
 }
 
+.nav-link > ion-icon {
+    color: var(--white);
+}
+
 /*******************************************
 ******** Main
 *******************************************/
@@ -253,6 +257,10 @@ header > section > .section-wrapper {
 /* section.browse-menu */
 .browse-menu > .section-wrapper {
     text-align: center;
+}
+
+.text-link {
+    color: var(--aqua);
 }
 
 .link-menu-category {
@@ -482,6 +490,10 @@ footer {
 
 .footer-bottom .text-info {
     margin-right: 1rem;
+}
+
+.link-website {
+    color: var(--aqua);
 }
 
 .footer-bottom > .section-wrapper > .right-wrapper {
