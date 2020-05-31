@@ -102,6 +102,10 @@ header > section > .section-wrapper {
     color: var(--white);
 }
 
+.banner-text {
+    font-size: 1rem;
+}
+
 .banner-text > .text-highlight {
     color: var(--white);
     font-weight: 600;
@@ -158,6 +162,8 @@ header > section > .section-wrapper {
 /* section.order-placement */
 .order-placement > .section-wrapper {
     display: flex;
+
+    background-color: var(--light-aqua);
 }
 
 .order-contents {
@@ -256,6 +262,7 @@ header > section > .section-wrapper {
 
 /* section.browse-menu */
 .browse-menu > .section-wrapper {
+    background: linear-gradient(to bottom, white, var(--aqua), white);
     text-align: center;
 }
 
@@ -283,6 +290,7 @@ header > section > .section-wrapper {
 
     border: 1px solid var(--less-light-aqua);
     border-radius: 0.4rem;
+    background-color: var(--white);
 }
 
 .menu-image-container {
@@ -295,7 +303,6 @@ header > section > .section-wrapper {
 .menu-image-container > img {
     border-radius: 0.75rem;
 }
-
 
 .menu-info {
     position: relative;
@@ -363,6 +370,8 @@ header > section > .section-wrapper {
     display: flex;
 
     padding-bottom: 5%;
+    
+    background-color: var(--light-aqua);
 }
 
 .contact-contents {
@@ -397,6 +406,8 @@ header > section > .section-wrapper {
 
     width: 95%;
     padding: 2.5%;
+
+    background-color: var(--white);
 }
 
 .order-image-container.simple {
