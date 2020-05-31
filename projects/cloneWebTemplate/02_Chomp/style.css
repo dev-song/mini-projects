@@ -6,6 +6,7 @@
     --light-aqua: #F5FBFC;
     --less-light-aqua: #9ADBDE;
     --deep-aqua: #1B9097;
+    --less-deep-aqua: #2faeb4;
     --white: #FFFFFF;
     --gray: #DFE3E6;
     --light-gray: #FAFAFA;
@@ -28,7 +29,7 @@
     display: inline-block;
 
     margin: 2rem 0 1rem;
-    padding: 0.5rem 1rem;
+    padding: 1rem 2rem;
 
     border-radius: 0.4rem;
     font-size: 1.25rem;
@@ -36,8 +37,14 @@
 }
 
 .button.blue {
+    transition: all 0.25s ease-in-out;
+
     background-color: var(--aqua);
     color: var(--white);
+}
+
+.button.blue:hover {
+    background-color: var(--less-deep-aqua);
 }
 
 .button.white {
@@ -57,6 +64,8 @@ input {
 }
 
 input[type="submit"] {
+    cursor: pointer;
+
     width: auto;
 
     border-color: var(--aqua);
@@ -145,13 +154,34 @@ header > section > .section-wrapper {
 
 .nav-wrapper > ul > li:nth-child(1) > a {
     color: var(--aqua);
+
+    transition: all 0.25s ease-in-out;
+}
+
+.nav-wrapper > ul > li:nth-child(1) > a:hover {
+    color: var(--less-deep-aqua);
+}
+
+.nav-link.text {
+    transition: all 0.25s ease-in-out;
+}
+
+.nav-link.text:hover {
+    color: black;
 }
 
 .nav-wrapper .button {
     margin: 0;
+    padding: 1rem;
 }
 
 .nav-link > ion-icon {
+    display: flex;
+    align-items: center;
+
+    width: 1.5rem;
+    height: 1.5rem;
+
     color: var(--white);
 }
 
@@ -262,7 +292,7 @@ header > section > .section-wrapper {
 
 /* section.browse-menu */
 .browse-menu > .section-wrapper {
-    background: linear-gradient(to bottom, white, var(--aqua), white);
+    background: linear-gradient(to bottom, white, var(--less-light-aqua), white);
     text-align: center;
 }
 
@@ -478,9 +508,15 @@ footer {
 }
 
 .footer-top .text-content.sub > a {
+    transition: all 0.25s ease-in-out;
+
     color: gray;
     font-size: 1.1rem;
     text-decoration: none;
+}
+
+.footer-top .text-content.sub > a:hover {
+    color: black;
 }
 
 .footer-bottom > .section-wrapper {
@@ -512,6 +548,9 @@ footer {
 }
 
 .icon-container {
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+
     margin-left: 2rem;
     padding: 0.5rem;
 
@@ -519,7 +558,11 @@ footer {
     border-radius: 1.25rem;
 }
 
-ion-icon {
+.icon-container:hover {
+    border-color: black;
+}
+
+.footer-bottom ion-icon {
     display: flex;
     align-items: center;
 
