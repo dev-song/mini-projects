@@ -32,6 +32,7 @@
 
     border-radius: 0.4rem;
     font-size: 1.25rem;
+    text-decoration: none;
 }
 
 .button.blue {
@@ -63,7 +64,10 @@ input[type="submit"] {
     color: var(--white);
 }
 
-h1 { font-size: 4rem; }
+h1 { font-family: 'Gochi Hand'; font-weight: 500; }
+h4, p, div, input { font-family: 'Average'; }
+
+h1 { font-size: 4rem; line-height: 5rem; }
 h4 { font-size: 1.5rem; }
 p { font-size: 1.25rem; }
 
@@ -187,6 +191,7 @@ header > section > .section-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
 
     width: 50%;
     padding-right: 5%;
@@ -217,7 +222,7 @@ header > section > .section-wrapper {
 /* section.how-it-work */
 .how-it-work > .section-wrapper {
     display: grid;
-    gap: 15% 5%;
+    gap: 5% 5%;
 
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 4fr;
@@ -227,6 +232,7 @@ header > section > .section-wrapper {
     grid-column: 1 / span 3;
 
     justify-self: center;
+    align-self: center;
 }
 
 .how-it-work .work-step {
@@ -237,7 +243,7 @@ header > section > .section-wrapper {
 .step-image-container {
     width: 16rem;
     height: 16rem;
-    margin: 0 auto 4rem;
+    margin: 0 auto 2rem;
 }
 
 .step-image-container > img {
