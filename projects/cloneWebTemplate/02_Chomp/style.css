@@ -69,7 +69,7 @@ h4, p, div, input { font-family: 'Average'; }
 
 h1 { font-size: 4rem; line-height: 5rem; }
 h4 { font-size: 1.5rem; }
-p { font-size: 1.25rem; }
+p, input { font-size: 1.2rem; }
 
 .text-highlight {
     color: var(--aqua);
@@ -255,6 +255,11 @@ header > section > .section-wrapper {
     text-align: center;
 }
 
+.link-menu-category {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
 .menu-contents {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -286,10 +291,15 @@ header > section > .section-wrapper {
 
 .menu-info {
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 70%;
 }
 
 .menu-name {
+    position: relative;
     display: inline-block;
 }
 
@@ -299,6 +309,9 @@ header > section > .section-wrapper {
     top: 0.25rem;
 
     display: inline-block;
+
+    font-size: 1.2rem;
+    font-weight: normal;
 }
 
 .menu-info > .text-content.sub {
@@ -437,20 +450,38 @@ footer {
     justify-self: center;
 }
 
+.article-title {
+    font-size: 1.2rem;
+}
+
 .footer-top .text-content.sub {
     padding-top: 1.5rem;
+}
+
+.footer-top .text-content.sub > a {
+    color: gray;
+    font-size: 1.1rem;
+    text-decoration: none;
 }
 
 .footer-bottom > .section-wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     width: 95%;
-    padding: 5% 2.5%;
+    margin: 0 2.5%;
+    padding: 5% 0;
+
+    border-top: 1px solid var(--gray);
 }
 
 .footer-bottom > .section-wrapper > .left-wrapper {
     display: flex;
+}
+
+.footer-bottom .text-info {
+    margin-right: 1rem;
 }
 
 .footer-bottom > .section-wrapper > .right-wrapper {
@@ -461,7 +492,7 @@ footer {
     margin-left: 2rem;
     padding: 0.5rem;
 
-    border: 1px solid var(--gray);
+    border: 1px solid gray;
     border-radius: 1.25rem;
 }
 
@@ -472,5 +503,5 @@ ion-icon {
     width: 1.5rem;
     height: 1.5rem;
 
-    color: var(--gray);
+    color: gray;
 }
