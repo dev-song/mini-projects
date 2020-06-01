@@ -340,7 +340,7 @@ header > section > .section-wrapper {
     text-align: left;
 }
 
-#menuSide, #menuDrink {
+#menuSides, #menuDrinks {
     grid-template-rows: 1fr 1fr;
 }
 
