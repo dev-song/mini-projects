@@ -190,10 +190,12 @@ header > section > .section-wrapper {
 *******************************************/
 
 /* section.order-placement */
+.order-placement {
+    background-color: var(--light-aqua);
+}
+
 .order-placement > .section-wrapper {
     display: flex;
-
-    background-color: var(--light-aqua);
 }
 
 .order-contents {
@@ -312,8 +314,11 @@ header > section > .section-wrapper {
 }
 
 /* section.browse-menu */
-.browse-menu > .section-wrapper {
+.browse-menu {
     background: linear-gradient(to bottom, white, var(--less-light-aqua), white);
+}
+
+.browse-menu > .section-wrapper {
     text-align: center;
 }
 
@@ -417,12 +422,14 @@ header > section > .section-wrapper {
 }
 
 /* section.company-contact */
+.company-contact {
+    background-color: var(--light-aqua);
+}
+
 .company-contact > .section-wrapper {
     display: flex;
 
     padding-bottom: 5%;
-    
-    background-color: var(--light-aqua);
 }
 
 .contact-contents {
@@ -452,19 +459,26 @@ header > section > .section-wrapper {
 }
 
 /* section.order-placement.visual */
+.order-placement.visual {
+    background-color: var(--white);
+}
+
 .order-placement.visual > .section-wrapper {
     display: flex;
 
     width: 95%;
     padding: 2.5%;
-
-    background-color: var(--white);
 }
 
 .order-image-container.simple {
+    animation-name: none;
+
     width: 50%;
     margin-right: 0.5rem;
     padding: 0;
+
+    opacity: 1;
+    transform: scale(1);
 }
 
 .order-image-container.simple > img {
@@ -483,6 +497,12 @@ header > section > .section-wrapper {
 
     background-color: var(--aqua);
     color: white;
+}
+
+.order-contents.simple > .text-content.main {
+    animation-name: none;
+
+    opacity: 1;
 }
 
 .text-highlight-2 {
@@ -546,7 +566,7 @@ footer {
     align-items: center;
 
     width: 95%;
-    margin: 0 2.5%;
+    margin: 0 auto;
     padding: 5% 0;
 
     border-top: 1px solid var(--gray);
