@@ -340,6 +340,18 @@ header > section > .section-wrapper {
     text-align: left;
 }
 
+#menuSide, #menuDrink {
+    grid-template-rows: 1fr 1fr;
+}
+
+.menu-contents.active {
+    display: grid;
+}
+
+.menu-contents.inactive {
+    display: none;
+}
+
 .menu-content-container {
     display: flex;
     padding: 2rem 1.5rem;
