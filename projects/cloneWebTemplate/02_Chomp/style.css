@@ -327,6 +327,8 @@ header > section > .section-wrapper {
 }
 
 .link-menu-category {
+    cursor: pointer;
+
     margin-left: 1rem;
     margin-right: 1rem;
 }
