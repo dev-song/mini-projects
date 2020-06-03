@@ -107,6 +107,7 @@ header > section {
 .container-support-title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .container-support-title-main,
@@ -174,6 +175,7 @@ header > section {
     margin-right: 0;
     margin-left: auto;
     padding: 3rem 20% 3rem 30%;
+    border-radius: .4rem;
 
     background: var(--color-emphasize);
     color: var(--color-foreground);
@@ -189,8 +191,49 @@ header > section {
 }
 
 .message-writer:first-child {
-    margin-top: 0.75rem;
+    margin-top: .75rem;
 }
 .message-writer:last-child {
-    margin-bottom: 0.75rem;
+    margin-bottom: .75rem;
+}
+
+/*******************************************
+******** Footer
+*******************************************/
+footer {
+    background: var(--color-emphasize);
+    color: var(--color-foreground);
+}
+
+.footer-upper {
+    padding: 4rem 1.5rem 1rem;
+}
+
+.footer-upper > .container-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-network-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+    padding: .2rem;
+    border-radius: .4rem;
+
+    background: var(--color-foreground);
+    color: var(--color-emphasize);
+}
+
+.footer-bottom {
+    padding: 1rem 1.5rem;
+}
+
+.footer-bottom > .container-footer {
+    text-align: center;
+}
+
+.link-webflow {
+    color: var(--color-background);
 }
