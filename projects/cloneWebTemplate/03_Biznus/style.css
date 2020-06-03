@@ -13,7 +13,7 @@
 }
 
 section {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
 }
 
 .container-header,
@@ -35,6 +35,9 @@ button {
 img {
     width: 100%;
     height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
 }
 
 /*******************************************
@@ -91,6 +94,8 @@ header > section {
 /* section.intro */
 .intro {
     padding: 8rem 1.5rem;
+
+    background: center / cover no-repeat url(img/travel-minivan-dino-reichmuth.jpg);
     text-align: left;
 }
 
@@ -122,9 +127,40 @@ header > section {
     margin-top: 2rem;
 }
 
+.support-content-card {
+    position: relative;
+    box-sizing: border-box;
+    padding-bottom: 100%;
+    border-radius: .4rem;
+
+    background: var(--color-emphasize);
+    color: var(--color-foreground);
+}
+
+.support-content-card-number {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.support-content-card-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+}
+
+.support-content-body {
+    margin-top: 2rem;
+}
+
 /* section.statement */
 .statement {
     padding: 8rem 1.5rem;
+
+    background: center / cover no-repeat url(img/travel-lakeside-simon-migaj.jpg);
     text-align: right;
 }
 
@@ -138,6 +174,12 @@ header > section {
 /* section.shopping */
 .shopping {
     padding: 3rem 1.5rem;
+
+    text-align: center;
+}
+
+.container-shopping-title {
+    text-align: left;
 }
 
 .container-shopping-content {
@@ -146,8 +188,37 @@ header > section {
     gap: 0 5%;
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
 
-    text-align: center;
+.container-shopping-content-image {
+    position: relative;
+    padding-bottom: 80%;
+}
+
+.shopping-content-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.shopping-content-name {
+    margin-top: 1.5rem;
+}
+
+.shopping-content-price {
+    margin-top: 0.5rem;
+}
+
+.button-shopping-content {
+    margin-top: 1.5rem;
+
+    background: var(--color-background);
+}
+
+.button-all-products {
+    margin: auto;
+    margin-top: 2rem;
+    background: var(--color-emphasize);
 }
 
 /* section.message */
@@ -166,7 +237,13 @@ header > section {
     top: 3rem;
     left: 5%;
 
-    background: var(--color-background);
+    width: 20%;
+    height: 16rem;
+}
+
+.message-image {
+    border-radius: .4rem;
+    object-position: center left;
 }
 
 .message-content {
