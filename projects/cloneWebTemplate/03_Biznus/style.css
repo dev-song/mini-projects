@@ -1,0 +1,27 @@
+/*******************************************
+******** General
+*******************************************/
+:root {
+    --color-background: #EB5757;
+    --color-foreground: #F9F9F9;
+    --color-emphasize: #222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--color-foreground);
+    border-radius: 0.4rem;
+
+    background: transparent;
+    color: var(--color-foreground);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
