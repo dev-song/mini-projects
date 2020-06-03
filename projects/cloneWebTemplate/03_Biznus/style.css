@@ -13,7 +13,7 @@
 }
 
 section {
-    padding: 1.5rem 1rem;
+    padding: 2rem 1.5rem;
 }
 
 .container-header,
@@ -24,9 +24,9 @@ section {
 }
 
 button {
-    padding: 0.5rem 1.5rem;
+    padding: .5rem 1.5rem;
     border: 1px solid var(--color-foreground);
-    border-radius: 0.4rem;
+    border-radius: .4rem;
 
     background: transparent;
     color: var(--color-foreground);
@@ -46,7 +46,7 @@ header > section {
 }
 
 .header-upper {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
 
     background: var(--color-emphasize);
 }
@@ -54,7 +54,7 @@ header > section {
 .banner-highlight {
     display: inline-block;
     margin: 0 1rem;
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem;
     border-radius: 1rem;
 
     background: var(--color-background);
@@ -83,4 +83,114 @@ header > section {
 
     color: var(--color-foreground);
     text-decoration: none;
+}
+
+/*******************************************
+******** Main
+*******************************************/
+/* section.intro */
+.intro {
+    padding: 8rem 1.5rem;
+    text-align: left;
+}
+
+.intro-title,
+.intro-body {
+    width: 20rem;
+}
+
+/* .section.support */
+.support {
+    padding: 3rem 1.5rem;
+}
+
+.container-support-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-support-title-main,
+.container-support-title-sub {
+    width: 50%;
+}
+
+.container-support-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;    
+    gap: 0 5%;
+    margin-top: 2rem;
+}
+
+/* section.statement */
+.statement {
+    padding: 8rem 1.5rem;
+    text-align: right;
+}
+
+.statement-title,
+.statement-body {
+    width: 20rem;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+/* section.shopping */
+.shopping {
+    padding: 3rem 1.5rem;
+}
+
+.container-shopping-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 5%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    text-align: center;
+}
+
+/* section.message */
+.message {
+    padding: 3rem 1.5rem;
+}
+
+.message > .container-main {
+    display: flex;
+    
+    text-align: right;
+}
+
+.container-message-image {
+    position: relative;
+    top: 3rem;
+    left: 5%;
+
+    background: var(--color-background);
+}
+
+.message-content {
+    box-sizing: border-box;
+    width: 80%;
+    margin-right: 0;
+    margin-left: auto;
+    padding: 3rem 20% 3rem 30%;
+
+    background: var(--color-emphasize);
+    color: var(--color-foreground);
+}
+
+.message-title {
+    margin: 1rem 0;
+}
+
+.message-body,
+.message-separator {
+    margin: .75rem 0;
+}
+
+.message-writer:first-child {
+    margin-top: 0.75rem;
+}
+.message-writer:last-child {
+    margin-bottom: 0.75rem;
 }
