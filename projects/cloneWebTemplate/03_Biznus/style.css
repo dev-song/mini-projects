@@ -24,6 +24,7 @@ section {
 }
 
 button {
+    cursor: pointer;
     padding: .3rem 1.5rem;
     border: 1px solid var(--color-foreground);
     border-radius: .4rem;
@@ -90,7 +91,7 @@ header > section {
 .banner-highlight {
     display: inline-block;
     margin: 0 1rem;
-    padding: .5rem 1rem;
+    padding: .2rem 1rem;
     border-radius: 1rem;
 
     background: var(--color-background);
@@ -126,11 +127,18 @@ header > section {
     list-style: none;
 }
 
-.container-nav .link-nav {
-    margin-right: 2rem;
+.link-nav {
+    padding: 0 1rem;
+    margin: 0 1rem;
+    border-radius: .4rem;
+    transition: all .4s ease-in-out;
 
     color: var(--color-foreground);
     text-decoration: none;
+}
+
+.link-nav:hover {
+    background: var(--color-emphasize);
 }
 
 /*******************************************
@@ -138,7 +146,7 @@ header > section {
 *******************************************/
 /* section.intro */
 .intro {
-    margin-top: 8.5rem;
+    margin-top: 8rem;
     padding: 10rem 1.5rem;
 
     background: center / cover no-repeat url(img/travel-minivan-dino-reichmuth.jpg);
@@ -155,9 +163,16 @@ header > section {
 
 .button-shopping {
     margin-top: 1rem;
+    transition: all .2s ease-in-out;
 
     box-shadow: var(--color-emphasize) 0 0 .5rem;
     text-shadow: var(--color-emphasize) 0 0 .5rem;
+}
+
+.button-shopping:hover {
+    background: var(--color-foreground);
+    color: var(--color-emphasize);
+    text-shadow: none;
 }
 
 /* .section.support */
@@ -234,10 +249,17 @@ header > section {
 
 .button-statement {
     margin-top: 1rem;
+    transition: all .2s ease-in-out;
 
     background: var(--color-foreground);
     box-shadow: var(--color-emphasize) 0 0 .5rem;
     color: var(--color-emphasize);
+}
+
+.button-statement:hover {
+    border-color: var(--color-background);
+    background: var(--color-background);
+    color: var(--color-foreground);
 }
 
 /* section.shopping */
@@ -282,14 +304,25 @@ header > section {
 
 .button-shopping-content {
     margin-top: 1rem;
+    transition: all .2s ease-in-out;
 
     background: var(--color-background);
+}
+
+.button-shopping-content:hover {
+    background: var(--color-emphasize);
 }
 
 .button-all-products {
     margin: auto;
     margin-top: 1rem;
+    transition: all .2s ease-in-out;
+
     background: var(--color-emphasize);
+}
+
+.button-all-products:hover {
+    background: var(--color-background);
 }
 
 /* section.message */
@@ -374,14 +407,20 @@ footer {
 }
 
 .social-network-icon {
+    cursor: pointer;
     width: 2rem;
     height: 2rem;
     margin-left: 1rem;
     padding: .2rem;
     border-radius: .4rem;
+    transition: all .2s ease-in-out;
 
     background: var(--color-foreground);
     color: var(--color-emphasize);
+}
+
+.social-network-icon:hover {
+    background: lightgray;
 }
 
 .footer-bottom {
@@ -397,5 +436,6 @@ footer {
 }
 
 .link-webflow {
+    font-size: .9rem;
     color: var(--color-background);
 }
