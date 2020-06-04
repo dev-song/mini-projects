@@ -138,6 +138,7 @@ header > section {
 *******************************************/
 /* section.intro */
 .intro {
+    margin-top: 8.5rem;
     padding: 10rem 1.5rem;
 
     background: center / cover no-repeat url(img/travel-minivan-dino-reichmuth.jpg);
