@@ -9,6 +9,12 @@
     --circleRadiusBig: 2.5rem;
     --circleRadiusMedium: 2rem;
     --circleRadiusSmall: 1.5rem;
+
+    --num1to10: #F1C40F;
+    --num11to20: #2980B9;
+    --num21to30: #C0392B;
+    --num31to40: #BDC3C7;
+    --num41to45: #27AE60;
 }
 
 * {
@@ -137,7 +143,7 @@ main {
     background-color: transparent;
     box-shadow: 0 0 .5rem gray;
     color: white;
-    font-size: 1.6rem;
+    font-size: 2rem;
     line-height: var(--circleSizeMedium);
     text-shadow: 0 0 .4rem gray;
 }
@@ -158,12 +164,12 @@ main {
 ***************************************/
 #overlayNumberSelection {
     position: absolute;
-    bottom: 5%;
-    left: -5%;
+    bottom: 20%;
+    left: 10%;
 
     opacity: 0;
     display: none;
-    width: 110%;
+    width: 80%;
     margin: auto;
     border-radius: 1rem;
     transition: all .4s ease-in-out;
@@ -172,23 +178,57 @@ main {
 }
 
 .selection-set {
-    margin: 1rem 0;
-    padding: 1rem;
+    padding: .5rem 1.5rem;
     
     display: flex;
     justify-content: space-around;
     align-content: center;
 }
 
+.selection-set:nth-of-type(1) {
+    padding-top: 1.5rem;
+}
+
+.selection-set:last-child {
+    padding-bottom: 1.5rem;
+}
+
 .selection-number {
     width: var(--circleSizeSmall);
     height: var(--circleSizeSmall);
     border-radius: var(--circleRadiusSmall);
-    
-    line-height: var(--circleSizeSmall);
 
-    background-color: white;
+    box-shadow: 0 0 .5rem gray;
+    color: white;
+    font-size: 1.5rem;
+    line-height: var(--circleSizeSmall);
     text-align: center;
+    text-shadow: 0 0 .4rem gray;
+}
+
+.selection-set:nth-of-type(1) > .selection-number {
+    background: var(--num1to10);
+}
+
+.selection-set:nth-of-type(2) > .selection-number {
+    background: var(--num11to20);
+}
+
+.selection-set:nth-of-type(3) > .selection-number {
+    background: var(--num21to30);
+}
+
+.selection-set:nth-of-type(4) > .selection-number {
+    background: var(--num31to40);
+}
+
+.selection-set:nth-of-type(5) > .selection-number {
+    background: var(--num41to45);
+}
+
+.selection-set:nth-of-type(5) > .selection-number:nth-of-type(n+6) {
+    box-shadow: none;
+    background: none;
 }
 
 #btnOverlayClose {
