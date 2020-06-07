@@ -2,6 +2,7 @@ const userNumbers = document.querySelectorAll('.user-number');
 const resultNumbers = document.querySelectorAll('.result-number');
 const selectNumbers = document.querySelectorAll('.selection-number');
 const overlay = document.querySelector('#overlayNumberSelection');
+const btnOverlayClose = document.querySelector('#btnOverlayClose');
 let userSelection = [];
 
 // JSON related variables (JSON source path)
@@ -14,11 +15,14 @@ userNumbers.forEach(elm => elm.addEventListener('click', e => {
 selectNumbers.forEach(elm => elm.addEventListener('click', e => {
     const isAddedWithoutErr = addUserSelection(e.target);
     if (isAddedWithoutErr) {
-        toggleElm(overlay);
         userSelection.sort((a, b) => a - b);
         displayUserSelection();
     }
 }));
+
+btnOverlayClose.addEventListener('click', () => {
+    toggleElm(overlay);
+});
 
 // changes elements' color by its number
 function setColorByNum(elm) {
