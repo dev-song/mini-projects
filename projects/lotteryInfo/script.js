@@ -58,7 +58,7 @@ function toggleElm(elm) {
     
     if (isVisible) {
         elm.style.opacity = "0";
-        setTimeout(() => { elm.style.display = "none"; }, 1000);
+        setTimeout(() => { elm.style.display = "none"; }, 400);
     } else {
         elm.style.display = "block";
         setTimeout(() => { elm.style.opacity = "1"; }, 0);
