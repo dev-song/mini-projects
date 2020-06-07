@@ -146,11 +146,11 @@ main {
     bottom: 5%;
     left: -5%;
 
+    display: none;
     width: 110%;
     margin: auto;
     border-radius: 1rem;
-    
-    display: none;
+    transition: all 1s ease-in-out;
 
     background-color: lightgray;
 }
