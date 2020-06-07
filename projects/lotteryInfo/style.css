@@ -44,7 +44,7 @@ h3 {
 }
 
 .link {
-    margin: 2rem;
+    margin: 1rem 1.5rem;
 
     list-style: none;
 }
@@ -59,13 +59,28 @@ h3 {
 ***************************************/
 main {
     position: relative;
+}
 
-    width: 80%;
-    margin: auto;
+.upper-page {
+    position: relative;
+    
+    height: 100vh;
+    padding-top: 3rem;
+    overflow: hidden;
+}
+
+.bg-upper-page {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    filter: blur(3px);
 }
 
 #pageInfo, .draw-result {
-    margin-top: 1rem;
+    width: 80%;
+    margin: auto;
     padding: 1rem;
 
     text-align: center;
