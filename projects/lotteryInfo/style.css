@@ -146,6 +146,7 @@ main {
     bottom: 5%;
     left: -5%;
 
+    opacity: 0;
     display: none;
     width: 110%;
     margin: auto;
@@ -173,6 +174,22 @@ main {
 
     background-color: white;
     text-align: center;
+}
+
+#btnOverlayClose {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    padding: .25rem .5rem;
+    border: 1px solid black;
+    border-radius: .4rem;
+
+    background: black;
+    color: white;
+}
+
+#btnOverlayClose {
+    outline: none;
 }
 
 /*******************************************
