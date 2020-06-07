@@ -48,9 +48,17 @@ function setColorByNum(elm) {
 }
 
 // make certain DOM element visible or invisible
+    // fadein & fadeout effect using setTimeout
 function toggleElm(elm) {
     const isVisible = elm.style.display === "block";
-    elm.style.display = isVisible ? "none" : "block";
+    
+    if (isVisible) {
+        elm.style.opacity = "0";
+        setTimeout(() => { elm.style.display = "none"; }, 1000);
+    } else {
+        elm.style.display = "block";
+        setTimeout(() => { elm.style.opacity = "1"; }, 0);
+    }
 }
 
 // add element's number to the selection
