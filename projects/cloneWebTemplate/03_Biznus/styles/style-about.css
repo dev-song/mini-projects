@@ -1,0 +1,87 @@
+/*******************************************
+******** Main
+*******************************************/
+/* .section.explanation */
+.explanation {
+    padding: 3rem 1.5rem;
+}
+
+.container-explanation-header {
+    width: 36rem;
+    margin: auto;
+
+    text-align: center;
+}
+
+.explanation-title {
+    margin: 1.5rem 0 .5rem;
+}
+
+.container-explanation-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;    
+    gap: 0 5%;
+    margin-top: 2rem;
+}
+
+.container-explanation-content {
+    margin-top: 2rem;
+}
+
+.explanation-content-card-title {
+    margin: 1rem 0;
+}
+
+/* section.message */
+
+/* section.owners */
+.owners {
+    padding: 3rem 1.5rem;
+}
+
+.owners > .container-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.owners-content {
+    width: 24rem;
+    margin: 0 3rem;
+    text-align: center;
+}
+
+/* section.help */
+.help {
+    padding: 10rem 1.5rem;
+
+    background: linear-gradient(rgba(34, 34, 34, .2), rgba(34, 34, 34, 1)),
+                center / cover no-repeat url(../img/travel-lakeside-simon-migaj.jpg);
+    color: var(--color-foreground);
+    text-shadow: var(--color-emphasize) 0 0 .5rem;
+}
+
+.help-title {
+    width: 32rem;
+    margin: 1rem 0;
+}
+
+.help-body {
+    width: 24rem;
+    margin: 1rem 0;
+}
+
+.button-help {
+    margin-top: 1rem;
+    transition: all .2s ease-in-out;
+
+    background: var(--color-foreground);
+    box-shadow: var(--color-emphasize) 0 0 .5rem;
+    color: var(--color-emphasize);
+}
+
+.button-statement:hover {
+    border-color: var(--color-background);
+    background: var(--color-background);
+    color: var(--color-foreground);
+}
