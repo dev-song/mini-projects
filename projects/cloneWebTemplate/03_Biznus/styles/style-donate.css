@@ -1,0 +1,50 @@
+/*******************************************
+******** Main
+*******************************************/
+/* .section.intro */
+.intro {
+    margin-top: 6rem;
+    padding: 8rem 1.5rem;
+
+    text-align: center;
+}
+
+.intro-title,
+.intro-subtitle,
+.intro-body {
+    width: 40rem;
+    margin: 1rem auto;
+}
+
+/* section.donation */
+.donation {
+    padding: 5rem 1.5rem;
+}
+
+.container-donations {
+    display: flex;
+    flex-direction: column;
+    width: 32rem;
+    margin: auto;
+    padding: 1.5rem;
+    border: 2px solid var(--color-emphasize);
+    border-radius: .4rem;
+}
+
+.button-donation {
+    margin: .5rem 0;
+    padding: 1rem 1.5rem;
+    border-color: var(--color-background);
+
+    background: var(--color-background);
+    font-size: 1.5rem;
+    color: var(--color-foreground);
+}
+
+.button-donation:first-of-type {
+    margin-top: 0;
+}
+
+.button-donation:last-of-type {
+    margin-bottom: 0;
+}
