@@ -149,7 +149,8 @@ header > section {
     margin-top: 8rem;
     padding: 10rem 1.5rem;
 
-    background: center / cover no-repeat url(img/travel-minivan-dino-reichmuth.jpg);
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .2)),
+                center / cover no-repeat url(img/travel-minivan-dino-reichmuth.jpg);
     color: var(--color-foreground);
     text-align: left;
     text-shadow: var(--color-emphasize) 0 0 .5rem;
@@ -231,7 +232,8 @@ header > section {
 .statement {
     padding: 10rem 1.5rem;
 
-    background: center / cover no-repeat url(img/travel-lakeside-simon-migaj.jpg);
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .2)),
+                center / cover no-repeat url(img/travel-lakeside-simon-migaj.jpg);
     color: var(--color-foreground);
     text-align: right;
     text-shadow: var(--color-emphasize) 0 0 .5rem;
