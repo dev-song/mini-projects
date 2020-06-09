@@ -1,0 +1,94 @@
+/*******************************************
+******** Main
+*******************************************/
+/* .section.shop-header */
+.shop-header {
+    margin-top: 8rem;
+    padding: 2rem 1rem;
+
+    background: var(--color-emphasize);
+    color: var(--color-foreground);
+}
+
+/* section.shop-upper-body */
+.shop-upper-body {
+    padding: 3rem 1.5rem;
+}
+
+.container-featured-item {
+    position: relative;
+    width: 60rem;
+    height: 12rem;
+    margin: auto;
+    border-radius: .4rem;
+
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .2)),
+    center / cover no-repeat url(../img/travel-lakeside-simon-migaj.jpg);
+}
+
+.container-item-name-price {
+    position: absolute;
+    left: 1.5rem;
+    bottom: 1rem;
+
+    color: var(--color-foreground);
+}
+
+.banner-featured {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: .25rem 1rem;
+    border-radius: .4rem;
+
+    background: var(--color-foreground);
+    color: var(--color-emphasize);
+}
+
+
+/* section.shop-lower-body */
+.shop-lower-body {
+    padding: 2rem 1.5rem 8rem;
+}
+
+.shop-lower-body > .container-main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-category {
+    display: flex;
+    flex-direction: column;
+    margin: 0 2rem;
+}
+
+.button-category {
+    margin-top: 1rem;
+
+    border-color: var(--color-emphasize);
+    color: var(--color-emphasize);
+    text-align: left;
+}
+
+.item-contents {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 5%;
+    margin: 0 2rem;
+}
+
+.item-card {
+    text-align: center;
+}
+
+.item-name {
+    margin-top: 1rem;
+}
+
+.button-item-detail {
+    margin-top: 1rem;
+    border-color: var(--color-background);
+
+    background: var(--color-background);
+    color: var(--color-foreground);
+}
