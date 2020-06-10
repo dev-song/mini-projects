@@ -1,0 +1,101 @@
+/*******************************************
+******** Main
+*******************************************/
+/* .section.intro */
+.intro {
+    margin-top: 8rem;
+    padding: 3rem 1rem;
+
+    background: var(--color-emphasize);
+    color: var(--color-foreground);
+}
+
+.intro-title {
+    width: auto;
+}
+
+.container-intro-card {
+    display: inline-block;
+    width: 16rem;
+    height: 20rem;
+    padding: 1.5rem;
+    border-radius: .4rem;
+
+    background: var(--color-foreground);
+    color: var(--color-emphasize);
+    text-align: center;
+    text-shadow: none;
+}
+
+.container-intro-card:first-of-type {
+    margin-right: 1rem;
+}
+
+.button-intro-card {
+    margin-top: 1rem;
+
+    background: var(--color-background);
+    color: var(--color-foreground);
+}
+
+/* section.contact-body */
+.contact-body {
+    padding: 5rem 1.5rem;
+}
+
+.contact-body > .container-main {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-info-address:first-of-type {
+    margin-top: .5rem;
+}
+
+.contact-info-phone {
+    margin-top: 1.5rem;
+}
+
+.contact-info-phone:last-of-type {
+    margin: 0;
+}
+
+.text-highlight {
+    font-weight: bold;
+}
+
+.container-contact-form {
+    margin-left: 4rem;
+}
+
+.contact-form-description {
+    margin-top: .5rem;
+}
+
+.contact-form > div {
+    margin-top: .5rem;
+}
+
+.contact-form label {
+    display: block;
+}
+
+.input-name,
+.input-email,
+.input-message {
+    width: 100%;
+    margin-top: .5rem;
+    padding: .75rem;
+    border: 1px solid var(--color-emphasize);
+    border-radius: .4rem;
+}
+
+.input-submit {
+    margin-top: 1rem;
+    padding: .3rem 1.5rem;
+    border: none;
+    border-radius: .4rem;
+
+    background: var(--color-background);
+    color: var(--color-foreground);
+}
