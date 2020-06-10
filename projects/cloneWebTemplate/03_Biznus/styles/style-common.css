@@ -54,7 +54,7 @@ h4 {
     font-weight: 300;
 }
 
-p, a {
+p, a, label, input, textarea {
     font-family: 'Kanit', sans-serif;
     font-size: 1.2rem;
 }
