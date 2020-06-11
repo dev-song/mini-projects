@@ -12,20 +12,12 @@ aside {
     width: 100%;
 }
 
-aside.active {
-    display: flex;
-}
-
 .page-background {
     width: 100%;
     transition: all .3s ease-in-out;
 
     opacity: 0;
     background: rgba(0, 0, 0, .8);
-}
-
-.page-background.active {
-    opacity: 1;
 }
 
 .cart-side {
@@ -40,11 +32,6 @@ aside.active {
     transform: translateX(2rem);
     opacity: 0;
     background: var(--color-foreground);
-}
-
-.cart-side.active {
-    transform: translateX(0);
-    opacity: 1; 
 }
 
 .cart-header {
