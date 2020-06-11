@@ -31,3 +31,7 @@ function cartOff() {
 function toggleCart() {
     isCartOn ? cartOff() : cartOn();
 }
+
+btnCart.addEventListener('click', toggleCart);
+background.addEventListener('click', cartOff);
+btnClose.addEventListener('click', cartOff);
