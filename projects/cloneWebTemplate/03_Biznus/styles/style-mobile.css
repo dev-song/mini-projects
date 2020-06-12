@@ -2,4 +2,42 @@
 ******** Mobile Responsive
 *******************************************/
 @media (max-width: 480px) {
+    h2 {
+        font-size: 2rem;
+        line-height: 2.2rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+        line-height: 1.8rem;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+    }
+
+    p, a, label, input, textarea {
+        font-size: .9rem;
+    }
+
+    .banner-highlight {
+        display: block;
+        width: 8rem;
+        margin: auto;
+    }
+
+    .link-nav {
+        display: none;
+    }
+
+    .intro {
+        padding-top: 16rem;
+        padding-bottom: 4rem;
+    }
+
+    .intro-title,
+    .intro-body {
+        width: 16rem;
+    }
 }
