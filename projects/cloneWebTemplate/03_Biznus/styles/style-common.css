@@ -354,6 +354,7 @@ header > section {
 }
 
 .header-lower > .container-header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -421,6 +422,24 @@ header > section {
     color: var(--color-emphasize);
 }
 
+.button-menu {
+    z-index: 20;
+    display: none;
+    align-items: center;
+    margin-left: 1rem;
+    padding: 0;
+    border: none;
+}
+
+.button-menu > ion-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.container-mobile-nav {
+    display: none;
+}
+    
 /*******************************************
 ******** Footer
 *******************************************/
