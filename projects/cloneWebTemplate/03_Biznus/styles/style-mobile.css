@@ -39,6 +39,7 @@
     }
 
     .intro-title,
+    .intro-subtitle,
     .intro-body {
         width: 16rem;
     }
@@ -153,5 +154,37 @@
         grid-template-columns: 1fr;
 
         margin-bottom: 4rem;
+    }
+
+    /* Donate styles */
+    .container-donations {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Contact styles */
+    .container-intro-card {
+        display: block;
+        width: 100%;
+        margin: 1rem 0;
+        padding: 2rem;
+        box-sizing: border-box;
+    }
+
+    .contact-body > .container-main {
+        flex-direction: column;
+    }
+
+    .container-contact-form {
+        margin-top: 4rem;
+    }
+
+    /* Cart styles */
+    .page-background {
+        display: none;
+    }
+
+    .cart-side {
+        width: 100%;
     }
 }
