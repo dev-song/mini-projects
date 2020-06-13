@@ -23,7 +23,7 @@ function cartOff() {
     }, 300);
     background.style.opacity = 0;
     cart.style.opacity = 0;
-    cart.style.transform = 'translateX(1rem)';
+    cart.style.transform = 'translateX(3rem)';
     
     isCartOn = false;
 }
