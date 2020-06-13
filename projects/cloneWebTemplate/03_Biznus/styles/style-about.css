@@ -20,7 +20,7 @@
 .container-explanation-content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;    
-    gap: 0 5%;
+    gap: 5%;
     margin-top: 2rem;
 }
 
