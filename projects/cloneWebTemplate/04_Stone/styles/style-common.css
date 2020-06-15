@@ -1,0 +1,274 @@
+/*******************************************
+******** General
+*******************************************/
+:root {
+    --color-bg: #323232;
+    --color-bg-emphasize: #000000;
+    --color-fg: #c7aa8b;
+    --color-bright: #ffffff;
+    --color-dark: #4d4d4d;
+    --color-less-bright: #f7f7f7;
+    --color-less-dark: #d3d3d3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: cover url('../img/bg-horizon-luke-cuthbert.jpg');
+}
+
+section {
+    padding: 4rem;
+}
+
+.container-header,
+.container-main,
+.container-footer {
+    max-width: 960px;
+    margin: auto;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-bright);
+}
+
+.text-highlight {
+    font-weight: bold;
+}
+
+button {
+    cursor: pointer;
+    padding: .5rem 1rem;
+    border: 1.5px solid var(--color-bright);
+
+    background: transparent;
+    color: var(--color-bright);
+}
+
+/*******************************************
+******** Header
+*******************************************/
+header {
+    padding: 1rem 4rem;
+
+    background: var(--color-bg);
+    color: var(--color-bright);
+}
+
+.container-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3.2fr .8fr;
+    grid-template-rows: auto;
+    grid-template-areas: "brand-info nav-site . nav-social-network";
+    gap: 5%;
+    align-items: center;
+}
+
+.container-header > .container-brand-info {
+    grid-area: brand-info;
+
+    display: flex;
+}
+
+.nav-site {
+    grid-area: nav-site;
+}
+
+.nav-site > ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-social-network {
+    grid-area: nav-social-network;
+}
+
+.nav-social-network > ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*******************************************
+******** Main
+*******************************************/
+
+/* section.intro */
+.intro {
+    padding: 6rem 4rem;
+
+    background: var(--color-bright);
+}
+
+.intro > .container-main {
+    text-align: center;
+}
+
+.title-intro {
+    font-weight: normal;
+}
+
+.hr-intro {
+    width: 4rem;
+    margin: 1rem auto;
+    border: 1px solid var(--color-bright);
+}
+
+.body-intro {
+    font-style: italic;
+}
+
+/* section.process */
+.process {
+    background: var(--color-fg);
+    color: var(--color-dark);
+}
+
+.process > .container-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 5%;
+}
+
+.number-process {
+    border-bottom: 1px solid var(--color-dark);
+}
+
+.title-process {
+    margin-top: 1rem;
+
+    text-align: center;
+}
+
+.body-process {
+    margin-top: 2rem;
+}
+
+/* section.message */
+.message {
+    padding: 6rem 4rem;
+    
+    background: rgba(0, 0, 0, .7);
+    color: var(--color-fg);
+}
+
+.title-message {
+    width: 40rem;
+}
+
+.hr-message {
+    width: 4rem;
+    margin: 1rem 0;
+    border: 1px solid var(--color-fg);
+}
+
+/* section.team */
+.team {
+    background: var(--color-bright);
+    color: var(--color-dark);
+}
+
+.team > .container-main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-team {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 10%;
+}
+
+/* .section.testimonial */
+.testimonial {
+    padding: 6rem 4rem;
+
+    background: var(--color-less-bright);
+    text-align: center;
+}
+
+.title-testimonial {
+    color: var(--color-less-dark);
+}
+
+.hr-testimonial {
+    width: 4rem;
+    margin: 1rem auto;
+    border: 1px solid var(--color-less-dark);
+}
+
+.container-testimonial-slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.button-left-testimonial,
+.button-right-testimonial {
+    border: none;
+    font-size: 4rem;
+    text-align: center;
+    color: var(--color-less-dark);
+}
+
+.container-testimonials {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 80%;
+}
+
+.testimonial-card {
+    display: inline-block;
+    width: 45%;
+    margin: 0 2.5%;
+}
+
+.body-testimonial {
+    white-space: normal;
+}
+
+.writer-testimonial {
+    margin-top: 1rem;
+
+    color: var(--color-fg);
+}
+
+/*******************************************
+******** Footer
+*******************************************/
+footer {
+    padding: 4rem;
+
+    background: var(--color-bg);
+    color: var(--color-less-dark);
+}
+
+footer > .container-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+.container-footer > .container-brand-info {
+    display: flex;
+}
+
+.button-contact-us {
+    border-color: var(--color-fg);
+    color: var(--color-fg);
+}
+
+.address-brand {
+    justify-self: right;
+}
