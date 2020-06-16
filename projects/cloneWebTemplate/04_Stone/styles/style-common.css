@@ -54,23 +54,35 @@ button {
 }
 
 h1 { font-family: 'Raleway', sans-serif; }
-h2, h3, h4, p { font-family: 'Quicksand', sans-serif; }
+h2, h3, h4, p, a, button { font-family: 'Quicksand', sans-serif; }
+figcaption { font-family: 'Quicksand', sans-serif; }
 .font-serif {
     font-family: 'Montaga', serif;
     font-style: italic;
 }
+.name-brand { font-family: 'Raleway', sans-serif }
 
 h1 { font-size: 4rem; }
 h2 { font-size: 2.5rem; }
 h3 { font-size: 2rem; }
 h4 { font-size: 1.5rem; }
-p { font-size: 1.2rem; }
+
+figcaption {
+    font-size: .7rem;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 
 /*******************************************
 ******** Header
 *******************************************/
 header {
-    padding: 1rem 4rem;
+    padding: 0 4rem;
 
     background: var(--color-bg);
     color: var(--color-bright);
@@ -100,6 +112,16 @@ header {
     justify-content: space-between;
 }
 
+.nav-site > ul > li {
+    padding: 1.5rem;
+    border-left: .5px solid var(--color-dark);
+    border-right: .5px solid var(--color-dark);
+}
+
+.nav-site > ul > li:nth-of-type(n+2) {
+    border-left: none;
+}
+
 .nav-social-network {
     grid-area: nav-social-network;
 }
@@ -107,6 +129,24 @@ header {
 .nav-social-network > ul {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.nav-social-network > ul > li {
+    padding: 1.5rem;
+    border-left: .5px solid var(--color-dark);
+    border-right: .5px solid var(--color-dark);
+}
+
+.nav-social-network > ul > li:nth-of-type(n+2) {
+    border-left: none;
+}
+
+.nav-logo-social-network {
+    display: flex;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 /*******************************************
@@ -115,13 +155,32 @@ header {
 
 /* section.intro */
 .intro {
-    padding: 6rem 4rem;
+    display: flex;
+    width: 300%;
+    padding: 0;
 
-    background: var(--color-bright);
+    background: transparent;
+    color: var(--color-bright);
 }
 
 .intro > .container-main {
+    width: 100%;
+    max-width: none;
+    padding: 8rem 4rem;
+
     text-align: center;
+}
+
+.intro-first {
+    background: linear-gradient(rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .3) 100%), linear-gradient(rgba(199, 170, 139, .7) 0%, rgba(199, 170, 139, .7) 100%), center center / cover no-repeat url('../img/intro-city-of-prague-wojtek-witkowski.jpg');
+}
+
+.intro-second {
+    background: linear-gradient(rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .3) 100%), linear-gradient(rgba(199, 170, 139, .7) 0%, rgba(199, 170, 139, .7) 100%), center center / cover no-repeat url('../img/intro-city-skyline-jonathan-roger.jpg');
+}
+
+.intro-third {
+    background: linear-gradient(rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .3) 100%), linear-gradient(rgba(199, 170, 139, .7) 0%, rgba(199, 170, 139, .7) 100%), center center / cover no-repeat url('../img/intro-under-bridge-charlie-foster.jpg');
 }
 
 .title-intro {
@@ -136,6 +195,10 @@ header {
 
 .body-intro {
     font-style: italic;
+}
+
+.button-intro {
+    margin-top: 3rem;
 }
 
 /* section.process */
@@ -161,8 +224,12 @@ header {
     text-align: center;
 }
 
-.body-process {
-    margin-top: 2rem;
+.container-process-image {
+    padding: 1rem 6rem 1.5rem;
+}
+
+.process-image {
+    filter: brightness(840%);
 }
 
 /* section.message */
@@ -198,7 +265,26 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    gap: 10%;
+    gap: 5%;
+
+    width: 75%;
+}
+
+.member-image {
+    filter: saturate(30%) grayscale(80%) brightness(130%);
+    border-radius: .4rem;
+}
+
+.name-member {
+    margin-top: .5rem;
+    font-size: 1.2rem;
+}
+
+.logo-social-network {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: .5rem .25rem 0 0;
+    filter: brightness(250%);
 }
 
 /* .section.testimonial */
