@@ -15,6 +15,8 @@ function rotateImages(delay) {
 	}, delay);
 }
 
+const buttons = document.querySelectorAll('.container-testimonial-slider > button');
+
 function moveTestimonials(button) {
     const container = document.querySelector('.container-testimonials');
     const direction = button.dataset.direction;
@@ -49,3 +51,12 @@ function moveTestimonials(button) {
         }, 500);
     }
 }
+
+function init() {
+    rotateImages(3200);
+    buttons.forEach(elm => elm.addEventListener('click', function() {
+        moveTestimonials(elm);
+    }));
+}
+
+window.addEventListener('DOMContentLoaded', init);
