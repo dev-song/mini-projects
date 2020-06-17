@@ -175,6 +175,7 @@ header {
     display: inline-block;
     width: 100%;
     padding: 8rem 4rem;
+    vertical-align: middle;
 
     font-size: 1rem;
     text-align: center;
@@ -329,16 +330,25 @@ header {
     color: var(--color-less-dark);
 }
 
-.container-testimonials {
+.testimonial-slider {
     overflow: hidden;
-    white-space: nowrap;
     width: 80%;
 }
 
+.container-testimonials {
+    white-space: nowrap;
+
+    font-size: 0;
+}
+
 .testimonial-card {
+    white-space: normal;
     display: inline-block;
     width: 45%;
     margin: 0 2.5%;
+    vertical-align: middle;
+
+    font-size: 1rem;
 }
 
 .body-testimonial {
