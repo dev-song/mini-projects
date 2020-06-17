@@ -14,3 +14,38 @@ function rotateImages(delay) {
 		}, 800);
 	}, delay);
 }
+
+function moveTestimonials(button) {
+    const container = document.querySelector('.container-testimonials');
+    const direction = button.dataset.direction;
+    const transition = 'all .5s ease-in-out';
+
+    if (direction === "left") {
+        const length = container.children.length;
+        let firstToLast = container.children[length - 1];
+        let secondToLast = container.children[length - 2];
+        container.insertBefore(firstToLast, container.firstElementChild);
+        container.insertBefore(secondToLast, container.firstElementChild);
+    
+        container.style.transition = 'none';
+        container.style.transform = 'translateX(-100%)';
+    
+        setTimeout(function() {
+            container.style.transition = transition;
+            container.style.transform = 'translateX(0%)';
+        }, 0)
+    } else if (direction === "right") {
+        container.style.transition = transition;
+        container.style.transform = 'translateX(-100%)';
+        
+        setTimeout(function() {
+            container.style.transition = 'none';
+            container.style.transform = 'translateX(0)';
+    
+            let first = container.children[0];
+            let second = container.children[1];
+            container.appendChild(first);
+            container.appendChild(second);
+        }, 500);
+    }
+}
