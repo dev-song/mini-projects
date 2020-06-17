@@ -155,8 +155,7 @@ header {
 
 /* section.intro */
 .intro {
-    display: flex;
-    width: 300%;
+    overflow: hidden;
     padding: 0;
 
     background: transparent;
@@ -164,10 +163,20 @@ header {
 }
 
 .intro > .container-main {
-    width: 100%;
+    white-space: nowrap;
     max-width: none;
+
+    font-size: 0;
+}
+
+.intro > .container-main > div {
+    box-sizing: border-box;
+    white-space: normal;
+    display: inline-block;
+    width: 100%;
     padding: 8rem 4rem;
 
+    font-size: 1rem;
     text-align: center;
 }
 
