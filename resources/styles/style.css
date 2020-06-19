@@ -156,14 +156,16 @@ div.container-main-intro {
 ******** Footer
 *******************************************/
 
+footer {
+    background: var(--color-dark);
+    color: var(--color-bright);
+}
+
 .container-footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     padding: 2rem 4rem;
-
-    background: var(--color-dark);
-    color: var(--color-bright);
 }
 
 .container-contact {
