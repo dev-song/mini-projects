@@ -152,6 +152,10 @@ div.container-main-intro {
     text-align: left;
 }
 
+.link-project {
+    color: var(--color-dark);
+}
+
 /*******************************************
 ******** Footer
 *******************************************/
