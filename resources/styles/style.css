@@ -40,6 +40,15 @@ button {
     color: var(--color-dark);
 }
 
+h1 { font-family: 'Ubuntu', sans-serif; }
+h2,
+h3,
+h4,
+p,
+li,
+a,
+button { font-family: 'Poppins', sans-serif; }
+
 h1 { font-size: 3rem; }
 h2 { font-size: 2.4rem; }
 h3 { font-size: 2rem; }
