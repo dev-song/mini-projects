@@ -1,4 +1,14 @@
-@media (max-width: 480px) {
+@media (max-width: 720px) {
+    header {
+        padding: 0;
+    }
+
+    .link-page {
+        padding: 1rem;
+
+        font-size: 1rem;
+    }
+
     div.container-main-intro {
         flex-direction: column;
     }
@@ -16,7 +26,7 @@
     }
 
     .projects {
-        padding: 0 4rem;
+        padding: 0 2rem;
     }
 
     .container-main-projects {
