@@ -156,6 +156,15 @@ div.container-main-intro {
     color: var(--color-dark);
 }
 
+.link-origin {
+    display: inline-block;
+    padding: .1rem .3rem;
+    border-radius: .4rem;
+
+    background: cornsilk;
+    color: var(--color-dark);
+}
+
 /*******************************************
 ******** Footer
 *******************************************/
