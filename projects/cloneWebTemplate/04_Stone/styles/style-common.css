@@ -236,6 +236,8 @@ header {
 
 .container-process-image {
     padding: 1rem 6rem 1.5rem;
+
+    text-align: center;
 }
 
 .process-image {
@@ -371,10 +373,10 @@ footer {
     color: var(--color-less-dark);
 }
 
-footer > .container-footer {
+.container-footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: auto;
     align-items: center;
 }
 
