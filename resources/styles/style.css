@@ -2,8 +2,8 @@
 ******** General
 *******************************************/
 :root {
-    --color-bright: #eee;
-    --color-dark: #111;
+    --color-bright: #ddd;
+    --color-dark: #222;
 }
 
 * {
@@ -16,9 +16,9 @@ section {
 }
 
 .container-header,
-.container-main,
+div[class^="container-main"],
 .container-footer {
-    max-width: 960px;
+    max-width: 1080px;
     margin: auto;
 }
 
@@ -39,10 +39,11 @@ button {
     color: var(--color-dark);
 }
 
-h1 { font-size: 4rem; }
-h2 { font-size: 2.5rem; }
+h1 { font-size: 3rem; }
+h2 { font-size: 2.4rem; }
 h3 { font-size: 2rem; }
-h4 { font-size: 1.5rem; }
+h4 { font-size: 1.6rem; }
+p { font-size: 1.2rem; }
 
 img {
     width: 100%;
@@ -54,7 +55,12 @@ img {
 ******** Header
 *******************************************/
 header {
+    z-index: 10;
+    position: sticky;
+    top: 0;
     padding: 0 4rem;
+
+    background: white;
 }
 
 .container-header {
@@ -75,4 +81,48 @@ header {
 
 .button-menu-mobile {
     display: none;
+}
+
+/*******************************************
+******** Main
+*******************************************/
+
+/* section.intro */
+.intro {
+    background: var(--color-dark);
+}
+
+.container-main-intro {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-intro-image {
+    position: relative;
+    flex: 1.5;
+}
+
+.container-intro-image::after {
+    content: "";
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0rem 0 1.5rem 1rem var(--color-dark);
+}
+
+.intro-image {
+    display: block;
+    position: relative;
+    /* z-index: -1; */
+    box-shadow: inset 0 0 2rem 2rem var(--color-bright);
+}
+
+.container-intro {
+    flex: 1;
+    padding: 2rem 4rem;
+
+    color: var(--color-bright);
 }
