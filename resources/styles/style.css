@@ -32,10 +32,11 @@ a {
 
 button {
     cursor: pointer;
-    padding: .5rem 1rem;
-    border: 1.5px solid var(--color-dark);
+    padding: .5rem 2rem;
+    border: none;
+    border-radius: .4rem;
 
-    background: transparent;
+    background: var(--color-bright);
     color: var(--color-dark);
 }
 
@@ -140,4 +141,42 @@ div.container-main-intro {
 
 .description-project {
     text-align: left;
+}
+
+/*******************************************
+******** Footer
+*******************************************/
+
+.container-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 2rem 4rem;
+
+    background: var(--color-dark);
+    color: var(--color-bright);
+}
+
+.container-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link-contact {
+    color: var(--color-bright);
+}
+
+.link-contact > ion-icon {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+}
+
+.button-contact {
+    justify-self: center;
+}
+
+.owner-info {
+    justify-self: right;
 }
