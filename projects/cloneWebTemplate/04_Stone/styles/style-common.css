@@ -16,8 +16,9 @@
     padding: 0;
 }
 
-html {
-    background: cover url('../img/bg-horizon-luke-cuthbert.jpg');
+.parallax {
+    height: 100%;
+    background: fixed center no-repeat url('../img/bg-horizon-luke-cuthbert.jpg');
 }
 
 section {
@@ -248,7 +249,7 @@ header {
 .message {
     padding: 6rem 4rem;
     
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, .8);
     color: var(--color-fg);
 }
 
