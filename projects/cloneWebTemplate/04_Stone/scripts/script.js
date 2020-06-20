@@ -21,13 +21,17 @@ function moveTestimonials(button) {
     const container = document.querySelector('.container-testimonials');
     const direction = button.dataset.direction;
     const transition = 'all .5s ease-in-out';
+    const width = window.innerWidth;
 
     if (direction === "left") {
         const length = container.children.length;
         let firstToLast = container.children[length - 1];
-        let secondToLast = container.children[length - 2];
         container.insertBefore(firstToLast, container.firstElementChild);
-        container.insertBefore(secondToLast, container.firstElementChild);
+
+        if (width > 960) {
+            let secondToLast = container.children[length - 1];
+            container.insertBefore(secondToLast, container.firstElementChild);
+        }
     
         container.style.transition = 'none';
         container.style.transform = 'translateX(-100%)';
@@ -45,9 +49,12 @@ function moveTestimonials(button) {
             container.style.transform = 'translateX(0)';
     
             let first = container.children[0];
-            let second = container.children[1];
             container.appendChild(first);
-            container.appendChild(second);
+
+            if (width > 960) {
+                let second = container.children[0];
+                container.appendChild(second);
+            }
         }, 500);
     }
 }
