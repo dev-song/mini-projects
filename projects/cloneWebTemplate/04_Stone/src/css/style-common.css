@@ -18,7 +18,7 @@
 
 .parallax {
     height: 100%;
-    background: fixed center no-repeat url('../img/bg-horizon-luke-cuthbert.jpg');
+    background: fixed center no-repeat url('../images/bg-horizon-luke-cuthbert.jpg');
 }
 
 section {
@@ -183,15 +183,15 @@ header {
 }
 
 .intro-first {
-    background: linear-gradient(rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .3) 100%), linear-gradient(rgba(199, 170, 139, .7) 0%, rgba(199, 170, 139, .7) 100%), center center / cover no-repeat url('../img/intro-city-of-prague-wojtek-witkowski.jpg');
+    background: linear-gradient(rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .3) 100%), linear-gradient(rgba(199, 170, 139, .7) 0%, rgba(199, 170, 139, .7) 100%), center center / cover no-repeat url('../images/intro-city-of-prague-wojtek-witkowski.jpg');
 }
 
 .intro-second {
-    background: linear-gradient(rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .3) 100%), linear-gradient(rgba(199, 170, 139, .7) 0%, rgba(199, 170, 139, .7) 100%), center center / cover no-repeat url('../img/intro-city-skyline-jonathan-roger.jpg');
+    background: linear-gradient(rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .3) 100%), linear-gradient(rgba(199, 170, 139, .7) 0%, rgba(199, 170, 139, .7) 100%), center center / cover no-repeat url('../images/intro-city-skyline-jonathan-roger.jpg');
 }
 
 .intro-third {
-    background: linear-gradient(rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .3) 100%), linear-gradient(rgba(199, 170, 139, .7) 0%, rgba(199, 170, 139, .7) 100%), center center / cover no-repeat url('../img/intro-under-bridge-charlie-foster.jpg');
+    background: linear-gradient(rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .3) 100%), linear-gradient(rgba(199, 170, 139, .7) 0%, rgba(199, 170, 139, .7) 100%), center center / cover no-repeat url('../images/intro-under-bridge-charlie-foster.jpg');
 }
 
 .title-intro {
