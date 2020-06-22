@@ -1,0 +1,59 @@
+/*******************************************
+******** Main
+*******************************************/
+
+/* section.work-message */
+.work-message {
+    padding: 4rem;
+    
+    background: var(--color-bg);
+}
+
+.title-message {
+    color: var(--color-fg);
+}
+
+.quote-message {
+    color: var(--color-less-dark);
+}
+
+/* section.projects */
+.projects {
+    padding: 0;
+}
+
+.project {
+    display: flex;
+    justify-content: space-between;
+    padding: 6rem 4rem;
+
+    background: var(--color-bright);
+}
+
+.project:nth-of-type(2n) {
+    flex-direction: row-reverse;
+
+    background: var(--color-less-bright);
+}
+
+.projects button {
+    border: none;
+
+    background: var(--color-fg);
+}
+
+.project-info {
+    width: 40%;
+}
+
+.number-project {
+    color: var(--color-less-dark);
+}
+
+.description-project {
+    margin: 1rem 0;
+}
+
+.button-view-project {
+    margin-top: 1rem;
+}
