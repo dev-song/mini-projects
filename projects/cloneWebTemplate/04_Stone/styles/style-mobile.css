@@ -14,7 +14,7 @@
     }
 
     .intro > .container-main {
-        height: 30rem;
+        height: 24rem;
     }
 
     .intro > .container-main > div {
@@ -78,5 +78,25 @@
 
     .address-brand {
         justify-self: center;
+    }
+}
+
+@media (max-width: 700px) {
+    .intro > .container-main {
+        height: 30rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .intro > .container-main {
+        height: 36rem;
+    }
+
+    .intro > .container-main > div {
+        padding: 2rem;
+    }
+
+    .testimonial {
+        padding: 2rem 1rem;
     }
 }
