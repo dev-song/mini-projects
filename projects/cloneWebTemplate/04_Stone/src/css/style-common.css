@@ -56,7 +56,7 @@ button {
 
 h1 { font-family: 'Raleway', sans-serif; }
 h2, h3, h4, p, a, button { font-family: 'Quicksand', sans-serif; }
-figcaption { font-family: 'Quicksand', sans-serif; }
+span, figcaption { font-family: 'Quicksand', sans-serif; }
 .font-serif {
     font-family: 'Montaga', serif;
     font-style: italic;
@@ -84,6 +84,7 @@ img {
 *******************************************/
 header {
     padding: 0 4rem;
+    border-bottom: .5px solid var(--color-dark);
 
     background: var(--color-bg);
     color: var(--color-bright);
