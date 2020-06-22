@@ -43,7 +43,7 @@
 }
 
 .project-info {
-    width: 40%;
+    width: 35%;
 }
 
 .number-project {
@@ -56,4 +56,12 @@
 
 .button-view-project {
     margin-top: 1rem;
+}
+
+.container-project-image {
+    width: 60%;
+}
+
+.project-image {
+    filter: blur(.1rem);
 }
