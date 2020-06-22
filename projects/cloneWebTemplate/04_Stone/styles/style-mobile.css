@@ -22,12 +22,20 @@
         padding: 4rem 2rem;
     }
 
-    .process {
-        padding-bottom: 8rem;
+    .process > .container-main {
+        display: block;
     }
 
-    .process > .container-main {
-        grid-template-columns: 1fr;
+    .process-card {
+        margin-bottom: 2rem;
+    }
+
+    .process-card:last-of-type {
+        margin: 0;
+    }
+
+    .container-process-image {
+        padding: 1rem 0 1.5rem;
     }
 
     .process-image {
