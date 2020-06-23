@@ -1,0 +1,24 @@
+@media (max-width: 960px) {
+    .project:nth-of-type(n) {
+        flex-direction: column;
+    }
+
+    .project-info {
+        width: 100%;
+    }
+
+    .container-project-image {
+        width: 100%;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .work-message {
+        padding: 2rem;
+    }
+
+    .project {
+        padding: 2rem;
+    }
+}
