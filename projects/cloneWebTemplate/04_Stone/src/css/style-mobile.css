@@ -5,12 +5,7 @@
     h4 { font-size: 1.2rem; }
 
     header {
-        padding: 1rem;
-    }
-
-    .nav-site,
-    .nav-social-network {
-        display: none;
+        padding: 0 2rem;
     }
 
     .intro > .container-main {
@@ -82,6 +77,15 @@
 }
 
 @media (max-width: 700px) {
+    header {
+        padding: 1rem;
+    }
+
+    .nav-site,
+    .nav-social-network {
+        display: none;
+    }
+
     .intro > .container-main {
         height: 30rem;
     }
