@@ -119,10 +119,23 @@ header {
     padding: 1.5rem;
     border-left: .5px solid var(--color-dark);
     border-right: .5px solid var(--color-dark);
+    transition: all .1s ease-in-out;
+}
+
+.nav-site > ul > li.active {
+    background: var(--color-bg-emphasize);
 }
 
 .nav-site > ul > li:nth-of-type(n+2) {
     border-left: none;
+}
+
+.nav-site > ul > li:not(.active):hover {
+    background: var(--color-bg-emphasize);
+}
+
+.nav-site > ul > li.active > a {
+    color: var(--color-fg);
 }
 
 .nav-social-network {
@@ -139,10 +152,15 @@ header {
     padding: 1.5rem;
     border-left: .5px solid var(--color-dark);
     border-right: .5px solid var(--color-dark);
+    transition: all .1s ease-in-out;
 }
 
 .nav-social-network > ul > li:nth-of-type(n+2) {
     border-left: none;
+}
+
+.nav-social-network > ul > li:hover {
+    background: var(--color-bg-emphasize);
 }
 
 .nav-logo-social-network {
@@ -212,6 +230,12 @@ header {
 
 .button-intro {
     margin-top: 3rem;
+    transition: all .1s ease-in-out;
+}
+
+.button-intro:hover {
+    background: var(--color-bright);
+    color: var(--color-bg-emphasize);
 }
 
 /* section.process */
@@ -389,7 +413,14 @@ footer {
 
 .button-contact-us {
     border-color: var(--color-fg);
+    transition: all .1s ease-in-out;
+    
     color: var(--color-fg);
+}
+
+.button-contact-us:hover {
+    background: var(--color-fg);
+    color: var(--color-bg-emphasize);
 }
 
 .address-brand {
