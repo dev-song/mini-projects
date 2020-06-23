@@ -1,0 +1,71 @@
+/*******************************************
+******** Main
+*******************************************/
+
+/* section.contact-message */
+.contact-message {
+    padding: 4rem;
+
+    background: var(--color-bg);
+}
+
+/* section.contact */
+.contact {
+    padding: 0 4rem;
+}
+
+.contact > .container-main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-info {
+    flex-basis: 25%;
+    padding: 4rem 0;
+}
+
+.contact-type {
+    margin: 2rem 0;
+}
+
+.contact-type-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+.contact-form {
+    flex-basis: 60%;
+    padding: 4rem 2rem;
+
+    background: var(--color-fg);
+}
+
+.contact-input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+}
+
+.contact-input:nth-of-type(n+2) {
+    margin-top: 1rem;
+}
+
+.contact-textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: none;
+}
+
+.contact-submit {
+    margin: 2rem 0 1.5rem;
+    padding: 1rem 1.5rem;
+    border: none;
+
+    background: var(--color-bg-emphasize);
+    color: var(--color-fg);
+}
