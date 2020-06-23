@@ -37,9 +37,15 @@
 }
 
 .projects button {
-    border: none;
+    border: 2px solid var(--color-fg);
+    transition: all .1s ease-in-out;
 
     background: var(--color-fg);
+}
+
+.projects button:hover {
+    background: var(--color-bright);
+    color: var(--color-fg);
 }
 
 .project-info {
