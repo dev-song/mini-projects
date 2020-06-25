@@ -95,9 +95,15 @@
   }
 
   .nav-site {
+    display: none;
     width: 50%;
     margin-top: 1rem;
     border-top: 0.5px solid var(--color-dark);
+    border-bottom: 0.5px solid var(--color-dark);
+  }
+
+  .nav-site.active {
+    display: flex;
   }
 
   .nav-site > ul {
@@ -109,16 +115,35 @@
   }
 
   .nav-site > ul > li {
-    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+    width: 80%;
+    margin: auto;
+    padding: 0.5rem 1.5rem;
     border: none;
   }
 
+  .nav-site > ul > li:nth-of-type(1) {
+    margin-top: 0.5rem;
+  }
+
+  .nav-site > ul > li:nth-of-type(3) {
+    margin-bottom: 0.5rem;
+  }
+
   .nav-site > ul > li.active {
-    background: none;
+    border-radius: 0.4rem;
+  }
+
+  .nav-social-network {
+    display: none;
+  }
+
+  .nav-social-network.active {
+    display: flex;
   }
 
   .nav-social-network > ul > li {
-    padding: 1rem 1.5rem;
+    padding: 1rem 1rem 0;
     border: none;
   }
 
