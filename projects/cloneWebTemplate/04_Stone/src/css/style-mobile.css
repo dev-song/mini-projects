@@ -134,6 +134,10 @@
     border-radius: 0.4rem;
   }
 
+  .nav-site > ul > li:not(.active):hover {
+    border-radius: 0.4rem;
+  }
+
   .nav-social-network {
     display: none;
   }
