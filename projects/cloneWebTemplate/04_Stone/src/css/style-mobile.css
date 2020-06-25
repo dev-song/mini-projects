@@ -157,6 +157,10 @@
 }
 
 @media (max-width: 480px) {
+  .nav-site > ul > li {
+    padding: 0.5rem;
+  }
+
   .intro > .container-main {
     height: 36rem;
   }
