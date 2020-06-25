@@ -89,9 +89,41 @@
     padding: 1rem;
   }
 
-  .nav-site,
-  .nav-social-network {
-    display: none;
+  .container-header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-site {
+    width: 80%;
+    margin-top: 1rem;
+    border-top: 0.5px solid var(--color-dark);
+  }
+
+  .nav-site > ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .nav-site > ul > li {
+    padding: 1rem 1.5rem;
+    border: none;
+  }
+
+  .nav-site > ul > li.active {
+    background: none;
+  }
+
+  .nav-social-network > ul > li {
+    padding: 1rem 1.5rem;
+    border: none;
+  }
+
+  .button-mobile-menu {
+    display: block;
   }
 
   .intro > .container-main {

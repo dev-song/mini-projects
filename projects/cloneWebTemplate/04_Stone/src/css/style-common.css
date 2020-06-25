@@ -2,172 +2,212 @@
 ******** General
 *******************************************/
 :root {
-    --color-bg: #323232;
-    --color-bg-emphasize: #000000;
-    --color-fg: #c7aa8b;
-    --color-bright: #ffffff;
-    --color-dark: #4d4d4d;
-    --color-less-bright: #f7f7f7;
-    --color-less-dark: #d3d3d3;
+  --color-bg: #323232;
+  --color-bg-emphasize: #000000;
+  --color-fg: #c7aa8b;
+  --color-bright: #ffffff;
+  --color-dark: #4d4d4d;
+  --color-less-bright: #f7f7f7;
+  --color-less-dark: #d3d3d3;
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .parallax {
-    height: 100%;
-    background: fixed center no-repeat url('../images/bg-horizon-luke-cuthbert.jpg');
+  height: 100%;
+  background: fixed center no-repeat
+    url('../images/bg-horizon-luke-cuthbert.jpg');
 }
 
 section {
-    padding: 4rem;
+  padding: 4rem;
 }
 
 .container-header,
 .container-main,
 .container-footer {
-    max-width: 960px;
-    margin: auto;
+  max-width: 960px;
+  margin: auto;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
-    color: var(--color-bright);
+  text-decoration: none;
+  color: var(--color-bright);
 }
 
 .text-highlight {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 button {
-    cursor: pointer;
-    padding: .5rem 1rem;
-    border: 1.5px solid var(--color-bright);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: 1.5px solid var(--color-bright);
 
-    background: transparent;
-    color: var(--color-bright);
+  background: transparent;
+  color: var(--color-bright);
 }
 
-h1 { font-family: 'Raleway', sans-serif; }
-h2, h3, h4, p, a, button { font-family: 'Quicksand', sans-serif; }
-span, figcaption, input, textarea { font-family: 'Quicksand', sans-serif; }
+h1 {
+  font-family: 'Raleway', sans-serif;
+}
+h2,
+h3,
+h4,
+p,
+a,
+button {
+  font-family: 'Quicksand', sans-serif;
+}
+span,
+figcaption,
+input,
+textarea {
+  font-family: 'Quicksand', sans-serif;
+}
 .font-serif {
-    font-family: 'Montaga', serif;
-    font-style: italic;
+  font-family: 'Montaga', serif;
+  font-style: italic;
 }
-.name-brand { font-family: 'Raleway', sans-serif }
+.name-brand {
+  font-family: 'Raleway', sans-serif;
+}
 
-h1 { font-size: 4rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.5rem; }
-button, input, textarea { font-size: 1rem; }
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+button,
+input,
+textarea {
+  font-size: 1rem;
+}
 
 figcaption {
-    font-size: .7rem;
-    text-align: center;
+  font-size: 0.7rem;
+  text-align: center;
 }
 
 img {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /*******************************************
 ******** Header
 *******************************************/
 header {
-    padding: 0 4rem;
-    border-bottom: .5px solid var(--color-dark);
+  padding: 0 4rem;
+  border-bottom: 0.5px solid var(--color-dark);
 
-    background: var(--color-bg);
-    color: var(--color-bright);
+  background: var(--color-bg);
+  color: var(--color-bright);
 }
 
 .container-header {
-    display: grid;
-    grid-template-columns: 1fr 2fr 3.2fr .8fr;
-    grid-template-rows: auto;
-    grid-template-areas: "brand-info nav-site . nav-social-network";
-    gap: 5%;
-    align-items: center;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 2fr 3.2fr 0.8fr;
+  grid-template-rows: auto;
+  grid-template-areas: 'brand-info nav-site . nav-social-network';
+  gap: 5%;
+  align-items: center;
 }
 
 .container-header > .container-brand-info {
-    grid-area: brand-info;
+  grid-area: brand-info;
 
-    display: flex;
+  display: flex;
 }
 
 .nav-site {
-    grid-area: nav-site;
+  grid-area: nav-site;
 }
 
 .nav-site > ul {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav-site > ul > li {
-    padding: 1.5rem;
-    border-left: .5px solid var(--color-dark);
-    border-right: .5px solid var(--color-dark);
-    transition: all .1s ease-in-out;
+  padding: 1.5rem;
+  border-left: 0.5px solid var(--color-dark);
+  border-right: 0.5px solid var(--color-dark);
+  transition: all 0.1s ease-in-out;
 }
 
 .nav-site > ul > li.active {
-    background: var(--color-bg-emphasize);
+  background: var(--color-bg-emphasize);
 }
 
-.nav-site > ul > li:nth-of-type(n+2) {
-    border-left: none;
+.nav-site > ul > li:nth-of-type(n + 2) {
+  border-left: none;
 }
 
 .nav-site > ul > li:not(.active):hover {
-    background: var(--color-bg-emphasize);
+  background: var(--color-bg-emphasize);
 }
 
 .nav-site > ul > li.active > a {
-    color: var(--color-fg);
+  color: var(--color-fg);
 }
 
 .nav-social-network {
-    grid-area: nav-social-network;
+  grid-area: nav-social-network;
 }
 
 .nav-social-network > ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-social-network > ul > li {
-    padding: 1.5rem;
-    border-left: .5px solid var(--color-dark);
-    border-right: .5px solid var(--color-dark);
-    transition: all .1s ease-in-out;
+  padding: 1.5rem;
+  border-left: 0.5px solid var(--color-dark);
+  border-right: 0.5px solid var(--color-dark);
+  transition: all 0.1s ease-in-out;
 }
 
-.nav-social-network > ul > li:nth-of-type(n+2) {
-    border-left: none;
+.nav-social-network > ul > li:nth-of-type(n + 2) {
+  border-left: none;
 }
 
 .nav-social-network > ul > li:hover {
-    background: var(--color-bg-emphasize);
+  background: var(--color-bg-emphasize);
 }
 
 .nav-logo-social-network {
-    display: flex;
-    align-items: center;
-    width: 1.5rem;
-    height: 1.5rem;
+  display: flex;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.button-mobile-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+
+  font-size: 2rem;
+  line-height: 2rem;
 }
 
 /*******************************************
@@ -176,253 +216,262 @@ header {
 
 /* section.intro */
 .intro {
-    overflow: hidden;
-    padding: 0;
+  overflow: hidden;
+  padding: 0;
 
-    background: transparent;
-    color: var(--color-bright);
+  background: transparent;
+  color: var(--color-bright);
 }
 
 .intro > .container-main {
-    white-space: nowrap;
-    max-width: none;
+  white-space: nowrap;
+  max-width: none;
 
-    font-size: 0;
+  font-size: 0;
 }
 
 .intro > .container-main > div {
-    box-sizing: border-box;
-    white-space: normal;
-    display: inline-block;
-    width: 100%;
-    padding: 8rem 4rem;
-    vertical-align: middle;
+  box-sizing: border-box;
+  white-space: normal;
+  display: inline-block;
+  width: 100%;
+  padding: 8rem 4rem;
+  vertical-align: middle;
 
-    font-size: 1rem;
-    text-align: center;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .intro-first {
-    background: linear-gradient(rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .3) 100%), linear-gradient(rgba(199, 170, 139, .7) 0%, rgba(199, 170, 139, .7) 100%), center center / cover no-repeat url('../images/intro-city-of-prague-wojtek-witkowski.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%),
+    linear-gradient(rgba(199, 170, 139, 0.7) 0%, rgba(199, 170, 139, 0.7) 100%),
+    center center / cover no-repeat
+      url('../images/intro-city-of-prague-wojtek-witkowski.jpg');
 }
 
 .intro-second {
-    background: linear-gradient(rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .3) 100%), linear-gradient(rgba(199, 170, 139, .7) 0%, rgba(199, 170, 139, .7) 100%), center center / cover no-repeat url('../images/intro-city-skyline-jonathan-roger.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%),
+    linear-gradient(rgba(199, 170, 139, 0.7) 0%, rgba(199, 170, 139, 0.7) 100%),
+    center center / cover no-repeat
+      url('../images/intro-city-skyline-jonathan-roger.jpg');
 }
 
 .intro-third {
-    background: linear-gradient(rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .3) 100%), linear-gradient(rgba(199, 170, 139, .7) 0%, rgba(199, 170, 139, .7) 100%), center center / cover no-repeat url('../images/intro-under-bridge-charlie-foster.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%),
+    linear-gradient(rgba(199, 170, 139, 0.7) 0%, rgba(199, 170, 139, 0.7) 100%),
+    center center / cover no-repeat
+      url('../images/intro-under-bridge-charlie-foster.jpg');
 }
 
 .title-intro {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 .hr-intro {
-    width: 4rem;
-    margin: 1rem auto;
-    border: 1px solid var(--color-bright);
+  width: 4rem;
+  margin: 1rem auto;
+  border: 1px solid var(--color-bright);
 }
 
 .body-intro {
-    font-style: italic;
+  font-style: italic;
 }
 
 .button-intro {
-    margin-top: 3rem;
-    transition: all .1s ease-in-out;
+  margin-top: 3rem;
+  transition: all 0.1s ease-in-out;
 }
 
 .button-intro:hover {
-    background: var(--color-bright);
-    color: var(--color-bg-emphasize);
+  background: var(--color-bright);
+  color: var(--color-bg-emphasize);
 }
 
 /* section.process */
 .process {
-    background: var(--color-fg);
-    color: var(--color-dark);
+  background: var(--color-fg);
+  color: var(--color-dark);
 }
 
 .process > .container-main {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    gap: 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 5%;
 }
 
 .number-process {
-    border-bottom: 1px solid var(--color-dark);
+  border-bottom: 1px solid var(--color-dark);
 }
 
 .title-process {
-    margin-top: 1rem;
+  margin-top: 1rem;
 
-    text-align: center;
+  text-align: center;
 }
 
 .container-process-image {
-    padding: 1rem 6rem 1.5rem;
+  padding: 1rem 6rem 1.5rem;
 
-    text-align: center;
+  text-align: center;
 }
 
 .process-image {
-    filter: brightness(840%);
+  filter: brightness(840%);
 }
 
 /* section.message */
 .message {
-    padding: 6rem 4rem;
-    
-    background: rgba(0, 0, 0, .8);
-    color: var(--color-fg);
+  padding: 6rem 4rem;
+
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--color-fg);
 }
 
 .title-message {
-    width: 40rem;
+  width: 40rem;
 }
 
 .hr-message {
-    width: 4rem;
-    margin: 1rem 0;
-    border: 1px solid var(--color-fg);
+  width: 4rem;
+  margin: 1rem 0;
+  border: 1px solid var(--color-fg);
 }
 
 /* section.team */
 .team {
-    background: var(--color-bright);
-    color: var(--color-dark);
+  background: var(--color-bright);
+  color: var(--color-dark);
 }
 
 .team > .container-main {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .container-team {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    gap: 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 5%;
 
-    width: 75%;
+  width: 75%;
 }
 
 .member-image {
-    filter: saturate(30%) grayscale(80%) brightness(130%);
-    border-radius: .4rem;
+  filter: saturate(30%) grayscale(80%) brightness(130%);
+  border-radius: 0.4rem;
 }
 
 .name-member {
-    margin-top: .5rem;
-    font-size: 1.2rem;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
 }
 
 .logo-social-network {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin: .5rem .25rem 0 0;
-    filter: brightness(250%);
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0.5rem 0.25rem 0 0;
+  filter: brightness(250%);
 }
 
 /* .section.testimonial */
 .testimonial {
-    padding: 6rem 4rem;
+  padding: 6rem 4rem;
 
-    background: var(--color-less-bright);
-    text-align: center;
+  background: var(--color-less-bright);
+  text-align: center;
 }
 
 .title-testimonial {
-    color: var(--color-less-dark);
+  color: var(--color-less-dark);
 }
 
 .hr-testimonial {
-    width: 4rem;
-    margin: 1rem auto;
-    border: 1px solid var(--color-less-dark);
+  width: 4rem;
+  margin: 1rem auto;
+  border: 1px solid var(--color-less-dark);
 }
 
 .container-testimonial-slider {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
 }
 
 .button-left-testimonial,
 .button-right-testimonial {
-    border: none;
-    font-size: 4rem;
-    text-align: center;
-    color: var(--color-less-dark);
+  border: none;
+  font-size: 4rem;
+  text-align: center;
+  color: var(--color-less-dark);
 }
 
 .testimonial-slider {
-    overflow: hidden;
-    width: 80%;
+  overflow: hidden;
+  width: 80%;
 }
 
 .container-testimonials {
-    white-space: nowrap;
+  white-space: nowrap;
 
-    font-size: 0;
+  font-size: 0;
 }
 
 .testimonial-card {
-    white-space: normal;
-    display: inline-block;
-    width: 45%;
-    margin: 0 2.5%;
-    vertical-align: middle;
+  white-space: normal;
+  display: inline-block;
+  width: 45%;
+  margin: 0 2.5%;
+  vertical-align: middle;
 
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .body-testimonial {
-    white-space: normal;
+  white-space: normal;
 }
 
 .writer-testimonial {
-    margin-top: 1rem;
+  margin-top: 1rem;
 
-    color: var(--color-fg);
+  color: var(--color-fg);
 }
 
 /*******************************************
 ******** Footer
 *******************************************/
 footer {
-    padding: 4rem;
+  padding: 4rem;
 
-    background: var(--color-bg);
-    color: var(--color-less-dark);
+  background: var(--color-bg);
+  color: var(--color-less-dark);
 }
 
 .container-footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  align-items: center;
 }
 
 .container-footer > .container-brand-info {
-    display: flex;
+  display: flex;
 }
 
 .button-contact-us {
-    border-color: var(--color-fg);
-    transition: all .1s ease-in-out;
-    
-    color: var(--color-fg);
+  border-color: var(--color-fg);
+  transition: all 0.1s ease-in-out;
+
+  color: var(--color-fg);
 }
 
 .button-contact-us:hover {
-    background: var(--color-fg);
-    color: var(--color-bg-emphasize);
+  background: var(--color-fg);
+  color: var(--color-bg-emphasize);
 }
 
 .address-brand {
-    justify-self: right;
+  justify-self: right;
 }
