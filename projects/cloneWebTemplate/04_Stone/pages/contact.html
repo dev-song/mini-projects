@@ -2,106 +2,155 @@
 <!-- Cloned Webflow template, 'Stone' (https://template-stone.webflow.io/) -->
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no">
-    
-        <title>Stone</title>
-    
-        <link href="https://fonts.googleapis.com/css2?family=Montaga&family=Raleway&family=Quicksand&display=swap" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="../src/css/style-common.css">
-        <link type="text/css" rel="stylesheet" href="../src/css/style-mobile.css">
-        <link type="text/css" rel="stylesheet" href="../src/css/style-work.css">
-        <link type="text/css" rel="stylesheet" href="../src/css/style-contact.css">
-        <link type="text/css" rel="stylesheet" href="../src/css/style-mobile-contact.css">
-    </head>
-    <body>
-        <header>
-            <div class="container-header">
-                <div class="container-brand-info">
-                    <figure class="container-logo">
-                        <img src="" alt="" class="logo">
-                    </figure>
-                    <h3 class="name-brand">STONE</h3>
-                </div>
-                <nav class="nav-site">
-                    <ul>
-                        <li>
-                            <a href="../index.html" class="site-link">HOME</a>
-                        </li>
-                        <li>
-                            <a href="./work.html" class="site-link">WORK</a>
-                        </li>
-                        <li class="active">
-                            <a href="./contact.html" class="site-link">CONTACT</a>
-                        </li>
-                    </ul>
-                </nav>
-                <nav class="nav-social-network">
-                    <ul>
-                        <li>
-                            <a href="" class="link-social-network">
-                                <ion-icon name="logo-facebook" class="nav-logo-social-network"></ion-icon>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="link-social-network">
-                                <ion-icon name="logo-twitter" class="nav-logo-social-network"></ion-icon>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+
+    <title>Stone</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montaga&family=Raleway&family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <link type="text/css" rel="stylesheet" href="../src/css/style-common.css" />
+    <link type="text/css" rel="stylesheet" href="../src/css/style-mobile.css" />
+    <link type="text/css" rel="stylesheet" href="../src/css/style-work.css" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../src/css/style-contact.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../src/css/style-mobile-contact.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container-header">
+        <div class="container-brand-info">
+          <figure class="container-logo">
+            <img src="" alt="" class="logo" />
+          </figure>
+          <h3 class="name-brand">STONE</h3>
+        </div>
+        <nav class="nav-site">
+          <ul>
+            <li>
+              <a href="../index.html" class="site-link">HOME</a>
+            </li>
+            <li>
+              <a href="./work.html" class="site-link">WORK</a>
+            </li>
+            <li class="active">
+              <a href="./contact.html" class="site-link">CONTACT</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="nav-social-network">
+          <ul>
+            <li>
+              <a href="" class="link-social-network">
+                <ion-icon
+                  name="logo-facebook"
+                  class="nav-logo-social-network"
+                ></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="" class="link-social-network">
+                <ion-icon
+                  name="logo-twitter"
+                  class="nav-logo-social-network"
+                ></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main">
+      <section class="contact-message">
+        <div class="container-main">
+          <h2 class="title-message">Let's have a conversation</h2>
+          <hr class="hr-message" />
+          <p class="quote-message">
+            "The whole process was satisfying" - One client
+          </p>
+        </div>
+      </section>
+      <section class="contact">
+        <div class="container-main">
+          <article class="contact-info">
+            <h3 class="contact-title">GET IN TOUCH</h3>
+            <div class="contact-type">
+              <ion-icon
+                name="mail-outline"
+                class="contact-type-icon"
+              ></ion-icon>
+              <p class="contact-address">contact@stoneagency.com</p>
             </div>
-        </header>
-
-        <main role="main">
-            <section class="contact-message">
-                <div class="container-main">
-                    <h2 class="title-message">Let's have a conversation</h2>
-                    <hr class="hr-message">
-                    <p class="quote-message">"The whole process was satisfying" - One client</p>
-                </div>
-            </section>
-            <section class="contact">
-                <div class="container-main">
-                    <article class="contact-info">
-                        <h3 class="contact-title">GET IN TOUCH</h3>
-                        <div class="contact-type">
-                            <ion-icon name="mail-outline" class="contact-type-icon"></ion-icon>
-                            <p class="contact-address">contact@stoneagency.com</p>
-                        </div>
-                        <div class="contact-type">
-                            <ion-icon name="location-outline" class="contact-type-icon"></ion-icon>
-                            <p class="contact-address">1423 Elk Steet</p>
-                            <p class="contact-address">Brooklyn, NY 82328</p>
-                        </div>
-                    </article>
-                    <form class="contact-form">
-                        <input type="text" name="name" placeholder="NAME" class="contact-input">
-                        <input type="email" name="email" placeholder="EMAIL" class="contact-input">
-                        <input type="number" name="budget" placeholder="BUDGET" class="contact-input">
-                        <textarea name="description" rows="5" placeholder="PROJECT DESCRIPTION" class="contact-textarea"></textarea>
-                        <input type="submit" value="SEND EMAIL" class="contact-submit">
-                        <p class="contact-form-announcement">We'll get back to you within 48 hours.</p>
-                    </form>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class="container-footer">
-                <div class="container-brand-info">
-                    <figure class="container-logo">
-                        <img src="" alt="" class="logo">
-                    </figure>
-                    <h3 class="name-brand">STONE</h3>
-                </div>
-                <button type="button" class="button-contact-us">GET IN TOUCH WITH US</button>
-                <p class="address-brand">1423 Elk St, Brooklyn NY, 82328</p>
+            <div class="contact-type">
+              <ion-icon
+                name="location-outline"
+                class="contact-type-icon"
+              ></ion-icon>
+              <p class="contact-address">1423 Elk Steet</p>
+              <p class="contact-address">Brooklyn, NY 82328</p>
             </div>
-        </footer>
+          </article>
+          <form class="contact-form">
+            <input
+              type="text"
+              name="name"
+              placeholder="NAME"
+              class="contact-input"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="EMAIL"
+              class="contact-input"
+            />
+            <input
+              type="number"
+              name="budget"
+              placeholder="BUDGET"
+              class="contact-input"
+            />
+            <textarea
+              name="description"
+              rows="5"
+              placeholder="PROJECT DESCRIPTION"
+              class="contact-textarea"
+            ></textarea>
+            <input type="submit" value="SEND EMAIL" class="contact-submit" />
+            <p class="contact-form-announcement">
+              We'll get back to you within 48 hours.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
 
-        <!-- Ionicons Installation -->
-        <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-    </body>
+    <footer>
+      <div class="container-footer">
+        <div class="container-brand-info">
+          <figure class="container-logo">
+            <img src="" alt="" class="logo" />
+          </figure>
+          <h3 class="name-brand">STONE</h3>
+        </div>
+        <button type="button" class="button-contact-us">
+          GET IN TOUCH WITH US
+        </button>
+        <p class="address-brand">1423 Elk St, Brooklyn NY, 82328</p>
+      </div>
+    </footer>
+
+    <!-- Ionicons Installation -->
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  </body>
 </html>
