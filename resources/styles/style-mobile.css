@@ -1,12 +1,38 @@
 @media (max-width: 768px) {
   header {
-    padding: 0;
+    padding: 2rem;
+  }
+
+  .container-header {
+    justify-content: center;
+  }
+
+  .nav-link {
+    display: none;
+    flex-direction: column;
+  }
+
+  .nav-link.active {
+    display: flex;
   }
 
   .link-page {
-    padding: 1rem;
+    padding: 0.5rem;
 
     font-size: 1rem;
+  }
+
+  .link-page:first-of-type {
+    padding-top: 2rem;
+  }
+
+  .link-page:last-of-type {
+    padding-bottom: 0;
+  }
+
+  .button-menu-mobile {
+    display: flex;
+    align-items: center;
   }
 
   div.container-main-intro {
@@ -55,6 +81,8 @@
     grid-template-rows: 1fr 1fr 1fr;
     justify-items: center;
     gap: 5%;
+
+    padding: 1rem 2rem;
   }
 
   .owner-info {

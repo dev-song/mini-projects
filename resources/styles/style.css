@@ -106,7 +106,19 @@ header {
 }
 
 .button-menu-mobile {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+
   display: none;
+  padding: 0;
+
+  background: none;
+}
+
+.button-menu-mobile > ion-icon {
+  width: 2rem;
+  height: 2rem;
 }
 
 /*******************************************
