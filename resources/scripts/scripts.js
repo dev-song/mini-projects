@@ -7,9 +7,6 @@ buttonMobileMenu.addEventListener('click', function () {
   if (!isNavOn) {
     isNavOn = true;
     navlink.classList.add('active');
-    setTimeout(() => {
-      navlink.style.width = '100%';
-    }, 0);
   } else {
     isNavOn = false;
     navlink.classList.remove('active');
