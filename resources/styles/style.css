@@ -2,95 +2,111 @@
 ******** General
 *******************************************/
 :root {
-    --color-bright: #f7f7f7;
-    --color-dark: #323232;
+  --color-bright: #f7f7f7;
+  --color-dark: #323232;
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 section {
-    padding: 4rem;
+  padding: 4rem;
 }
 
 .container-header,
-div[class^="container-main"],
+div[class^='container-main'],
 .container-footer {
-    max-width: 1080px;
-    margin: auto;
+  max-width: 1080px;
+  margin: auto;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 button {
-    cursor: pointer;
-    padding: .5rem 2rem;
-    border: none;
-    border-radius: .4rem;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 0.4rem;
 
-    background: var(--color-bright);
-    color: var(--color-dark);
+  background: var(--color-bright);
+  color: var(--color-dark);
 }
 
-h1 { font-family: 'Ubuntu', sans-serif; }
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+}
 h2,
 h3,
 h4,
 p,
 li,
 a,
-button { font-family: 'Poppins', sans-serif; }
+button {
+  font-family: 'Poppins', sans-serif;
+}
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2.4rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.6rem; }
-p, li, button { font-size: 1.2rem; }
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.4rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.6rem;
+}
+p,
+li,
+button {
+  font-size: 1.2rem;
+}
 
 img {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /*******************************************
 ******** Header
 *******************************************/
 header {
-    z-index: 10;
-    position: sticky;
-    top: 0;
-    padding: 0 4rem;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+  padding: 0 4rem;
 
-    background: white;
+  background: white;
 }
 
 .container-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .link-page {
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
 
 .button-menu-mobile {
-    display: none;
+  display: none;
 }
 
 /*******************************************
@@ -99,70 +115,79 @@ header {
 
 /* section.intro */
 .intro {
-    padding: 0;
+  padding: 0;
 }
 
 div.container-main-intro {
-    max-width: none;
-    display: flex;
-    justify-content: space-between;
+  max-width: none;
+  display: flex;
+  justify-content: space-between;
 
-    background: var(--color-dark);
+  background: var(--color-dark);
 }
 
 .container-intro-image {
-    width: 50%;
-    height: 32rem;
+  width: 50%;
+  height: 32rem;
 
-    /* Picture of a laptop by Yoshiko Evanka on Unsplash */
-    background: linear-gradient(to right, rgba(50, 50, 50, 0) 70%, rgba(50, 50, 50, 1) 100%), center / cover no-repeat url(../img/laptop-yoshiko-evanka-unsplash.jpg);
+  /* Picture of a laptop by Yoshiko Evanka on Unsplash */
+  background: linear-gradient(
+      to right,
+      rgba(50, 50, 50, 0) 70%,
+      rgba(50, 50, 50, 1) 100%
+    ),
+    center / cover no-repeat url(../img/laptop-yoshiko-evanka-unsplash.jpg);
 }
 
 .container-intro {
-    box-sizing: border-box;
-    width: 50%;
-    padding: 2rem 6rem;
+  box-sizing: border-box;
+  width: 50%;
+  padding: 2rem 6rem;
 
-    color: var(--color-bright);
+  color: var(--color-bright);
 }
 
 /* section.projects */
+.projects {
+  margin-bottom: 4rem;
+}
+
 .container-main-projects {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5% 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10% 0;
 }
 
 .container-project {
-    padding: 3rem 2rem;
-    border-right: 1px solid var(--color-dark);
+  padding: 1rem 2rem;
+  border-right: 1px solid var(--color-dark);
 
-    text-align: center;
+  text-align: center;
 }
 
 .container-project:nth-of-type(3n) {
-    border-right: none;
+  border-right: none;
 }
 
 .container-project-image {
-    margin: 2rem 0;
+  margin: 2rem 0;
 }
 
 .description-project {
-    text-align: left;
+  text-align: left;
 }
 
 .link-project {
-    color: var(--color-dark);
+  color: var(--color-dark);
 }
 
 .link-origin {
-    display: inline-block;
-    padding: .1rem .3rem;
-    border-radius: .4rem;
+  display: inline-block;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.4rem;
 
-    background: cornsilk;
-    color: var(--color-dark);
+  background: cornsilk;
+  color: var(--color-dark);
 }
 
 /*******************************************
@@ -170,37 +195,37 @@ div.container-main-intro {
 *******************************************/
 
 footer {
-    background: var(--color-dark);
-    color: var(--color-bright);
+  background: var(--color-dark);
+  color: var(--color-bright);
 }
 
 .container-footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    padding: 2rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 2rem 4rem;
 }
 
 .container-contact {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .link-contact {
-    color: var(--color-bright);
+  color: var(--color-bright);
 }
 
 .link-contact > ion-icon {
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
 }
 
 .button-contact {
-    justify-self: center;
+  justify-self: center;
 }
 
 .owner-info {
-    justify-self: right;
+  justify-self: right;
 }
