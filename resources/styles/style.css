@@ -9,6 +9,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 section {
@@ -86,7 +87,7 @@ header {
   top: 0;
   padding: 0 4rem;
 
-  background: white;
+  background: var(--color-bright);
 }
 
 .container-header {
@@ -103,6 +104,8 @@ header {
 
 .link-page {
   padding: 1.5rem;
+
+  background: var(--color-bright);
 }
 
 .button-menu-mobile {
@@ -152,7 +155,6 @@ div.container-main-intro {
 }
 
 .container-intro {
-  box-sizing: border-box;
   width: 50%;
   padding: 2rem 6rem;
 
