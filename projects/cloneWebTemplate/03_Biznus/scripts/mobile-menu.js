@@ -11,8 +11,9 @@ let isNavOn = false;
 function mobileNavOn() {
   setTimeout(() => {
     mobileNav.style.width = "100%";
-    mobileMenuContainer.style.display = "block";
+    mobileMenuContainer.style.width = "100%";
   }, 0);
+  mobileMenuContainer.style.display = "block";
 
   isNavOn = true;
 }
@@ -24,6 +25,7 @@ function mobileNavOff() {
     });
   }, 400);
   mobileNav.style.width = "0";
+  mobileMenuContainer.style.width = "0";
 
   isNavOn = false;
 }
