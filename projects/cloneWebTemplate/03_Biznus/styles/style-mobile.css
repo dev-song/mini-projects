@@ -69,11 +69,11 @@
   }
 
   .container-mobile-nav > ul {
+    display: none;
     margin: auto;
   }
 
   .container-mobile-nav > ul > li {
-    visibility: hidden;
     margin-bottom: 1rem;
 
     list-style: none;

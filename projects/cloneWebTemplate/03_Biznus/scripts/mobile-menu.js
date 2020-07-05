@@ -1,5 +1,8 @@
 const mobileNav = document.querySelector(".container-mobile-nav");
 const btnMenu = document.querySelector(".button-menu");
+const mobileMenuContainer = document.querySelector(
+  ".container-mobile-nav > ul"
+);
 const mobileMenuLinks = document.querySelectorAll(
   ".container-mobile-nav > ul > li"
 );
@@ -8,9 +11,7 @@ let isNavOn = false;
 function mobileNavOn() {
   setTimeout(() => {
     mobileNav.style.width = "100%";
-    mobileMenuLinks.forEach((elm) => {
-      elm.style.visibility = "visible";
-    });
+    mobileMenuContainer.style.display = "block";
   }, 0);
 
   isNavOn = true;
@@ -19,7 +20,7 @@ function mobileNavOn() {
 function mobileNavOff() {
   setTimeout(() => {
     mobileMenuLinks.forEach((elm) => {
-      elm.style.visibility = "hidden";
+      mobileMenuContainer.style.display = "none";
     });
   }, 400);
   mobileNav.style.width = "0";
