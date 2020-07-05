@@ -3,9 +3,6 @@ const btnMenu = document.querySelector(".button-menu");
 const mobileMenuContainer = document.querySelector(
   ".container-mobile-nav > ul"
 );
-const mobileMenuLinks = document.querySelectorAll(
-  ".container-mobile-nav > ul > li"
-);
 let isNavOn = false;
 
 function mobileNavOn() {
@@ -20,9 +17,7 @@ function mobileNavOn() {
 
 function mobileNavOff() {
   setTimeout(() => {
-    mobileMenuLinks.forEach((elm) => {
-      mobileMenuContainer.style.display = "none";
-    });
+    mobileMenuContainer.style.display = "hidden";
   }, 400);
   mobileNav.style.width = "0";
   mobileMenuContainer.style.width = "0";

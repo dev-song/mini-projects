@@ -72,6 +72,9 @@
     display: none;
     width: 0;
     margin: auto;
+    transition: all 0.4s ease-in-out;
+
+    overflow: hidden;
   }
 
   .container-mobile-nav > ul > li {
