@@ -1,28 +1,34 @@
-const mobileNav = document.querySelector('.container-mobile-nav');
-const btnMenu = document.querySelector('.button-menu');
+const mobileNav = document.querySelector(".container-mobile-nav");
+const btnMenu = document.querySelector(".button-menu");
+const mobileMenuLinks = document.querySelectorAll(
+  ".container-mobile-nav > ul > li"
+);
 let isNavOn = false;
 
 function mobileNavOn() {
-    mobileNav.style.display = 'flex';
-    
-    setTimeout(() => {
-        mobileNav.style.transform = 'translateX(0)';
-    }, 0);
+  setTimeout(() => {
+    mobileNav.style.width = "100%";
+    mobileMenuLinks.forEach((elm) => {
+      elm.style.visibility = "visible";
+    });
+  }, 0);
 
-    isNavOn = true;
+  isNavOn = true;
 }
 
 function mobileNavOff() {
-    setTimeout(() => {
-        mobileNav.style.display = 'none';
-    }, 400);
-    mobileNav.style.transform = 'translateX(100%)';
-    
-    isNavOn = false;
+  setTimeout(() => {
+    mobileMenuLinks.forEach((elm) => {
+      elm.style.visibility = "hidden";
+    });
+  }, 400);
+  mobileNav.style.width = "0";
+
+  isNavOn = false;
 }
 
 function toggleNav() {
-    isNavOn ? mobileNavOff() : mobileNavOn();
+  isNavOn ? mobileNavOff() : mobileNavOn();
 }
 
-btnMenu.addEventListener('click', toggleNav);
+btnMenu.addEventListener("click", toggleNav);

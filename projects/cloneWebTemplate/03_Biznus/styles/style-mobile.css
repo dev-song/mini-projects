@@ -54,15 +54,14 @@
 
   .container-mobile-nav {
     z-index: 5;
-    display: none;
+    display: flex;
     position: absolute;
     top: 5rem;
-    left: 0;
+    right: 0;
     bottom: 0;
-    width: 100%;
-    padding: 8rem 2rem 16rem;
+    width: 0;
+    padding: 8rem 0 16rem;
     box-sizing: border-box;
-    transform: translateX(100%);
     transition: all 0.4s ease-in-out;
 
     background: var(--color-background);
@@ -74,6 +73,7 @@
   }
 
   .container-mobile-nav > ul > li {
+    visibility: hidden;
     margin-bottom: 1rem;
 
     list-style: none;
