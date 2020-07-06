@@ -3,7 +3,7 @@ import React from "react";
 class Header extends React.Component {
   state = {
     brandName: "Nature",
-    brandLogoUrl: "",
+    brandLogoUrl: "#",
     linkInfo: [
       { name: "Home", url: "" },
       { name: "About", url: "" },
@@ -27,10 +27,10 @@ class Header extends React.Component {
         <figure className='brand-info'>
           <img
             className='brand-info__brand-logo'
-            src={brandLogoUrl}
+            src={this.state.brandLogoUrl}
             alt='Brand Logo'
           />
-          <h1 className='brand-info__brand-name'>{Nature}</h1>
+          <h1 className='brand-info__brand-name'>{this.state.brandName}</h1>
         </figure>
         <ul className='nav-bar'>{linkList}</ul>
       </header>
