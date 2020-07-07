@@ -2,13 +2,13 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-import Header from "./components/Header";
+import NatureHeader from "./components/NatureHeader";
 import Carousel from "./components/Carousel";
 
 function App() {
   return (
     <div className='App'>
-      <Header />
+      <NatureHeader />
       <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
         <Carousel />
