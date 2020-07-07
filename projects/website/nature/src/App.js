@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import Header from "./components/Header";
+import Carousel from "./components/Carousel";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
+        <Carousel />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
