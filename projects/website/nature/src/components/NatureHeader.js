@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
+import BrandInfo from "./BrandInfo";
+
 function NatureHeader(props) {
   const data = {
     background: props.background || "transparent",
-    brandName: "Nature",
-    brandLogoUrl: "#",
     linkInfo: [
       { name: "Home", url: "" },
       { name: "About", url: "" },
@@ -25,15 +25,6 @@ function NatureHeader(props) {
     max-width: 1200px;
     margin: auto;
     padding: 1rem 2rem;
-  `;
-
-  const Figure = styled.figure`
-    display: flex;
-    margin: 0;
-  `;
-
-  const BrandName = styled.h1`
-    margin: 0 1rem;
   `;
 
   const Navigation = styled.ul`
@@ -59,16 +50,7 @@ function NatureHeader(props) {
   return (
     <Header>
       <HeaderContainer>
-        <Figure className='brand-info'>
-          <img
-            className='brand-info__brand-logo'
-            src={data.brandLogoUrl}
-            alt='Brand Logo'
-          />
-          <BrandName className='brand-info__brand-name'>
-            {data.brandName}
-          </BrandName>
-        </Figure>
+        <BrandInfo />
         <Navigation className='nav-bar'>{linkList}</Navigation>
       </HeaderContainer>
     </Header>
