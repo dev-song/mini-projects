@@ -4,6 +4,7 @@ import "./App.css";
 
 import NatureHeader from "./components/NatureHeader";
 import Carousel from "./components/Carousel";
+import NatureFooter from "./components/NatureFooter";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <NatureFooter />
     </div>
   );
 }
