@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-class NatureHeader extends React.Component {
-  state = {
-    background: this.props.background || "transparent",
+function NatureHeader(props) {
+  const data = {
+    background: props.background || "transparent",
     brandName: "Nature",
     brandLogoUrl: "#",
     linkInfo: [
@@ -13,12 +13,12 @@ class NatureHeader extends React.Component {
     ],
   };
 
-  Header = styled.header`
+  const Header = styled.header`
     width: 100%;
-    background: ${this.state.background};
+    background: ${data.background};
   `;
 
-  HeaderContainer = styled.div`
+  const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,58 +27,52 @@ class NatureHeader extends React.Component {
     padding: 1rem 2rem;
   `;
 
-  Figure = styled.figure`
+  const Figure = styled.figure`
     display: flex;
     margin: 0;
   `;
 
-  BrandName = styled.h1`
+  const BrandName = styled.h1`
     margin: 0 1rem;
   `;
 
-  Navigation = styled.ul`
+  const Navigation = styled.ul`
     display: flex;
   `;
 
-  NavigationItem = styled.li`
+  const NavigationItem = styled.li`
     margin: 0 0.5rem;
     list-style: none;
   `;
 
-  NavigationLink = styled.a`
+  const NavigationLink = styled.a`
     text-decoration: none;
     color: black;
   `;
 
-  brandNameStyle = {
-    margin: "0 1rem",
-  };
+  const linkList = data.linkInfo.map((link, index) => (
+    <NavigationItem className='nav-link' key={index}>
+      <NavigationLink href={link.url}>{link.name}</NavigationLink>
+    </NavigationItem>
+  ));
 
-  render() {
-    const linkList = this.state.linkInfo.map((link, index) => (
-      <this.NavigationItem className='nav-link' key={index}>
-        <this.NavigationLink href={link.url}>{link.name}</this.NavigationLink>
-      </this.NavigationItem>
-    ));
-
-    return (
-      <this.Header>
-        <this.HeaderContainer>
-          <this.Figure className='brand-info'>
-            <img
-              className='brand-info__brand-logo'
-              src={this.state.brandLogoUrl}
-              alt='Brand Logo'
-            />
-            <this.BrandName className='brand-info__brand-name'>
-              {this.state.brandName}
-            </this.BrandName>
-          </this.Figure>
-          <this.Navigation className='nav-bar'>{linkList}</this.Navigation>
-        </this.HeaderContainer>
-      </this.Header>
-    );
-  }
+  return (
+    <Header>
+      <HeaderContainer>
+        <Figure className='brand-info'>
+          <img
+            className='brand-info__brand-logo'
+            src={data.brandLogoUrl}
+            alt='Brand Logo'
+          />
+          <BrandName className='brand-info__brand-name'>
+            {data.brandName}
+          </BrandName>
+        </Figure>
+        <Navigation className='nav-bar'>{linkList}</Navigation>
+      </HeaderContainer>
+    </Header>
+  );
 }
 
 export default NatureHeader;
