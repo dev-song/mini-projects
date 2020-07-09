@@ -4,13 +4,14 @@ import styled from "styled-components";
 // inspired by 'Making Carousel with React Hooks' tutorial by peppermint100
 // https://medium.com/@krpeppermint100/js-react-hooks%EB%A1%9C-carousel-slider-%EB%A7%8C%EB%93%A4%EA%B8%B0-2e558151bbee
 import Slide from "./ImageSlide";
-import sampleImg1 from "../image/ben-white-unsplash.jpg";
-import sampleImg2 from "../image/johannes-plenio-unsplash.jpg";
-import sampleImg3 from "../image/luke-stackpoole-unsplash.jpg";
-import sampleImg4 from "../image/nate-rayfield-unsplash.jpg";
+import sampleImg1 from "../image/chungsong_forest_002.jpg";
+import sampleImg2 from "../image/chungsong_forest_006.jpg";
+import sampleImg3 from "../image/chungsong_forest_007.jpg";
+import sampleImg4 from "../image/gumbong_forest_003.jpg";
 
 const Container = styled.div`
-  width: 60%;
+  width: 100%;
+  margin: auto;
   overflow: hidden;
 `;
 
