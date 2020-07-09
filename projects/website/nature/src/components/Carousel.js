@@ -10,6 +10,7 @@ import sampleImg3 from "../image/chungsong_forest_007.jpg";
 import sampleImg4 from "../image/gumbong_forest_003.jpg";
 
 const Container = styled.div`
+  position: relative;
   width: 100%;
   margin: auto;
   overflow: hidden;
@@ -17,12 +18,14 @@ const Container = styled.div`
 
 const Button = styled.button`
   all: unset;
+  padding: 0.5rem 1rem;
   border: 1px solid coral;
-  padding: 0.5em 2em;
-  color: coral;
   border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  background: #fff;
+  color: coral;
+
   &:hover {
-    transition: all 0.3s ease-in-out;
     background-color: coral;
     color: #fff;
   }
@@ -37,6 +40,20 @@ const SliderCounter = styled.span`
   display: inline-block;
   padding: 0 1em;
 `;
+
+const leftButtonStyle = {
+  position: "absolute",
+  top: "50%",
+  left: "1rem",
+  transform: "translateY(-50%)",
+};
+
+const rightButtonStyle = {
+  position: "absolute",
+  top: "50%",
+  right: "1rem",
+  transform: "translateY(-50%)",
+};
 
 const TOTAL_SLIDES = 3; // 4개의 이미지이므로 0 ~ 3 index
 function Carousel() {
@@ -67,9 +84,13 @@ function Carousel() {
         <Slide img={sampleImg3} />
         <Slide img={sampleImg4} />
       </SliderContainer>
-      <Button onClick={prevSlide}>Previous Slide</Button>
+      <Button onClick={prevSlide} style={leftButtonStyle}>
+        &lt;
+      </Button>
       <SliderCounter>{currentSlide}</SliderCounter>
-      <Button onClick={nextSlide}>Next Slide</Button>
+      <Button onClick={nextSlide} style={rightButtonStyle}>
+        &gt;
+      </Button>
     </Container>
   );
 }
