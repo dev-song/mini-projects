@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
-import styled from "styled-components";
+import React, { useState, useEffect, useRef } from 'react';
+import styled from 'styled-components';
 
 // inspired by 'Making Carousel with React Hooks' tutorial by peppermint100
 // https://medium.com/@krpeppermint100/js-react-hooks%EB%A1%9C-carousel-slider-%EB%A7%8C%EB%93%A4%EA%B8%B0-2e558151bbee
-import Slide from "./ImageSlide";
-import sampleImg1 from "../image/chungsong_forest_002.jpg";
-import sampleImg2 from "../image/chungsong_forest_006.jpg";
-import sampleImg3 from "../image/chungsong_forest_007.jpg";
-import sampleImg4 from "../image/gumbong_forest_003.jpg";
+import Slide from './ImageSlide';
+import sampleImg1 from '../image/chungsong_forest_002.jpg';
+import sampleImg2 from '../image/chungsong_forest_006.jpg';
+import sampleImg3 from '../image/chungsong_forest_007.jpg';
+import sampleImg4 from '../image/gumbong_forest_003.jpg';
 
 const Container = styled.div`
   position: relative;
@@ -42,17 +42,17 @@ const SliderCounter = styled.span`
 `;
 
 const leftButtonStyle = {
-  position: "absolute",
-  top: "50%",
-  left: "1rem",
-  transform: "translateY(-50%)",
+  position: 'absolute',
+  top: '50%',
+  left: '1rem',
+  transform: 'translateY(-50%)',
 };
 
 const rightButtonStyle = {
-  position: "absolute",
-  top: "50%",
-  right: "1rem",
-  transform: "translateY(-50%)",
+  position: 'absolute',
+  top: '50%',
+  right: '1rem',
+  transform: 'translateY(-50%)',
 };
 
 const TOTAL_SLIDES = 3; // 4개의 이미지이므로 0 ~ 3 index
@@ -72,7 +72,7 @@ function Carousel() {
   };
 
   useEffect(() => {
-    slideRef.current.style.transition = "all 0.5s ease-in-out";
+    slideRef.current.style.transition = 'all 0.5s ease-in-out';
     slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
   }, [currentSlide]);
 

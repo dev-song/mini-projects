@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 function BrandInfo() {
   const data = {
-    brandName: "Nature",
-    brandLogoUrl: "#",
+    brandName: 'Nature',
+    brandLogoUrl: '#',
   };
 
   const Figure = styled.figure`
@@ -17,13 +17,13 @@ function BrandInfo() {
   `;
 
   return (
-    <Figure className='brand-info'>
+    <Figure className="brand-info">
       <img
-        className='brand-info__brand-logo'
+        className="brand-info__brand-logo"
         src={data.brandLogoUrl}
-        alt='Brand Logo'
+        alt="Brand Logo"
       />
-      <BrandName className='brand-info__brand-name'>{data.brandName}</BrandName>
+      <BrandName className="brand-info__brand-name">{data.brandName}</BrandName>
     </Figure>
   );
 }

@@ -1,15 +1,15 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import BrandInfo from "./BrandInfo";
+import BrandInfo from './BrandInfo';
 
 function NatureHeader(props) {
   const data = {
-    background: props.background || "transparent",
+    background: props.background || 'transparent',
     linkInfo: [
-      { name: "Home", url: "" },
-      { name: "About", url: "" },
-      { name: "Contact", url: "" },
+      { name: 'Home', url: '' },
+      { name: 'About', url: '' },
+      { name: 'Contact', url: '' },
     ],
   };
 
@@ -42,7 +42,7 @@ function NatureHeader(props) {
   `;
 
   const linkList = data.linkInfo.map((link, index) => (
-    <NavigationItem className='nav-link' key={index}>
+    <NavigationItem className="nav-link" key={index}>
       <NavigationLink href={link.url}>{link.name}</NavigationLink>
     </NavigationItem>
   ));
@@ -51,7 +51,7 @@ function NatureHeader(props) {
     <Header>
       <HeaderContainer>
         <BrandInfo />
-        <Navigation className='nav-bar'>{linkList}</Navigation>
+        <Navigation className="nav-bar">{linkList}</Navigation>
       </HeaderContainer>
     </Header>
   );

@@ -1,11 +1,13 @@
-import React from "react";
-import styled from "styled-components";
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+import React from 'react';
+import styled from 'styled-components';
 
-import BrandInfo from "./BrandInfo";
+import BrandInfo from './BrandInfo';
 
 function NatureFooter(props) {
   const data = {
-    background: props.background || "trnasparent",
+    background: props.background || 'trnasparent',
   };
 
   const Footer = styled.footer`
@@ -42,7 +44,7 @@ function NatureFooter(props) {
         <BrandInfo />
         <ContactInfo>
           <EmailAddress>owner_email@gmail.com</EmailAddress>
-          <SocialNetwork></SocialNetwork>
+          <SocialNetwork>Twitter, Facebook, LinkedIn</SocialNetwork>
         </ContactInfo>
       </FooterContainer>
     </Footer>
