@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-/* props
-  name: formContent, type: object (key: contentName, content, type, required)
-  name: hasSubmit, type: bool
+/* props (name | type | description)
+  1. formContent | object (key: contentName, content, type, required) | Only valid html input types and textarea are allowed. The number of contents should be bigger than 0.
+  2. hasSubmit | bool | Decides whether 'submit' button is displayed or not.
 */
 
 const Form = styled.form`
