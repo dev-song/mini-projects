@@ -40,6 +40,7 @@ const TextArea = styled.textarea`
   border: 2px solid black;
   border-radius: 4px;
   word-break: break-all;
+  resize: vertical;
 `;
 
 const Submit = styled.input`
