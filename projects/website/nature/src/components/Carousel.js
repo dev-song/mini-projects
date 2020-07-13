@@ -31,6 +31,20 @@ const Button = styled.button`
   }
 `;
 
+const LeftButton = styled(Button)`
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+`;
+
+const RightButton = styled(Button)`
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+`;
+
 const SliderContainer = styled.div`
   width: 100%;
   display: flex;
@@ -40,20 +54,6 @@ const SliderCounter = styled.span`
   display: inline-block;
   padding: 0 1em;
 `;
-
-const leftButtonStyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '1rem',
-  transform: 'translateY(-50%)',
-};
-
-const rightButtonStyle = {
-  position: 'absolute',
-  top: '50%',
-  right: '1rem',
-  transform: 'translateY(-50%)',
-};
 
 const TOTAL_SLIDES = 3; // 4개의 이미지이므로 0 ~ 3 index
 function Carousel() {
@@ -84,13 +84,13 @@ function Carousel() {
         <Slide img={sampleImg3} />
         <Slide img={sampleImg4} />
       </SliderContainer>
-      <Button onClick={prevSlide} style={leftButtonStyle}>
+      <LeftButton onClick={prevSlide}>
         &lt;
-      </Button>
+      </LeftButton>
       <SliderCounter>{currentSlide}</SliderCounter>
-      <Button onClick={nextSlide} style={rightButtonStyle}>
+      <RightButton onClick={nextSlide}>
         &gt;
-      </Button>
+      </RightButton>
     </Container>
   );
 }
