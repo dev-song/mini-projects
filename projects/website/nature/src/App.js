@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <NatureHeader />
-      <NatureMain></NatureMain>
+      <NatureMain />
       <NatureFooter />
     </div>
   );
