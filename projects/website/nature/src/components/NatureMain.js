@@ -4,19 +4,25 @@ import styled from 'styled-components';
 import Carousel from './Carousel';
 import NatureForm from './NatureForm';
 
-const Main = styled.main`
+import * as CommonStyles from './NatureStyles';
+
+const MainContainer = styled.div`
+max-width: 1200px;
+margin: auto;
+`;
+
+const MainSection = styled.section`
+  box-sizing: border-box;
   width: 100%;
-`;
-
-const Section = styled.section`
-  max-width: 1200px;
-  margin: auto;
   padding: 4rem 2rem;
+
+  background: ${CommonStyles.BACKGROUND_COLOR};
+  color: ${CommonStyles.COLOR};
 `;
 
-const DescriptionContainer = styled.div`
-  margin: 0;
-  padding: 1rem;
+const MainSectionReverse = styled(MainSection)`
+background: ${CommonStyles.COLOR};
+color: ${CommonStyles.BACKGROUND_COLOR};
 `;
 
 function NatureMain() {
@@ -44,40 +50,35 @@ function NatureMain() {
       content: "문의 내용",
       type: "textarea",
       required: true
-    },
-    {
-      contentName: "test",
-      content: "문의 내용",
-      type: "bvklasldfkjslk",
-      required: true
     }
   ];
 
   return (
-    <Main>
-      <Carousel />
-      <Section className="intro-message">
-        <h2>휴양림의 매력에 빠져보세요!</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
-          vitae?
-        </p>
-      </Section>
-      <Section className="owner-info">
-        <figure className="owner-info__photo-container">
-          <img src="" alt="" className="owner-info__photo" />
-        </figure>
-        <DescriptionContainer className="owner_info__description-container">
+    <main role="main">
+      <Carousel className="intro-carousel" />
+      <MainSection className="intro-message">
+        <MainContainer>
+          <h2>휴양림의 매력에 빠져보세요!</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+            vitae?
+          </p>
+        </MainContainer>
+      </MainSection>
+      <MainSectionReverse className="owner-info">
+        <MainContainer>
+          <figure className="owner-info__photo-container">
+            <img src="" alt="" className="owner-info__photo" />
+          </figure>
+        </MainContainer>
+      </MainSectionReverse>
+      <MainSection className="inquiry">
+        <MainContainer>
 
-        </DescriptionContainer>
-      </Section>
-      <Section className="inquiry">
-        <DescriptionContainer className="inquiry__description-container">
-
-        </DescriptionContainer>
-        <NatureForm formContent={formContent} hasSubmit={false}/>
-      </Section>
-    </Main>
+          <NatureForm formContent={formContent} hasSubmit={false} />
+        </MainContainer>
+      </MainSection>
+    </main>
   );
 }
 
