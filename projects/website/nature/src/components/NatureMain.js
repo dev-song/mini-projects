@@ -1,29 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import Carousel from './Carousel';
+import InfoWithPhoto from './InfoWithPhoto';
 import NatureForm from './NatureForm';
 
-import * as CommonStyles from './NatureStyles';
-
-const MainContainer = styled.div`
-max-width: 1200px;
-margin: auto;
-`;
-
-const MainSection = styled.section`
-  box-sizing: border-box;
-  width: 100%;
-  padding: 4rem 2rem;
-
-  background: ${CommonStyles.BACKGROUND_COLOR};
-  color: ${CommonStyles.COLOR};
-`;
-
-const MainSectionReverse = styled(MainSection)`
-background: ${CommonStyles.COLOR};
-color: ${CommonStyles.BACKGROUND_COLOR};
-`;
+import * as Nature from './NatureStyles';
 
 function NatureMain() {
   const formContent = [
@@ -56,28 +37,29 @@ function NatureMain() {
   return (
     <main role="main">
       <Carousel className="intro-carousel" />
-      <MainSection className="intro-message">
-        <MainContainer>
-          <h2>휴양림의 매력에 빠져보세요!</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
-            vitae?
-          </p>
-        </MainContainer>
-      </MainSection>
-      <MainSectionReverse className="owner-info">
-        <MainContainer>
-          <figure className="owner-info__photo-container">
-            <img src="" alt="" className="owner-info__photo" />
-          </figure>
-        </MainContainer>
-      </MainSectionReverse>
-      <MainSection className="inquiry">
-        <MainContainer>
 
+      <Nature.MainSection className="intro-message">
+        <Nature.MainContainer>
+          <h2>숲내음 한껏 느끼며</h2>
+          <p>
+            자연휴양림에서 맑은 공기와 함께 맛있는 음식과 휴식을 즐기세요!
+          </p>
+        </Nature.MainContainer>
+      </Nature.MainSection>
+
+      <Nature.MainSectionReverse className="info">
+        <InfoWithPhoto />
+      </Nature.MainSectionReverse>
+
+      <Nature.MainSection className="inquiry">
+        <Nature.MainContainer>
+          <div className="text-container">
+            <h2>문의</h2>
+            <p>자연휴양림 관련 궁금하신 점이 있으시면 알려주세요</p>
+          </div>
           <NatureForm formContent={formContent} hasSubmit={false} />
-        </MainContainer>
-      </MainSection>
+        </Nature.MainContainer>
+      </Nature.MainSection>
     </main>
   );
 }
