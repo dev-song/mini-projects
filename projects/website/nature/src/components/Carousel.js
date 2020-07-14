@@ -50,11 +50,6 @@ const SliderContainer = styled.div`
   display: flex;
 `;
 
-const SliderCounter = styled.span`
-  display: inline-block;
-  padding: 0 1em;
-`;
-
 const TOTAL_SLIDES = 3; // 4개의 이미지이므로 0 ~ 3 index
 function Carousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -87,7 +82,6 @@ function Carousel() {
       <LeftButton onClick={prevSlide}>
         &lt;
       </LeftButton>
-      <SliderCounter>{currentSlide}</SliderCounter>
       <RightButton onClick={nextSlide}>
         &gt;
       </RightButton>
