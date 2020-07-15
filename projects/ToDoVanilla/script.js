@@ -62,6 +62,11 @@ const controller = {
   addToDoItem: function() {
     const newItem = data.addToDo(this.DOMElements.input.value);
     view.showItem(this.DOMElements.list, newItem);
+    this.resetInput();
+  },
+  resetInput: function() {
+    this.DOMElements.input.value = '';
+    this.DOMElements.input.focus();
   },
   removeToDoItem: function(id, elm) {
     data.deleteToDo(parseInt(id));
