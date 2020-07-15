@@ -1,3 +1,10 @@
+:root {
+  --background-color: cornsilk;
+  --text-color: Black;
+  --border-color: saddlebrown;
+  --shadow-normal: 4px 4px 4px -2px;
+}
+
 html,
 body {
   margin: 0;
@@ -10,13 +17,76 @@ main {
   margin: 2rem auto;
 }
 
+.todo-list {
+  padding: 2rem;
+}
+
 .todo-list__title {
+  margin: 0;
+
+  color: var(--text-color);
+  font-size: 2rem;
   text-align: center;
 }
 
 .todo-list__input-container {
   padding: 1rem 2rem;
-  border-bottom: 1px solid gray;
+  border-bottom: 0.5px solid var(--border-color);
 
   text-align: center;
+}
+
+.todo-list__todo-input {
+  all: unset;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+
+  text-align: initial;
+}
+
+.todo-list__todo-submit {
+  all: unset;
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow-normal);
+
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+.todo-list__item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow-normal);
+
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+.todo-list__item-container:first-of-type {
+  margin-top: 1rem;
+}
+
+.todo-list__item-container:last-of-type {
+  margin-bottom: 1rem;
+}
+
+.todo-list__item-content {
+  margin: 0;
+}
+
+.todo-list__delete-button {
+  all: unset;
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--border-color);
+
+  color: var(--text-color);
+  font-size: 0.8rem;
 }
