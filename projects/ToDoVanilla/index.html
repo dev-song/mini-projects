@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>ToDo List with Vanilla JavaScript</title>
 
     <link type="text/css" rel="stylesheet" href="./style.css" />
     <script defer src="./script.js"></script>
@@ -11,10 +11,14 @@
   <body>
     <main role="main">
       <section class="todo-list">
-        <h2 class="todo-list__title">할 일 목록</h2>
+        <h1 class="todo-list__title">할 일 목록</h1>
         <form action="" class="todo-list__input-container">
-          <input type="text" class="todo-list__todo-input" />
-          <input type="submit" value="추가" class="todo-list__todo-submit" />
+          <input
+            type="text"
+            placeholder="해야 할 일"
+            class="todo-list__todo-input"
+          />
+          <input type="submit" value="입력" class="todo-list__todo-submit" />
         </form>
         <div class="todo-list__list-container"></div>
       </section>
