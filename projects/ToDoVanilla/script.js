@@ -36,7 +36,7 @@ const data = {
 };
 
 const view = {
-  addItem: function(parent, {id, todo}) {
+  showItem: function(parent, {id, todo}) {
     const html = `
       <div class="todo-list__item-container" data-todo-id=${id}>
         <p class="todo-list__item-content">${todo}</p>
@@ -45,10 +45,39 @@ const view = {
     `;
     parent.insertAdjacentHTML('beforeend', html);
   },
-  removeItem: function(parent, item) {
-    parent.removeChild(item);
+  hideItem: function(elm) {
+    elm.remove();
   },
   toggleItemComplete: function(item) {
     item.classList.toggle('completed');
   }
 }
+
+const controller = {
+  DOMElements: {
+    list: document.querySelector('.todo-list__list-container'),
+    input: document.querySelector('.todo-list__todo-input'),
+    submit: document.querySelector('.todo-list__todo-submit'),
+  },
+  addToDoItem: function() {
+    const newItem = data.addToDo(this.DOMElements.input.value);
+    view.showItem(this.DOMElements.list, newItem);
+  },
+  removeToDoItem: function(id, elm) {
+    data.deleteToDo(id);
+    view.hideItem(elm);
+  },
+  init: function() {
+    this.DOMElements.submit.addEventListener('click', e => {
+      e.preventDefault();
+      this.addToDoItem();
+    });
+    this.DOMElements.list.addEventListener('click', e => {
+      if (e.target.className === "todo-list__delete-button") {
+        this.removeToDoItem(e.target.parentNode.dataset.id, e.target.parentNode);
+      }
+    })
+  }
+}
+
+document.addEventListener('DOMContentLoaded', controller.init.bind(controller));
