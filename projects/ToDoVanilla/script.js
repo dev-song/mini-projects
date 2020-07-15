@@ -64,7 +64,7 @@ const controller = {
     view.showItem(this.DOMElements.list, newItem);
   },
   removeToDoItem: function(id, elm) {
-    data.deleteToDo(id);
+    data.deleteToDo(parseInt(id));
     view.hideItem(elm);
   },
   init: function() {
@@ -74,7 +74,7 @@ const controller = {
     });
     this.DOMElements.list.addEventListener('click', e => {
       if (e.target.className === "todo-list__delete-button") {
-        this.removeToDoItem(e.target.parentNode.dataset.id, e.target.parentNode);
+        this.removeToDoItem(e.target.parentNode.dataset.todoId, e.target.parentNode);
       }
     })
   }
