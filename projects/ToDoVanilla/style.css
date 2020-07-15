@@ -1,0 +1,22 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.todo-list__title {
+  text-align: center;
+}
+
+.todo-list__input-container {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid gray;
+
+  text-align: center;
+}
