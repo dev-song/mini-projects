@@ -6,12 +6,12 @@ function ToDo(id, content) {
 
 const data = {
   toDo: [],
-  toDoId: 1,
+  nextToDoId: 1,
   updateToDoId: function() {
-    this.toDoId++;
+    this.nextToDoId++;
   },
   addToDo: function(content) {
-    const todo = new ToDo(this.toDoId, content);
+    const todo = new ToDo(this.nextToDoId, content);
     this.toDo.push(todo);
     this.updateToDoId();
 
@@ -29,10 +29,19 @@ const data = {
     const toDoIndex = this.findToDo(id);
     this.toDo.splice(toDoIndex, 1);
   },
+  saveLocal: function() {
+    localStorage.setItem('toDoList', JSON.stringify(this.toDo));
+    localStorage.setItem('nextToDoId', this.nextToDoId);
+  },
+  loadLocal: function() {
+    this.toDo = JSON.parse(localStorage.getItem('toDoList'));
+    this.nextToDoId = parseInt(localStorage.getItem('nextToDoId'))
+  },
   resetToDo: function() {
     this.toDo = [];
-    this.toDoId = 1;
-  }
+    this.nextToDoId = 1;
+    localStorage.clear();
+  },
 };
 
 const view = {
@@ -47,6 +56,9 @@ const view = {
   },
   hideItem: function(elm) {
     elm.remove();
+  },
+  showTotalList: function(parent, list) {
+    list.forEach(elm => this.showItem(parent, elm))
   },
   toggleItemComplete: function(item) {
     item.classList.toggle('completed');
@@ -63,6 +75,8 @@ const controller = {
     const newItem = data.addToDo(this.DOMElements.input.value);
     view.showItem(this.DOMElements.list, newItem);
     this.resetInput();
+    
+    data.saveLocal();
   },
   resetInput: function() {
     this.DOMElements.input.value = '';
@@ -71,8 +85,14 @@ const controller = {
   removeToDoItem: function(id, elm) {
     data.deleteToDo(parseInt(id));
     view.hideItem(elm);
+    
+    data.saveLocal();
   },
   init: function() {
+    if (localStorage.length !== 0) {
+      data.loadLocal();
+      view.showTotalList(this.DOMElements.list, data.toDo);
+    }
     this.DOMElements.submit.addEventListener('click', e => {
       e.preventDefault();
       this.addToDoItem();
