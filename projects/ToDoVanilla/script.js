@@ -42,6 +42,17 @@ const data = {
     this.nextToDoId = 1;
     localStorage.clear();
   },
+  getDataSizeInByte: function() {
+    let allStrings = '';
+    for (let key in window.localStorage) {
+      if (window.localStorage.hasOwnProperty(key)) {
+        allStrings += window.localStorage[key];
+      }
+    }
+
+    const dataSize = allStrings ? (allStrings.length * 2) : 0;
+    return dataSize;
+  }
 };
 
 const view = {
@@ -92,7 +103,7 @@ const controller = {
     if (localStorage.length !== 0) {
       data.loadLocal();
       view.showTotalList(this.DOMElements.list, data.toDo);
-    }
+    };
     this.DOMElements.submit.addEventListener('click', e => {
       e.preventDefault();
       this.addToDoItem();
