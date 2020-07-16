@@ -18,6 +18,7 @@ main {
 }
 
 .todo-list {
+  position: relative;
   padding: 2rem;
 }
 
@@ -89,4 +90,53 @@ main {
 
   color: var(--text-color);
   font-size: 0.8rem;
+}
+
+.todo-list__storage-info--container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.storage-info__summary {
+  margin-right: 1rem;
+}
+
+.storage-info__summary::after {
+  content: '%';
+}
+
+.storage-info__graphic {
+  position: relative;
+  z-index: 5;
+  /* box-sizing: border-box; */
+  width: 4rem;
+  height: 1rem;
+  margin-right: 1rem;
+  padding: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.storage-info__graphic::before {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 2rem;
+  height: 1rem;
+  border-radius: 3px;
+  background: var(--text-color);
+}
+
+.storage-info__detail {
+  margin-right: 1rem;
+}
+
+.storage-info__using-size::after {
+  content: ' / ';
 }
