@@ -28,24 +28,30 @@ const data = {
   deleteToDo: function(id) {
     const toDoIndex = this.findToDo(id);
     this.toDo.splice(toDoIndex, 1);
+    
+    if (this.toDo.length === 0) {
+      this.resetToDo();
+    }
   },
   saveLocal: function() {
-    localStorage.setItem('toDoList', JSON.stringify(this.toDo));
-    localStorage.setItem('nextToDoId', this.nextToDoId);
+    if (this.toDo.length === 0) return;
+    window.localStorage.setItem('toDoList', JSON.stringify(this.toDo));
+    window.localStorage.setItem('nextToDoId', this.nextToDoId);
   },
   loadLocal: function() {
-    this.toDo = JSON.parse(localStorage.getItem('toDoList'));
-    this.nextToDoId = parseInt(localStorage.getItem('nextToDoId'))
+    this.toDo = JSON.parse(window.localStorage.getItem('toDoList'));
+    this.nextToDoId = parseInt(window.localStorage.getItem('nextToDoId'))
   },
   resetToDo: function() {
     this.toDo = [];
     this.nextToDoId = 1;
-    localStorage.clear();
+    window.localStorage.clear();
   },
   getDataSizeInByte: function() {
     let allStrings = '';
     for (let key in window.localStorage) {
-      if (window.localStorage.hasOwnProperty(key)) {
+      // 객체 내부 hasOwnProperty 속성에 다른 값을 지정할 수 있으므로 외부에서 끌어다 쓰는 것이 권장됨 
+      if (Object.prototype.hasOwnProperty.call(window.localStorage, key)) {
         allStrings += window.localStorage[key];
       }
     }
@@ -56,7 +62,7 @@ const data = {
 };
 
 const view = {
-  showItem: function(parent, {id, todo}) {
+  showToDoItem: function(parent, {id, todo}) {
     const html = `
       <div class="todo-list__item-container" data-todo-id=${id}>
         <p class="todo-list__item-content">${todo}</p>
@@ -68,11 +74,14 @@ const view = {
   hideItem: function(elm) {
     elm.remove();
   },
-  showTotalList: function(parent, list) {
-    list.forEach(elm => this.showItem(parent, elm))
+  showList: function(parent, list) {
+    list.forEach(elm => this.showToDoItem(parent, elm))
   },
   toggleItemComplete: function(item) {
     item.classList.toggle('completed');
+  },
+  showText: function(elm, size) {
+    elm.textContent = size;
   }
 }
 
@@ -81,13 +90,13 @@ const controller = {
     list: document.querySelector('.todo-list__list-container'),
     input: document.querySelector('.todo-list__todo-input'),
     submit: document.querySelector('.todo-list__todo-submit'),
+    dataSize: document.querySelector('.storage-info__using-size'),
+    totalSize: document.querySelector('.storage-info__total-size')
   },
   addToDoItem: function() {
     const newItem = data.addToDo(this.DOMElements.input.value);
-    view.showItem(this.DOMElements.list, newItem);
+    view.showToDoItem(this.DOMElements.list, newItem);
     this.resetInput();
-    
-    data.saveLocal();
   },
   resetInput: function() {
     this.DOMElements.input.value = '';
@@ -97,21 +106,27 @@ const controller = {
     data.deleteToDo(parseInt(id));
     view.hideItem(elm);
     
-    data.saveLocal();
+  },
+  displayDataSize: function() {
+    const currentSizeInKB = ( (data.getDataSizeInByte())/1024 ).toFixed(2);
+    const totalSizeInKB = 5 * 1024;  // localStorage capacity is 5MB
+    this.DOMElements.dataSize.textContent = currentSizeInKB;
+    this.DOMElements.totalSize.textContent = totalSizeInKB;
   },
   init: function() {
-    if (localStorage.length !== 0) {
+    if (window.localStorage.length !== 0) {
       data.loadLocal();
-      view.showTotalList(this.DOMElements.list, data.toDo);
-    };
-    this.DOMElements.submit.addEventListener('click', e => {
+      view.showList(this.DOMElements.list, data.toDo);
+    }
+    this.displayDataSize();
+    document.addEventListener('click', e => {
       e.preventDefault();
-      this.addToDoItem();
-    });
-    this.DOMElements.list.addEventListener('click', e => {
-      if (e.target.className === "todo-list__delete-button") {
+      if (e.target === this.DOMElements.submit)
+        this.addToDoItem();
+      if (e.target.className === "todo-list__delete-button")
         this.removeToDoItem(e.target.parentNode.dataset.todoId, e.target.parentNode);
-      }
+      data.saveLocal();
+      this.displayDataSize();
     })
   }
 }
