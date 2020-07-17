@@ -121,10 +121,8 @@ main {
 }
 
 .storage-info__graphic-bar {
+  position: relative;
   z-index: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
   content: '';
   width: 0;
   height: 1rem;
@@ -138,4 +136,19 @@ main {
 
 .storage-info__using-size::after {
   content: ' / ';
+}
+
+.todo-list__reset-button {
+  all: unset;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 4rem;
+  margin-right: 1rem;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+
+  background: var(--background-color);
+  text-align: center;
 }
