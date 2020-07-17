@@ -155,6 +155,8 @@ const controller = {
       e.preventDefault();
       if (e.target === this.DOMElements.submit)
         this.addToDoItem();
+      if (e.target.classList.contains("todo-list__item-container"))
+        this.toggleToDoItemComplete(e.target.dataset.todoId, e.target.firstElementChild);
       if (e.target.classList.contains("todo-list__item-content"))
         this.toggleToDoItemComplete(e.target.parentNode.dataset.todoId, e.target);
       if (e.target.className === "todo-list__delete-button")
