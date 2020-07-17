@@ -112,7 +112,6 @@ main {
 .storage-info__graphic {
   position: relative;
   z-index: 5;
-  /* box-sizing: border-box; */
   width: 4rem;
   height: 1rem;
   margin-right: 1rem;
@@ -121,13 +120,13 @@ main {
   border-radius: 4px;
 }
 
-.storage-info__graphic::before {
+.storage-info__graphic-bar {
   z-index: 0;
   position: absolute;
   top: 0;
   left: 0;
   content: '';
-  width: 2rem;
+  width: 0;
   height: 1rem;
   border-radius: 3px;
   background: var(--text-color);
