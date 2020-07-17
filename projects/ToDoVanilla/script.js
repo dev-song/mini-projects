@@ -90,6 +90,7 @@ const controller = {
     list: document.querySelector('.todo-list__list-container'),
     input: document.querySelector('.todo-list__todo-input'),
     submit: document.querySelector('.todo-list__todo-submit'),
+    reset: document.querySelector('.todo-list__reset-button'),
     dataSize: document.querySelector('.storage-info__using-size'),
     totalSize: document.querySelector('.storage-info__total-size'),
     usagePercent: document.querySelector('.storage-info__summary'),
@@ -107,7 +108,11 @@ const controller = {
   removeToDoItem: function(id, elm) {
     data.deleteToDo(parseInt(id));
     view.hideItem(elm);
-    
+  },
+  resetList: function() {
+    const items = [...this.DOMElements.list.children];
+    data.resetToDo();
+    items.forEach(item => item.remove());
   },
   displayDataSize: function() {
     const currentSizeInKB = ( (data.getDataSizeInByte())/1024 ).toFixed(2);
@@ -131,6 +136,8 @@ const controller = {
         this.addToDoItem();
       if (e.target.className === "todo-list__delete-button")
         this.removeToDoItem(e.target.parentNode.dataset.todoId, e.target.parentNode);
+      if (e.target === this.DOMElements.reset)
+        this.resetList();
       data.saveLocal();
       this.displayDataSize();
     })
