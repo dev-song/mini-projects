@@ -88,8 +88,15 @@ const view = {
   showText: function(elm, size) {
     elm.textContent = size;
   },
-  alert: function(msg) {
-    alert(msg);
+  validateInputLength: function(inputElm) {
+    if (inputElm.value.length === 0) {
+      alert('한 글자 이상 입력해야 합니다 :)');
+      return true;
+    }
+    if (inputElm.value.length > 50) {
+      alert('50글자 미만으로 입력해주세요!');
+      return true;
+    }
   }
 }
 
@@ -105,10 +112,8 @@ const controller = {
     usageGraphicBar: document.querySelector('.storage-info__graphic-bar')
   },
   addToDoItem: function() {
-    if (this.DOMElements.input.value.length === 0) {
-      alert('한 글자 이상 입력해야 합니다');
+    if (view.validateInputLength(this.DOMElements.input))
       return false;
-    }
     const newItem = data.addToDo(this.DOMElements.input.value);
     view.showToDoItem(this.DOMElements.list, newItem);
     this.resetInput();
