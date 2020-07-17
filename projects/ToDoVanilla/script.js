@@ -66,7 +66,7 @@ const view = {
     const html = `
       <div class="todo-list__item-container" data-todo-id=${id}>
         <p class="todo-list__item-content">${todo}</p>
-        <button type="button" class="todo-list__delete-button">지우기</button>
+        <button type="button" class="todo-list__delete-button">삭제</button>
       </div>
     `;
     parent.insertAdjacentHTML('beforeend', html);
@@ -82,6 +82,9 @@ const view = {
   },
   showText: function(elm, size) {
     elm.textContent = size;
+  },
+  alert: function(msg) {
+    alert(msg);
   }
 }
 
@@ -97,6 +100,10 @@ const controller = {
     usageGraphicBar: document.querySelector('.storage-info__graphic-bar')
   },
   addToDoItem: function() {
+    if (this.DOMElements.input.value.length === 0) {
+      alert('한 글자 이상 입력해야 합니다');
+      return false;
+    }
     const newItem = data.addToDo(this.DOMElements.input.value);
     view.showToDoItem(this.DOMElements.list, newItem);
     this.resetInput();
