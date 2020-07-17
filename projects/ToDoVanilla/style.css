@@ -57,15 +57,20 @@ main {
   margin-left: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  box-shadow: var(--shadow-normal);
+  transition: all 0.3s;
+  cursor: pointer;
 
+  box-shadow: var(--shadow-normal);
   background: var(--blue-dark);
   color: var(--blue-extra-light);
 }
 
+.todo-list__todo-submit:hover {
+  background: var(--blue-extra-dark);
+}
+
 .todo-list__list-container {
   width: 100%;
-  /* min-height: 24rem; */
 }
 
 .todo-list__item-container {
@@ -73,10 +78,10 @@ main {
   justify-content: space-between;
   align-items: center;
   margin: 0.5rem 1rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1.5rem;
   border-radius: 4px;
-  box-shadow: var(--shadow-normal);
 
+  box-shadow: var(--shadow-normal);
   background: var(--blue-extra-light);
   color: var(--blue-extra-dark);
 }
@@ -103,6 +108,7 @@ main {
   all: unset;
   opacity: 0;
   transition: all 0.3s;
+  cursor: pointer;
 
   color: var(--blue-extra-dark);
   font-size: 0.8rem;
@@ -168,8 +174,15 @@ main {
   width: 4rem;
   padding: 0.3rem;
   border-radius: 4px;
+  transition: all 0.2s;
+  cursor: pointer;
 
+  box-shadow: var(--shadow-normal);
   background: var(--blue-extra-light);
   color: var(--blue-extra-dark);
   text-align: center;
+}
+
+.todo-list__reset-button:hover {
+  background: var(--blue-light);
 }
