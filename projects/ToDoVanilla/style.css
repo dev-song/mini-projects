@@ -5,7 +5,7 @@
   --blue-dark: #0077c2;
   --blue-extra-dark: #002171;
   --blue-extra-dark-transparent: rgba(0, 33, 103, 0.3);
-  --shadow-normal: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  --shadow-normal: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 html,
@@ -80,10 +80,15 @@ main {
   margin: 0.5rem 1rem;
   padding: 1rem 1.5rem;
   border-radius: 4px;
+  transition: all 0.3s;
+  cursor: pointer;
 
   box-shadow: var(--shadow-normal);
-  background: var(--blue-extra-light);
   color: var(--blue-extra-dark);
+}
+
+.todo-list__item-container:hover {
+  background: var(--blue-extra-light);
 }
 
 .todo-list__item-container:first-of-type {
@@ -169,12 +174,12 @@ main {
 .todo-list__reset-button {
   all: unset;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0.5rem;
+  right: 0.5rem;
   width: 4rem;
   padding: 0.3rem;
   border-radius: 4px;
-  transition: all 0.2s;
+  transition: all 0.3s;
   cursor: pointer;
 
   box-shadow: var(--shadow-normal);
