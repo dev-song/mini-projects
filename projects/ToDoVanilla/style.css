@@ -4,6 +4,7 @@
   --blue-light: #80d6ff;
   --blue-dark: #0077c2;
   --blue-extra-dark: #002171;
+  --blue-extra-dark-transparent: rgba(0, 33, 103, 0.3);
   --shadow-normal: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -90,6 +91,12 @@ main {
 
 .todo-list__item-content {
   margin: 0;
+  transition: all 0.5s;
+}
+
+.completed {
+  color: var(--blue-extra-dark-transparent);
+  text-decoration: line-through;
 }
 
 .todo-list__delete-button {

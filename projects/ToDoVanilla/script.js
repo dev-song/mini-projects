@@ -2,6 +2,7 @@ function ToDo(id, content) {
   this.id = id;
   this.todo = content;
   this.regDate = new Date();
+  this.complete = false;
 }
 
 const data = {
@@ -32,6 +33,10 @@ const data = {
     if (this.toDo.length === 0) {
       this.resetToDo();
     }
+  },
+  toggleToDoComplete: function(id) {
+    const toDoIndex = this.findToDo(id);
+    this.toDo[toDoIndex].complete = !this.toDo[toDoIndex].complete;
   },
   saveLocal: function() {
     if (this.toDo.length === 0) return;
@@ -116,7 +121,11 @@ const controller = {
     data.deleteToDo(parseInt(id));
     view.hideItem(elm);
   },
-  resetList: function() {
+  toggleToDoItemComplete: function(id, elm) {
+    data.toggleToDoComplete(parseInt(id));
+    view.toggleItemComplete(elm);
+  },
+  resetToDoList: function() {
     const items = [...this.DOMElements.list.children];
     data.resetToDo();
     items.forEach(item => item.remove());
@@ -141,10 +150,12 @@ const controller = {
       e.preventDefault();
       if (e.target === this.DOMElements.submit)
         this.addToDoItem();
+      if (e.target.classList.contains("todo-list__item-content"))
+        this.toggleToDoItemComplete(e.target.parentNode.dataset.todoId, e.target);
       if (e.target.className === "todo-list__delete-button")
         this.removeToDoItem(e.target.parentNode.dataset.todoId, e.target.parentNode);
       if (e.target === this.DOMElements.reset)
-        this.resetList();
+        this.resetToDoList();
       data.saveLocal();
       this.displayDataSize();
     })
