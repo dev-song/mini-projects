@@ -91,7 +91,9 @@ const controller = {
     input: document.querySelector('.todo-list__todo-input'),
     submit: document.querySelector('.todo-list__todo-submit'),
     dataSize: document.querySelector('.storage-info__using-size'),
-    totalSize: document.querySelector('.storage-info__total-size')
+    totalSize: document.querySelector('.storage-info__total-size'),
+    usagePercent: document.querySelector('.storage-info__summary'),
+    usageGraphicBar: document.querySelector('.storage-info__graphic-bar')
   },
   addToDoItem: function() {
     const newItem = data.addToDo(this.DOMElements.input.value);
@@ -110,8 +112,12 @@ const controller = {
   displayDataSize: function() {
     const currentSizeInKB = ( (data.getDataSizeInByte())/1024 ).toFixed(2);
     const totalSizeInKB = 5 * 1024;  // localStorage capacity is 5MB
+    const usagePercent = currentSizeInKB / totalSizeInKB * 100;
+    const formattedUsagePercent = usagePercent < 0.1 ? 0 : usagePercent.toFixed(1);
     this.DOMElements.dataSize.textContent = currentSizeInKB;
     this.DOMElements.totalSize.textContent = totalSizeInKB;
+    this.DOMElements.usagePercent.textContent = formattedUsagePercent;
+    this.DOMElements.usageGraphicBar.style.width = `${formattedUsagePercent}%`;
   },
   init: function() {
     if (window.localStorage.length !== 0) {
