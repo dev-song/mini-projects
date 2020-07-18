@@ -176,8 +176,7 @@ main {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  width: 4rem;
-  padding: 0.3rem;
+  padding: 0.3rem 0.5rem;
   border-radius: 4px;
   transition: all 0.3s;
   cursor: pointer;
@@ -190,4 +189,43 @@ main {
 
 .todo-list__reset-button:hover {
   background: var(--blue-light);
+}
+
+@media (max-width: 768px) {
+  .todo-list__input-container {
+    padding: 1rem;
+  }
+
+  .todo-list__todo-input {
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .todo-list__title {
+    padding-top: 3rem;
+  }
+
+  .todo-list__todo-input {
+    display: block;
+    width: 90%;
+    margin: auto;
+    padding: 0.5rem;
+  }
+
+  .todo-list__todo-submit {
+    display: block;
+    margin: 1rem auto 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .todo-list__todo-input {
+    text-align: center;
+  }
+
+  .todo-list__reset-button {
+    top: -1.3rem;
+    right: -0.5rem;
+  }
 }
