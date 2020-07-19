@@ -78,7 +78,7 @@ main {
   justify-content: space-between;
   align-items: center;
   margin: 0.5rem 1rem;
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
   border-radius: 4px;
   transition: all 0.3s;
   cursor: pointer;
@@ -111,12 +111,20 @@ main {
 
 .todo-list__delete-button {
   all: unset;
+  padding: 0.5rem;
+  border-radius: 4px;
   opacity: 0;
   transition: all 0.3s;
   cursor: pointer;
 
   color: var(--blue-extra-dark);
   font-size: 0.8rem;
+}
+
+.todo-list__delete-button:hover {
+  background: var(--blue-extra-dark);
+  color: var(--blue-extra-light);
+  font-weight: bold;
 }
 
 .todo-list__item-container:hover > .todo-list__delete-button {
