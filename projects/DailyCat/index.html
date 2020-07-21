@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daily Cat</title>
 
+    <link type="text/css" rel="stylesheet" href="./styles.css" />
     <script defer src="script.js"></script>
   </head>
   <body>
-    <div class="breed"></div>
+    <main role="main">
+      <div class="page-title__container">
+        <h1 class="page-title">Cat of the Day</h1>
+        <p class="page-title__description">
+          Today's cat is ...
+          <span class="page-title__cat-of-the-day">***</span>
+        </p>
+      </div>
+      <section class="cat-container"></section>
+      <button type="button" class="button-more-cats">More CATS!</button>
+    </main>
   </body>
 </html>
