@@ -1,0 +1,27 @@
+main {
+  max-width: 1280px;
+  margin: auto;
+  padding: 2rem;
+
+  text-align: center;
+}
+
+.cat-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5%;
+  justify-items: center;
+  align-items: center;
+}
+
+.cat-image {
+  display: inline-block;
+  width: 50%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.button-more-cats {
+  padding: 0.5rem 1rem;
+}
