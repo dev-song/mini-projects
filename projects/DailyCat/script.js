@@ -58,3 +58,12 @@ function createImgElement(src, classNames = []) {
 
   return img;
 }
+
+function init() {
+  selectTodaysCat();
+  const moreButton = document.querySelector('.button-more-cats');
+
+  moreButton.addEventListener('click', () => addCatImage(todaysCatId));
+}
+
+init();
