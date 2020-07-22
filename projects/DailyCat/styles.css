@@ -4,6 +4,10 @@ body {
   padding: 0;
 }
 
+header {
+  height: 4rem;
+}
+
 main {
   box-sizing: border-box;
   width: 100%;
