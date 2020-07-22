@@ -1,25 +1,54 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 main {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 2rem;
+
+  background: #b7a99a;
+}
+
+.page-title__container {
   max-width: 1280px;
   margin: auto;
-  padding: 2rem;
 
   text-align: center;
 }
 
+.page-title {
+  margin: 0;
+}
+
+.page-title__description {
+  margin: 0;
+}
+
 .cat-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5%;
-  justify-items: center;
-  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1280px;
+  margin: 2rem auto;
+
+  background: #fff;
 }
 
 .cat-image {
   display: inline-block;
-  width: 50%;
+  width: 40%;
+  height: 20rem;
+  margin: 1rem 0;
 
   object-fit: cover;
   object-position: center;
+}
+
+.cat-image:nth-of-type(-n + 2) {
+  margin-top: 2rem;
 }
 
 .button-more-cats {
