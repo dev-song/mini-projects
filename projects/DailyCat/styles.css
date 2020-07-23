@@ -1,3 +1,7 @@
+:root {
+  --main-bg: #e0c6ad;
+}
+
 html,
 body {
   margin: 0;
@@ -13,7 +17,8 @@ main {
   width: 100%;
   padding: 2rem;
 
-  background: #b7a99a;
+  background: var(--main-bg);
+  text-align: center;
 }
 
 .page-title__container {
@@ -44,8 +49,8 @@ main {
 .cat-image {
   display: inline-block;
   width: 40%;
-  height: 20rem;
   margin: 1rem 0;
+  border-radius: 0.5rem;
 
   object-fit: cover;
   object-position: center;
