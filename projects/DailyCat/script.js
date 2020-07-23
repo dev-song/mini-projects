@@ -1,5 +1,5 @@
 const randomCatImage = 'https://api.thecatapi.com/v1/images/search';
-let todaysCatId;
+let todaysCatId, todaysCatName;
 
 function getDataAjax(url, callback) {
   fetch(url)
@@ -22,7 +22,15 @@ function selectTodaysCat() {
     const randomIndex = Math.floor(Math.random() * breedInfo.length);
     const todaysCatInfo = breedInfo[randomIndex];
     todaysCatId = todaysCatInfo.id;
+    todaysCatName = todaysCatInfo.name;
   })
+}
+
+function showTodaysCatName() {
+  if (!todaysCatName) throw new Error(`There isn't today's cat... Reload the page!`);
+
+  const todaysCatElement = document.querySelector('.page-title__cat-of-the-day');
+  todaysCatElement.textContent = todaysCatName;
 }
 
 function addCatImage(breedId, imgLimit = 4) {
@@ -63,7 +71,10 @@ function init() {
   selectTodaysCat();
   const moreButton = document.querySelector('.button-more-cats');
 
-  moreButton.addEventListener('click', () => addCatImage(todaysCatId));
+  moreButton.addEventListener('click', () => {
+    addCatImage(todaysCatId);
+    showTodaysCatName();
+  });
 }
 
 init();
