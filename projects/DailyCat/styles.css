@@ -15,6 +15,7 @@ header {
 main {
   box-sizing: border-box;
   width: 100%;
+  min-height: calc(100vh - 4rem);
   padding: 2rem;
 
   background: var(--main-bg);
@@ -40,8 +41,10 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
   max-width: 1280px;
   margin: 2rem auto;
+  border-radius: 0.5rem;
 
   background: #fff;
 }
@@ -49,6 +52,7 @@ main {
 .cat-image {
   display: inline-block;
   width: 40%;
+  height: 100%;
   margin: 1rem 0;
   border-radius: 0.5rem;
 
@@ -58,6 +62,10 @@ main {
 
 .cat-image:nth-of-type(-n + 2) {
   margin-top: 2rem;
+}
+
+.cat-image:nth-last-of-type(-n + 2) {
+  margin-bottom: 2rem;
 }
 
 .button-more-cats {
