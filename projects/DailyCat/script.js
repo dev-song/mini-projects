@@ -52,6 +52,7 @@ function loadCatImage(breedId, imgCount = 4) {
     for (let i = startIndex; i < endIndex; i++) {
       if (i >= len) {
         console.warn(`There's no more pictures for ${todaysCatName}!`);
+        hideMoreButton();
         break;
       }
 
@@ -61,6 +62,11 @@ function loadCatImage(breedId, imgCount = 4) {
 
     addSequence++;
   })
+}
+
+function hideMoreButton() {
+  const moreButton = document.querySelector('.button-more-cats');
+  moreButton.style.display = 'none';
 }
 
 function createImgElement(src, classNames = []) {
