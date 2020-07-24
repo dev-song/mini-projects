@@ -86,8 +86,6 @@ function createImgElement(src, classNames = []) {
 }
 
 function init() {
-  selectTodaysCat();
-
   const moreButton = document.querySelector('.button-more-cats');
   moreButton.addEventListener('click', () => {
     loadCatImage(todaysCatId);
@@ -95,4 +93,5 @@ function init() {
   });
 }
 
-init();
+selectTodaysCat();
+document.addEventListener('DOMContentLoaded', init);
