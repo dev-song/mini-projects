@@ -1,5 +1,6 @@
 const randomCatImage = 'https://api.thecatapi.com/v1/images/search';
 let todaysCatId, todaysCatName;
+let addSequence = 0;
 
 function getDataAjax(url, callback) {
   fetch(url)
@@ -23,6 +24,8 @@ function selectTodaysCat() {
     const todaysCatInfo = breedInfo[randomIndex];
     todaysCatId = todaysCatInfo.id;
     todaysCatName = todaysCatInfo.name;
+
+    console.log(`Cat of the day is... ${todaysCatName} of which id is ${todaysCatId}!`);
   })
 }
 
@@ -33,27 +36,36 @@ function showTodaysCatName() {
   todaysCatElement.textContent = todaysCatName;
 }
 
-function addCatImage(breedId, imgLimit = 4) {
+function loadCatImage(breedId, imgCount = 4) {
   const imageContainer = document.querySelector('.cat-container');
 
-  const api = `https://api.thecatapi.com/v1/images/search?limit=${imgLimit}&breed_id=${breedId}`;
+  const images = 100;   // API's official limit is 100
+  const api = `https://api.thecatapi.com/v1/images/search?limit=${images}&breed_id=${breedId}`;
 
   getDataAjax(api, function (data) {
-    if (data.length === 0) throw new Error(`There's no image... Something's wrong!`);
+    const len = data.length;
+    if (len === 0) throw new Error(`There's no data for a cat... Searched cat is: ${breedId}`);
 
-    data.forEach(elm => {
-      console.log(elm);
+    const startIndex = imgCount * addSequence;
+    const endIndex = imgCount * (addSequence + 1);
 
-      const IMG = createImgElement(elm.url);
+    for (let i = startIndex; i < endIndex; i++) {
+      if (i >= len) {
+        console.warn(`There's no more pictures for ${todaysCatName}!`);
+        break;
+      }
+
+      const IMG = createImgElement(data[i].url);
       imageContainer.appendChild(IMG);
-    });
+    }
+
+    addSequence++;
   })
 }
 
 function createImgElement(src, classNames = []) {
   if (!src) {
     throw new Error(`Invalid image source!`);
-    return;
   }
 
   const img = document.createElement('img');
@@ -69,10 +81,10 @@ function createImgElement(src, classNames = []) {
 
 function init() {
   selectTodaysCat();
-  const moreButton = document.querySelector('.button-more-cats');
 
+  const moreButton = document.querySelector('.button-more-cats');
   moreButton.addEventListener('click', () => {
-    addCatImage(todaysCatId);
+    loadCatImage(todaysCatId);
     showTodaysCatName();
   });
 }
