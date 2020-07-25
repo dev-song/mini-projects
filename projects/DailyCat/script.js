@@ -56,8 +56,8 @@ function loadCatImage(breedId, imgCount = 4) {
         break;
       }
 
-      const IMG = createImgElement(data[i].url);
-      imageContainer.appendChild(IMG);
+      const imgElm = createImgElement(data[i].url);
+      imageContainer.appendChild(imgElm);
     }
 
     addSequence++;
@@ -76,13 +76,26 @@ function createImgElement(src, classNames = []) {
 
   const img = document.createElement('img');
   const defaultClass = 'cat-image';
-  if (classNames) {
+  if (classNames.length !== 0) {
     classNames.forEach(elm => img.classList.add(elm));
   }
-  img.classList.add(defaultClass);
+  if (classNames.length === 0) {
+    img.classList.add(defaultClass);
+  }
   img.setAttribute('src', src);
 
   return img;
+}
+
+function openImgPopUp(src) {
+  const main = document.querySelector('main');
+
+  const popUp = document.createElement('div');
+  popUp.classList.add('pop-up');
+  const imgPopUpElm = createImgElement(src, ['pop-up__image']);
+  popUp.appendChild(imgPopUpElm);
+
+  main.appendChild(popUp);
 }
 
 function init() {
@@ -91,6 +104,14 @@ function init() {
     loadCatImage(todaysCatId);
     showTodaysCatName();
   });
+
+  const container = document.querySelector('.cat-container');
+  container.addEventListener('click', e => {
+    if (e.target.className === 'cat-image') {
+      openImgPopUp(e.target.src);
+      console.log('clicked');
+    }
+  })
 }
 
 selectTodaysCat();
