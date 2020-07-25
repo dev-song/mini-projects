@@ -1,5 +1,6 @@
 :root {
   --main-bg: #e0c6ad;
+  --pop-up-bg: #fff;
 }
 
 html,
@@ -70,6 +71,28 @@ main {
 
 .button-more-cats {
   padding: 0.5rem 1rem;
+}
+
+.pop-up {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transform: translate(-50%, -50%);
+
+  background: var(--pop-up-bg);
+}
+
+.pop-up__image {
+  display: inline-block;
+  width: 100%;
+  border-radius: 0.5rem;
+
+  object-fit: cover;
+  object-position: center;
 }
 
 @media (max-width: 480px) {
