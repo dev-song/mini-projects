@@ -82,8 +82,14 @@ main {
   border-radius: 0.5rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.5s;
 
   background: var(--pop-up-bg);
+}
+
+.active {
+  opacity: 1;
 }
 
 .pop-up__image {
@@ -93,6 +99,18 @@ main {
 
   object-fit: cover;
   object-position: center;
+}
+
+.pop-up__close-button {
+  all: unset;
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+
+  background: var(--main-bg);
+  font-weight: bold;
 }
 
 @media (max-width: 480px) {
