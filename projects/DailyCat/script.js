@@ -92,10 +92,24 @@ function openImgPopUp(src) {
 
   const popUp = document.createElement('div');
   popUp.classList.add('pop-up');
+
   const imgPopUpElm = createImgElement(src, ['pop-up__image']);
+  const closeButton = document.createElement('button');
+  closeButton.classList.add('pop-up__close-button');
+  closeButton.textContent = 'X';
+
   popUp.appendChild(imgPopUpElm);
+  popUp.appendChild(closeButton);
 
   main.appendChild(popUp);
+}
+
+function closeImgPopUp() {
+  const popUp = document.querySelector('.pop-up');
+  popUp.classList.remove('active');
+  setTimeout(() => {
+    popUp.remove();
+  }, 500);
 }
 
 function init() {
@@ -105,11 +119,16 @@ function init() {
     showTodaysCatName();
   });
 
-  const container = document.querySelector('.cat-container');
-  container.addEventListener('click', e => {
+  const main = document.querySelector('main');
+  main.addEventListener('click', e => {
     if (e.target.className === 'cat-image') {
       openImgPopUp(e.target.src);
-      console.log('clicked');
+      setTimeout(() => {
+        document.querySelector('.pop-up').classList.add('active')
+      }, 0);
+    }
+    if (e.target.className === 'pop-up__close-button') {
+      closeImgPopUp();
     }
   })
 }
