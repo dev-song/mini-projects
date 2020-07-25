@@ -71,3 +71,18 @@ main {
 .button-more-cats {
   padding: 0.5rem 1rem;
 }
+
+@media (max-width: 480px) {
+  .cat-image:nth-of-type(n) {
+    width: 90%;
+    margin: 0.5rem 0;
+  }
+
+  .cat-image:nth-of-type(-n + 1) {
+    margin-top: 1rem;
+  }
+
+  .cat-image:nth-last-of-type(-n + 1) {
+    margin-bottom: 1rem;
+  }
+}
