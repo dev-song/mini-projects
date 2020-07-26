@@ -119,15 +119,16 @@ function init() {
     showTodaysCatName();
   });
 
-  const main = document.querySelector('main');
-  main.addEventListener('click', e => {
-    if (e.target.className === 'cat-image') {
+  document.addEventListener('click', e => {
+    const isPopUpOpen = document.querySelector('.pop-up');
+
+    if (!isPopUpOpen && e.target.className === 'cat-image') {
       openImgPopUp(e.target.src);
       setTimeout(() => {
         document.querySelector('.pop-up').classList.add('active')
       }, 0);
     }
-    if (e.target.className === 'pop-up__close-button') {
+    if (isPopUpOpen && (e.target.className !== 'pop-up' && e.target.className !== 'pop-up__image')) {
       closeImgPopUp();
     }
   })
