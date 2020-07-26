@@ -45,6 +45,7 @@ main {
   align-items: center;
   max-width: 1280px;
   margin: 2rem auto;
+  padding: 2rem 0;
   border-radius: 0.5rem;
 
   background: #fff;
@@ -54,7 +55,7 @@ main {
   display: inline-block;
   width: 40%;
   height: 100%;
-  margin: 1rem 0;
+  margin: 2rem 0 0;
   border-radius: 0.5rem;
 
   object-fit: cover;
@@ -62,11 +63,13 @@ main {
 }
 
 .cat-image:nth-of-type(-n + 2) {
-  margin-top: 2rem;
+  margin-top: 0;
 }
 
-.cat-image:nth-last-of-type(-n + 2) {
-  margin-bottom: 2rem;
+.inactive {
+  /* display: none; */
+  opacity: 0;
+  height: 8rem;
 }
 
 .button-more-cats {
@@ -114,17 +117,17 @@ main {
 }
 
 @media (max-width: 480px) {
+  .cat-container {
+    padding: 1rem 0;
+  }
+
   .cat-image:nth-of-type(n) {
     width: 90%;
-    margin: 0.5rem 0;
+    margin: 1rem 0 0;
   }
 
   .cat-image:nth-of-type(-n + 1) {
-    margin-top: 1rem;
-  }
-
-  .cat-image:nth-last-of-type(-n + 1) {
-    margin-bottom: 1rem;
+    margin-top: 0;
   }
 
   .pop-up {
