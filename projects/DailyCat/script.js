@@ -1,6 +1,5 @@
 const randomCatImage = 'https://api.thecatapi.com/v1/images/search';
 let todaysCatId, todaysCatName;
-let addSequence = 0;
 
 function getDataAjax(url, callback) {
   fetch(url)
@@ -46,21 +45,16 @@ function loadCatImage(breedId, imgCount = 4) {
     const len = data.length;
     if (len === 0) throw new Error(`There's no data for a cat... Searched cat is: ${breedId}`);
 
-    const startIndex = imgCount * addSequence;
-    const endIndex = imgCount * (addSequence + 1);
-
-    for (let i = startIndex; i < endIndex; i++) {
-      if (i >= len) {
-        console.warn(`There's no more pictures for ${todaysCatName}!`);
-        hideMoreButton();
-        break;
+    for (let i = 0; i < len; i++) {
+      let imgElm;
+      if (i < imgCount) {
+        imgElm = createImgElement(true, data[i].url);
+      } else {
+        imgElm = createImgElement(false, data[i].url);
+        imgElm.classList.add('inactive');
       }
-
-      const imgElm = createImgElement(data[i].url);
       imageContainer.appendChild(imgElm);
     }
-
-    addSequence++;
   })
 }
 
@@ -69,11 +63,7 @@ function hideMoreButton() {
   moreButton.style.display = 'none';
 }
 
-function createImgElement(src, classNames = []) {
-  if (!src) {
-    throw new Error(`Invalid image source!`);
-  }
-
+function createImgElement(initial = true, src, classNames = []) {
   const img = document.createElement('img');
   const defaultClass = 'cat-image';
   if (classNames.length !== 0) {
@@ -82,7 +72,12 @@ function createImgElement(src, classNames = []) {
   if (classNames.length === 0) {
     img.classList.add(defaultClass);
   }
-  img.setAttribute('src', src);
+  if (initial) {
+    img.setAttribute('src', src);
+  }
+  if (!initial) {
+    img.setAttribute('data-src', src);
+  }
 
   return img;
 }
