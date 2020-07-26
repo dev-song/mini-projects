@@ -107,6 +107,34 @@ function closeImgPopUp() {
   }, 500);
 }
 
+function lazyLoad(previouslyLoadedImages = 0) {
+  const options = {
+    root: null,
+    rootMargin: '0px 0px 30px 0px',
+    threshold: 0
+  };
+
+  const io = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.src = entry.target.dataset.src;
+        entry.target.classList.remove('inactive');
+        observer.unobserve(entry.target);
+
+        console.log(`loading new image...`);
+        console.dir(entry.target);
+      }
+    })
+  }, options);
+
+  const imgList = document.querySelectorAll('.cat-image');
+  imgList.forEach((elm, index) => {
+    if (index >= previouslyLoadedImages) {
+      io.observe(elm);
+    };
+  });
+}
+
 function init() {
   const moreButton = document.querySelector('.button-more-cats');
   moreButton.addEventListener('click', () => {
