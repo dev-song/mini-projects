@@ -77,10 +77,9 @@ main {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 80%;
   padding: 2rem;
   border-radius: 0.5rem;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1rem #000;
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: all 0.5s;
@@ -94,10 +93,11 @@ main {
 
 .pop-up__image {
   display: inline-block;
-  width: 100%;
+  max-width: 80vw;
+  max-height: 80vh;
   border-radius: 0.5rem;
 
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 
@@ -125,5 +125,13 @@ main {
 
   .cat-image:nth-last-of-type(-n + 1) {
     margin-bottom: 1rem;
+  }
+
+  .pop-up {
+    padding: 1rem;
+  }
+
+  .pop-up__image {
+    max-width: 90vw;
   }
 }
