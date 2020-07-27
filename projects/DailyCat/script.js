@@ -88,7 +88,7 @@ function openImgPopUp(src) {
   const popUp = document.createElement('div');
   popUp.classList.add('pop-up');
 
-  const imgPopUpElm = createImgElement(src, ['pop-up__image']);
+  const imgPopUpElm = createImgElement(true, src, ['pop-up__image']);
   const closeButton = document.createElement('button');
   closeButton.classList.add('pop-up__close-button');
   closeButton.textContent = 'X';
