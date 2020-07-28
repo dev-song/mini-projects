@@ -17,7 +17,7 @@ function getBreedInfo(callback) {
   })
 }
 
-function selectTodaysCat() {
+function selectTodaysCat(callback) {
   getBreedInfo(function (breedInfo) {
     const randomIndex = Math.floor(Math.random() * breedInfo.length);
     const todaysCatInfo = breedInfo[randomIndex];
@@ -25,6 +25,7 @@ function selectTodaysCat() {
     todaysCatName = todaysCatInfo.name;
 
     console.log(`Cat of the day is... ${todaysCatName} of which id is ${todaysCatId}!`);
+    callback();
   })
 }
 
@@ -135,6 +136,20 @@ function lazyLoad(previouslyLoadedImages = 0) {
   });
 }
 
+function animateLoadingPage() {
+  return setInterval(() => {
+    const dots = document.querySelector('.loading__text-more');
+    if (dots.textContent === '...') {
+      dots.textContent = '.';
+    } else if (dots.textContent === '.') {
+      dots.textContent = '..';
+    } else if (dots.textContent === '..') {
+      dots.textContent = '...';
+    }
+    console.log('text update!');
+  }, 400);
+}
+
 function init() {
   const moreButton = document.querySelector('.button-more-cats');
   moreButton.addEventListener('click', () => {
@@ -157,5 +172,11 @@ function init() {
   })
 }
 
-selectTodaysCat();
+const loadingPageTextAnimation = animateLoadingPage();
+selectTodaysCat(() => {
+  clearInterval(loadingPageTextAnimation);
+
+  const loadingPage = document.querySelector('.loading');
+  loadingPage.style.display = 'none';
+});
 document.addEventListener('DOMContentLoaded', init);
