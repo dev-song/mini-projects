@@ -1,4 +1,4 @@
-const randomCatImage = 'https://api.thecatapi.com/v1/images/search';
+// const randomCatImage = 'https://api.thecatapi.com/v1/images/search';
 let todaysCatId, todaysCatName;
 
 function getDataAjax(url, callback) {
@@ -57,11 +57,6 @@ function loadCatImage(breedId, imgCount = 4) {
       imageContainer.appendChild(imgElm);
     }
   })
-}
-
-function hideMoreButton() {
-  const moreButton = document.querySelector('.button-more-cats');
-  moreButton.style.display = 'none';
 }
 
 function createImgElement(initial = true, src, classNames = []) {
@@ -151,12 +146,6 @@ function animateLoadingPage() {
 }
 
 function init() {
-  const moreButton = document.querySelector('.button-more-cats');
-  moreButton.addEventListener('click', () => {
-    loadCatImage(todaysCatId);
-    showTodaysCatName();
-  });
-
   document.addEventListener('click', e => {
     const isPopUpOpen = document.querySelector('.pop-up');
 
@@ -178,5 +167,9 @@ selectTodaysCat(() => {
 
   const loadingPage = document.querySelector('.loading');
   loadingPage.style.display = 'none';
+
+  loadCatImage(todaysCatId);
+  showTodaysCatName();
+  setTimeout(() => lazyLoad(4), 1000);
 });
 document.addEventListener('DOMContentLoaded', init);
