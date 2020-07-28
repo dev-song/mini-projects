@@ -10,13 +10,14 @@ body {
 }
 
 header {
+  display: none;
   height: 4rem;
 }
 
 main {
   box-sizing: border-box;
   width: 100%;
-  min-height: calc(100vh - 4rem);
+  min-height: 100vh;
   padding: 2rem;
 
   background: var(--main-bg);
