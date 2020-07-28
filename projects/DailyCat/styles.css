@@ -116,6 +116,22 @@ main {
   font-weight: bold;
 }
 
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--main-bg);
+  text-align: center;
+}
+
+.loading__text {
+  margin-top: 4rem;
+
+  font-size: 3rem;
+}
+
 @media (max-width: 480px) {
   .cat-container {
     padding: 1rem 0;
