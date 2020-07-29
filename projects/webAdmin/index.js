@@ -11,6 +11,9 @@ const server = http.createServer((req, res) => {
   if (requestedUrl === '/admin') {
     responseUrl = '/admin.html';
   }
+  if (requestedUrl === '/styles.css') {
+    responseUrl = '/styles.css';
+  }
   if (!responseUrl) {
     res.writeHead(404);
     res.end();
