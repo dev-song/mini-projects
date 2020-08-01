@@ -21,6 +21,7 @@ main {
   padding: 2rem;
 
   background: var(--main-bg);
+  font-family: 'Rowdies', recursive;
   text-align: center;
 }
 
