@@ -30,5 +30,31 @@ function encrypt(userId, userPw, storage) {
   });
 }
 
+function checkPassword(userId, userPw, storage) {
+  for (let i = 0, len = storage.length; i < len; i++) {
+    const account = storage[i];
+    if (userId === account.id) {
+      crypto.pbkdf2(userPw, account.salt, 138164, 64, 'sha512', (err, key) => {
+        if (err) {
+          console.log(error);
+          return;
+        }
+
+        const password = key.toString('base64');
+        if (password === account.password) {
+          console.log(`'${userPw}' is valid password!`);
+        } else {
+          console.log(`'${userPw}' is wrong password!`);
+        }
+      })
+      break;
+    }
+  }
+}
+
 encrypt('dev-song', '12345678', encryptedAccountData);
-setTimeout(() => console.log(encryptedAccountData), 1000);
+setTimeout(() => {
+  console.log(encryptedAccountData);
+  checkPassword('dev-song', '12345678', encryptedAccountData);
+  checkPassword('dev-song', '123456781234', encryptedAccountData);
+}, 1000);
