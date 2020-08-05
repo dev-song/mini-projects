@@ -5,6 +5,9 @@ const options = {
   root: __dirname
 };
 
+const dataController = require('./data.js');
+const cryptoController = require('./crypto.js');
+
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
@@ -18,20 +21,23 @@ app.get('/admin', (req, res) => {
 
 app.post('/validate-login', (req, res) => {
   const { id, pw } = req.body;
-  const validId = 'devsong';
-  const validPw = 'SecTest1';
 
-  if (id !== validId) {
-    console.log(`${id}는 존재하지 않는 ID입니다.`);
-    res.redirect('/admin');
-    return;
-  }
-  if (pw !== validPw) {
-    console.log(`${pw}는 올바르지 않은 비밀번호입니다.`);
-    res.redirect('/admin');
-    return;
-  }
-  res.send('로그인 성공');
+  const accountDataPath = './data/account.json';
+  dataController.utilizeData(accountDataPath, json => {
+    cryptoController.checkPassword(id, pw, json,
+      () => {
+        console.log(`'${pw}' is a correct password! :)`);
+        res.send('로그인 성공');
+      },
+      () => {
+        console.log(`'${pw}' is INVALID password! :(`);
+        res.redirect('/admin');
+      },
+      () => {
+        console.log(`There is no account with the ID of '${id}'`);
+        res.redirect('/admin');
+      });
+  })
 })
 
 app.listen(port, () => console.log(`Port ${port} is listening!`));
