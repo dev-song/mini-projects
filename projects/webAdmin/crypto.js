@@ -28,7 +28,7 @@ exports.encryptPassword = (userId, userPw, callback) => {
   });
 }
 
-exports.checkPassword = (userId, userPw, storage) => {
+exports.checkPassword = (userId, userPw, storage, validPwCallback, invalidPwCallback, invalidIdCallback) => {
   for (let i = 0, len = storage.length; i < len; i++) {
     const account = storage[i];
     if (userId === account.id) {
@@ -40,12 +40,14 @@ exports.checkPassword = (userId, userPw, storage) => {
 
         const password = key.toString('base64');
         if (password === account.password) {
-          console.log(`'${userPw}' is a correct password! :)`);
+          validPwCallback();
         } else {
-          console.log(`'${userPw}' is INVALID password! :(`);
+          invalidPwCallback();
         }
       })
-      break;
+      return;
     }
   }
+
+  invalidIdCallback();
 }
