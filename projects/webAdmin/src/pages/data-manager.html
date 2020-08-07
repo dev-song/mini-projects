@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Manager</title>
+
+    <link type="text/css" rel="stylesheet" href="../styles/styles.css" />
+  </head>
+  <body>
+    <h1 class="page-title">데이터 관리</h1>
+    <form class="upload-product" action="/upload-product" method="post">
+      <div class="product__name--container">
+        <label for="name" class="product__name--label">상품명: </label>
+        <input
+          type="text"
+          name="name"
+          placeholder="상품명을 입력하세요."
+          class="product__name--input"
+        />
+      </div>
+      <div class="product__description--container">
+        <label for="pw" class="product__description--label">설명: </label>
+        <input
+          type="text"
+          name="description"
+          placeholder="상품설명을 입력하세요."
+          class="product__description--input"
+        />
+      </div>
+      <div class="product__submit--container">
+        <input type="submit" value="업로드" class="product__submit" />
+      </div>
+    </form>
+    <h2 class="data-box__title">데이터 현황</h2>
+    <section class="data-box"></section>
+  </body>
+</html>
