@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/admin', (req, res) => {
-  res.sendFile('admin.html', options);
+  res.sendFile('./src/pages/admin.html', options);
 })
 
 app.post('/validate-login', (req, res) => {
@@ -26,15 +26,15 @@ app.post('/validate-login', (req, res) => {
   dataController.utilizeData(accountDataPath, json => {
     cryptoController.checkPassword(id, pw, json,
       () => {
-        console.log(`'${pw}' is a correct password! :)`);
-        res.send('로그인 성공');
+        console.log(`Log-in succeeded. '${pw}' is a correct password! :)`);
+        res.sendFile('./src/pages/data-manager.html', options);
       },
       () => {
-        console.log(`'${pw}' is INVALID password! :(`);
+        console.log(`Log-in failed! '${pw}' is INVALID password! :(`);
         res.redirect('/admin');
       },
       () => {
-        console.log(`There is no account with the ID of '${id}'`);
+        console.log(`Log-in failed! There is no account with the ID of '${id}'`);
         res.redirect('/admin');
       });
   })
