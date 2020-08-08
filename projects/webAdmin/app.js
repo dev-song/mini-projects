@@ -5,11 +5,12 @@ const options = {
   root: __dirname
 };
 
-const dataController = require('./data.js');
-const cryptoController = require('./crypto.js');
+const dataController = require('./src/scripts/data.js');
+const cryptoController = require('./src/scripts/crypto.js');
 
-app.use(express.json()) // for parsing application/json
-app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(express.json());    // for parsing application/json
+app.use(express.urlencoded({ extended: true }));    // for parsing application/x-www-form-urlencoded
+app.use(express.static('src'));
 
 app.get('/', (req, res) => {
   res.sendFile('index.html', options);
