@@ -20,6 +20,12 @@ app.get('/admin', (req, res) => {
   res.sendFile('./src/pages/admin.html', options);
 })
 
+app.get('/get-products', (req, res) => {
+  dataController.utilizeData('./data/product-data.json', json => {
+    res.json(json);
+  })
+})
+
 app.post('/validate-login', (req, res) => {
   const { id, pw } = req.body;
 
