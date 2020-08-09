@@ -8,8 +8,8 @@ function readJson(json, callback) {
 
 // products 정보를 불러와 data-box 섹션에 추가
 function showProductData(path, parent) {
-  const container = document.createElement('div');
-  container.classList.add('data-box__items--container');
+  const itemsContainer = document.createElement('div');
+  itemsContainer.classList.add('data-box__items--container');
 
   readJson(path, data => {
     if (!data) {
@@ -18,14 +18,20 @@ function showProductData(path, parent) {
     }
 
     data.forEach(item => {
+      const itemContainer = document.createElement('div');
+      itemContainer.classList.add('data-box__item--container');
+
       for (const property in item) {
         const elm = document.createElement('p');
+        elm.classList.add(`data-box__item-${property}`);
         elm.textContent = item[property];
-        container.appendChild(elm);
+        itemContainer.appendChild(elm);
       }
+
+      itemsContainer.appendChild(itemContainer);
     });
 
-    parent.appendChild(container);
+    parent.appendChild(itemsContainer);
   })
 }
 
