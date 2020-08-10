@@ -47,4 +47,11 @@ app.post('/validate-login', (req, res) => {
   })
 })
 
+app.post('/add-product', (req, res) => {
+  const { id, cluster, building, space, description, img } = req.body;
+
+  const productDataPath = './data/product-data.json';
+  dataController.addData(productDataPath, req.body);
+})
+
 app.listen(port, () => console.log(`Port ${port} is listening!`));
