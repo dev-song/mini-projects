@@ -31,6 +31,7 @@ function createForm() {
     }
 
     input.classList.add(inputOptions.className);
+    input.name = property;
     input.type = inputOptions.type;
     input.placeholder = `${inputOptions.description}을 입력하세요`; // 종성에 따른 조사 변화 추가 필요
 
