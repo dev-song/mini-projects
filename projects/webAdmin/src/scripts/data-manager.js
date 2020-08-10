@@ -1,4 +1,44 @@
 const path = './get-products';
+const formData = {    // 각 property는 [설명, input 형식, 표시 여부]를 값으로 가짐
+  id: ['일련번호', 'number', false],
+  cluster: ['단지 번호', 'number', true],
+  building: ['동 번호', 'number', true],
+  space: ['넓이(평형)', 'number', true],
+  description: ['설명', 'text', true],
+  img: ['이미지', 'text', true]
+}
+
+function createForm() {
+  const form = document.createElement('form');
+  const formOptions = {
+    className: 'add-product',
+    action: '/add-product',
+    method: 'post'
+  }
+  form.classList.add(formOptions.className);
+  form.action = formOptions.action;
+  form.method = formOptions.method;
+
+  for (const property in formData) {
+    const input = document.createElement('input');
+
+    const values = formData[property];
+    const inputOptions = {
+      className: `add-product__input-${property}`,
+      description: values[0],
+      type: values[1],
+      visible: values[2]
+    }
+
+    input.classList.add(inputOptions.className);
+    input.type = inputOptions.type;
+    input.placeholder = `${inputOptions.description}을 입력하세요`; // 종성에 따른 조사 변화 추가 필요
+
+    form.appendChild(input);
+  }
+
+  return form;
+}
 
 function readJson(json, callback) {
   fetch(json)
