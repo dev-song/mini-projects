@@ -43,6 +43,12 @@ function createForm() {
     form.appendChild(input);
   }
 
+  const submit = document.createElement('input');
+  submit.classList.add('add-product__submit');
+  submit.type = 'submit';
+  submit.value = '등록';
+  form.appendChild(submit);
+
   return form;
 }
 
