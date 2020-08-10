@@ -5,9 +5,10 @@ const formData = {    // 각 property는 [설명, input 형식, 표시 여부]�
   building: ['동 번호', 'number', true],
   space: ['넓이(평형)', 'number', true],
   description: ['설명', 'text', true],
-  img: ['이미지', 'text', true]
+  img: ['이미지 경로', 'text', true]
 }
 
+// formData 양식에 따라 form HTML을 생성
 function createForm() {
   const form = document.createElement('form');
   const formOptions = {
@@ -34,6 +35,10 @@ function createForm() {
     input.name = property;
     input.type = inputOptions.type;
     input.placeholder = `${inputOptions.description}을 입력하세요`; // 종성에 따른 조사 변화 추가 필요
+
+    if (!inputOptions.visible) {
+      input.style.display = 'none';
+    }
 
     form.appendChild(input);
   }
