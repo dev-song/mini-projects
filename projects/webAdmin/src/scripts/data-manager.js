@@ -40,6 +40,12 @@ function createForm() {
   return form;
 }
 
+function renderForm(parent) {
+  const form = createForm();
+
+  parent.appendChild(form);
+}
+
 function readJson(json, callback) {
   fetch(json)
     .then(res => res.json())
@@ -76,6 +82,9 @@ function showProductData(path, parent) {
 }
 
 function init() {
+  const formParentNode = document.querySelector('.form-box');
+  renderForm(formParentNode);
+
   const dataBox = document.querySelector('.data-box');
   showProductData(path, dataBox);
 }
