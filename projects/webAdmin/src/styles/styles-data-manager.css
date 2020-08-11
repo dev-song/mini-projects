@@ -36,8 +36,19 @@
 .data-box__items--container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
+  flex-wrap: wrap;
 
   width: 80%;
   margin: auto;
+}
+
+.data-box__item--container {
+  width: 40%;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+
+  background: cornsilk;
 }
