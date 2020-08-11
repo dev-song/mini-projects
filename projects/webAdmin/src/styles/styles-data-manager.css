@@ -25,46 +25,6 @@
   margin-bottom: 0;
 }
 
-.upload-product {
-  width: 40%;
-  min-width: 400px;
-  margin: auto;
-  padding: 2rem 2rem 1rem;
-  border: 2px solid cornsilk;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-
-  background: cornsilk;
-}
-
-.upload-product > div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-.upload-product > div:first-of-type {
-  margin-top: 0;
-}
-
-.upload-product label {
-  width: 40%;
-
-  font-size: 1.5rem;
-}
-
-.upload-product input[type='text'] {
-  width: 60%;
-  padding: 0.5rem;
-
-  font-size: 1.2rem;
-}
-
-.upload-product .product__submit--container {
-  justify-content: center;
-}
-
 .data-box {
   margin-top: 4rem;
 }
