@@ -80,13 +80,18 @@ function showProductData(path, parent) {
       itemContainer.classList.add('data-box__item--container');
 
       for (const property in item) {
+        if (property === 'id') {
+          itemContainer.id = `item-${item[property]}`;
+          continue;
+        }
+
         const elm = document.createElement('p');
         elm.classList.add(`data-box__item-${property}`);
         elm.textContent = item[property];
         itemContainer.appendChild(elm);
       }
 
-      itemsContainer.appendChild(itemContainer);
+      itemsContainer.prepend(itemContainer);
     });
 
     parent.appendChild(itemsContainer);
