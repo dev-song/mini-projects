@@ -1,11 +1,11 @@
 const path = './get-products';
 const formData = {    // 각 property는 [설명, input 형식, 표시 여부]를 값으로 가짐
   id: ['일련번호', 'number', false],
-  cluster: ['단지 번호', 'number', true],
+  cluster: ['단지 번호', 'number', false],
   building: ['동 번호', 'number', true],
   space: ['넓이(평형)', 'number', true],
   description: ['설명', 'text', true],
-  img: ['이미지 경로', 'text', true]
+  img: ['이미지 경로', 'text', false]
 }
 
 // formData 양식에 따라 form HTML을 생성
