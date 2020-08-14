@@ -49,6 +49,7 @@ app.post('/validate-login', (req, res) => {
 
 app.post('/add-product', (req, res) => {
   req.body.id = new Date().getTime();
+  req.body.cluster = Math.floor(parseInt(req.body.building) / 100).toString();
 
   const productDataPath = './data/product-data.json';
   dataController.addData(productDataPath, req.body);
