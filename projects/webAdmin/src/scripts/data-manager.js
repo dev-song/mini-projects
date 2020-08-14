@@ -5,7 +5,7 @@ const formData = {    // 각 property는 [설명, input 형식, 표시 여부]�
   building: ['동 번호', 'number', true],
   space: ['넓이(평형)', 'number', true],
   description: ['설명', 'text', true],
-  img: ['이미지 경로', 'text', false]
+  img: ['이미지 경로', 'text', true]
 }
 
 // formData 양식에 따라 form HTML을 생성
@@ -80,10 +80,8 @@ function showProductData(path, parent) {
       itemContainer.classList.add('data-box__item--container');
 
       for (const property in item) {
-        if (property === 'id') {
-          itemContainer.id = `item-${item[property]}`;
-          continue;
-        }
+        if (property === 'id') itemContainer.id = `item-${item[property]}`;
+        if (!formData[property][2]) continue;
 
         const elm = document.createElement('p');
         elm.classList.add(`data-box__item-${property}`);
