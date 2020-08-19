@@ -79,8 +79,11 @@ function showProductData(path, parent) {
       const itemContainer = document.createElement('div');
       itemContainer.classList.add('data-box__item--container');
 
+      let clusterNumber;
+
       for (const property in item) {
         if (property === 'id') itemContainer.id = `item-${item[property]}`;
+        if (property === 'cluster') clusterNumber = item[property];
         if (!formData[property][2]) continue;
 
         const elm = document.createElement('p');
@@ -89,7 +92,16 @@ function showProductData(path, parent) {
         itemContainer.appendChild(elm);
       }
 
-      itemsContainer.prepend(itemContainer);
+      let cluster = document.querySelector(`.data-box__cluster-${clusterNumber}`);
+      console.log(`.data-box__cluster-${clusterNumber}`, cluster);
+      if (!cluster) {
+        cluster = document.createElement('div');
+        cluster.classList.add(`data-box__cluster-${clusterNumber}`);
+        itemsContainer.appendChild(cluster);
+      }
+      cluster.appendChild(itemContainer);
+
+      itemsContainer.prepend(cluster);
     });
 
     parent.appendChild(itemsContainer);
