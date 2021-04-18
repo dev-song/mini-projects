@@ -2,59 +2,55 @@
 
 var playing;
 
-// 배열 내 무작위 항목을 선택하는 함수
-var getRndElem = function (arr) {
-  var rndElem;
-  rndElem = arr[Math.floor(Math.random() * arr.length)];
+const characters = [
+  '길',
+  '벼',
+  '흐',
+  '오',
+  '랖',
+  'オ',
+  'サ',
+  'ホ',
+  'モ',
+  'ヤ',
+  'b',
+  'm',
+  'Q',
+  'R',
+  'y',
+  'δ',
+  'ε',
+  'θ',
+  'ψ',
+  'η',
+  'Б',
+  'Ж',
+  'Л',
+  'Ю',
+  'Я',
+  'ठ',
+  'त',
+  'थ',
+  'म',
+  'ह',
+  'խ',
+  'ծ',
+  'ջ',
+  'տ',
+  'ֆ',
+  'ᚠ',
+  'ᚱ',
+  'ᛉ',
+  'ᛒ',
+  'ᛗ',
+];
 
-  return rndElem;
+const chooseRandomArrayElement = (array) => {
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
 };
 
 var dataController = (function () {
-  // 글자들의 전체 집합을 설정
-  var characters = [
-    '길',
-    '벼',
-    '흐',
-    '오',
-    '랖',
-    'オ',
-    'サ',
-    'ホ',
-    'モ',
-    'ヤ',
-    'b',
-    'm',
-    'Q',
-    'R',
-    'y',
-    'δ',
-    'ε',
-    'θ',
-    'ψ',
-    'η',
-    'Б',
-    'Ж',
-    'Л',
-    'Ю',
-    'Я',
-    'ठ',
-    'त',
-    'थ',
-    'म',
-    'ह',
-    'խ',
-    'ծ',
-    'ջ',
-    'տ',
-    'ֆ',
-    'ᚠ',
-    'ᚱ',
-    'ᛉ',
-    'ᛒ',
-    'ᛗ',
-  ];
-
   return {
     // Characters 배열을 return하는 함수
     getCharacters: function () {
@@ -86,7 +82,7 @@ var dataController = (function () {
         var html = '<div' + divClass + '">';
 
         for (var j = 0; j < obj.columns; j++) {
-          var rndElem = getRndElem(arr);
+          var rndElem = chooseRandomArrayElement(arr);
           var spanClass = ' class="characters column_' + (j + 1) + '"';
           var spanId = ' id="r' + (i + 1) + 'c' + (j + 1);
 
@@ -103,7 +99,7 @@ var dataController = (function () {
     changeRndChar: function (arr, obj) {
       var rndRow = Math.floor(Math.random() * obj.rows + 1);
       var rndCol = Math.floor(Math.random() * obj.columns + 1);
-      var rndChar = getRndElem(arr);
+      var rndChar = chooseRandomArrayElement(arr);
 
       var rndId = 'r' + rndRow + 'c' + rndCol;
       document.getElementById(rndId).textContent = rndChar;
